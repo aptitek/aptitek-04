@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Merciless dead-code audit
+pnpm run lint:knip
+
+# Run all test suites before push (unit, stories, coverage, and e2e)
+pnpm run test

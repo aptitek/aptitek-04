@@ -1,0 +1,27 @@
+globs:
+  - '**/*.md'
+ignores:
+  - 'node_modules'
+  - 'dist'
+  - 'storybook-static'
+  - '.agents'
+  - 'coverage'
+  - '.astro'
+  - 'playwright-report'
+  - 'test-results'
+config:
+  default: true
+  MD013: false
+  MD029:
+    style: 'ordered'
+  MD033:
+    allowed_elements: []
+  MD040: true
+  MD046:
+    style: 'fenced'
+  MD048:
+    style: 'backtick'
+  MD055:
+    style: 'consistent'
+  MD056: true
+  MD058: true

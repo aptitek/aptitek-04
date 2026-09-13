@@ -1,0 +1,7 @@
+allowBuilds:
+  contextify: false
+  esbuild: true
+  sharp: true
+overrides:
+  reapti: link:/home/aptitek/50-59_Code/51_Websites/reapti-02
+  reapti-02: link:/home/aptitek/50-59_Code/51_Websites/reapti-02

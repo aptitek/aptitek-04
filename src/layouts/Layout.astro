@@ -1,0 +1,77 @@
+---
+import { useTranslations, type SupportedLocale } from '../i18n/index.ts';
+import { ThemeSwitch } from '../theme/index.ts';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  frontmatter?: {
+    title?: string;
+    description?: string;
+  };
+}
+
+const currentLocale = (Astro.currentLocale as SupportedLocale) ?? 'en';
+const t = useTranslations(currentLocale);
+const {
+  frontmatter,
+  title = frontmatter?.title ?? t.siteTitle,
+  description = frontmatter?.description ?? t.siteDescription,
+} = Astro.props;
+
+const targetHref = currentLocale === 'en' ? '/fr' : '/';
+const homeHref = currentLocale === 'en' ? '/' : '/fr';
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="/milkshake.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+    />
+    <script is:inline>
+      try {
+        const storedTheme = localStorage.getItem('aptitek-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch {
+        // Fallback if localStorage is inaccessible
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app-root">
+      <header class="app-header">
+        <a href={homeHref} class="brand-link">
+          <span class="brand-title">{t.siteTitle}</span>
+        </a>
+        <div class="header-controls">
+          <a
+            href={targetHref}
+            class="locale-switch-link"
+            aria-label={t.localeSwitchAriaLabel}
+            data-testid="locale-switch"
+          >
+            {t.localeSwitchLabel}
+          </a>
+          <ThemeSwitch client:only="react" ariaLabel={t.themeToggleAriaLabel} />
+        </div>
+      </header>
+      <main id="main-content">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

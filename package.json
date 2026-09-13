@@ -1,0 +1,209 @@
+{
+  "name": "aptitek-04",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "astro": "astro",
+    "build": "wireit",
+    "build:astro": "wireit",
+    "codegen:panda": "wireit",
+    "lint": "wireit",
+    "lint:eslint": "wireit",
+    "lint:prettier": "wireit",
+    "lint:markdown": "wireit",
+    "lint:mdx": "wireit",
+    "lint:knip": "wireit",
+    "lint:typecheck": "wireit",
+    "lint:fix": "wireit",
+    "test": "wireit",
+    "test:unit": "wireit",
+    "test:e2e": "wireit",
+    "format": "prettier --write --cache .",
+    "format:check": "prettier --check --cache .",
+    "clean": "wireit",
+    "prepare": "husky"
+  },
+  "wireit": {
+    "codegen:panda": {
+      "command": "panda codegen",
+      "files": [
+        "panda.config.ts",
+        "package.json",
+        "src/tokens/**"
+      ],
+      "output": [
+        "styled-system/**"
+      ]
+    },
+    "build": {
+      "dependencies": [
+        "build:astro"
+      ]
+    },
+    "build:astro": {
+      "command": "astro build",
+      "dependencies": [
+        "codegen:panda"
+      ],
+      "files": [
+        "src/**/*",
+        "astro.config.mjs",
+        "tsconfig.json",
+        "package.json"
+      ],
+      "output": [
+        "dist/**"
+      ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:eslint",
+        "lint:prettier",
+        "lint:markdown",
+        "lint:mdx",
+        "lint:knip",
+        "lint:typecheck"
+      ]
+    },
+    "lint:eslint": {
+      "command": "eslint --cache --cache-location node_modules/.cache/eslint/ --max-warnings 0 .",
+      "files": [
+        "src/**/*",
+        "tests/**/*",
+        "eslint.config.mjs",
+        "tsconfig.json",
+        "package.json"
+      ]
+    },
+    "lint:prettier": {
+      "command": "prettier --check --cache .",
+      "files": [
+        "src/**/*",
+        "tests/**/*",
+        "*.{mjs,js,ts,json,md,yml,yaml,astro}",
+        ".prettierrc.mjs",
+        ".prettierignore"
+      ]
+    },
+    "lint:knip": {
+      "command": "knip --cache --cache-location node_modules/.cache/knip/",
+      "files": [
+        "src/**/*",
+        "tests/**/*",
+        "knip.json",
+        "package.json",
+        "tsconfig.json"
+      ]
+    },
+    "lint:typecheck": {
+      "command": "astro check",
+      "dependencies": [
+        "codegen:panda"
+      ],
+      "files": [
+        "src/**/*",
+        "tsconfig.json",
+        "astro.config.mjs",
+        "package.json"
+      ]
+    },
+    "lint:markdown": {
+      "command": "markdownlint-cli2 && node scripts/lint-markdown-structure.mjs",
+      "files": [
+        "**/*.md",
+        ".markdownlint-cli2.yaml",
+        "scripts/lint-markdown-structure.mjs"
+      ]
+    },
+    "lint:mdx": {
+      "command": "node scripts/lint-mdx-purity.mjs",
+      "files": [
+        "**/*.mdx",
+        "scripts/lint-mdx-purity.mjs"
+      ]
+    },
+    "lint:fix": {
+      "command": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/ && markdownlint-cli2 --fix && prettier --write --cache ."
+    },
+    "test": {
+      "dependencies": [
+        "test:unit",
+        "test:e2e"
+      ]
+    },
+    "test:unit": {
+      "command": "vitest run --project=unit --passWithNoTests",
+      "files": [
+        "src/**/*.{ts,tsx,js,jsx}",
+        "tests/unit/**/*.{ts,tsx,js,jsx}",
+        "vitest.config.ts",
+        "tsconfig.json",
+        "package.json"
+      ]
+    },
+    "test:e2e": {
+      "command": "playwright test",
+      "dependencies": [
+        "build:astro"
+      ],
+      "files": [
+        "tests/e2e/**/*.{ts,js}",
+        "playwright.config.ts",
+        "package.json"
+      ]
+    },
+    "clean": {
+      "command": "rm -rf dist .astro coverage test-results playwright-report .wireit node_modules/.cache styled-system"
+    }
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/react": "^6.0.5",
+    "@lit/react": "^1.0.8",
+    "@m3e/icons": "^1.0.15",
+    "@m3e/react": "^2.7.11",
+    "@m3e/web": "^2.7.11",
+    "astro": "^7.3.2",
+    "lit": "^3.3.3",
+    "maplibre-gl": "^6.9.0",
+    "ogl": "^1.0.11",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-map-gl": "^8.1.3",
+    "reapti": "link:/home/aptitek/50-59_Code/51_Websites/reapti-02"
+  },
+  "devDependencies": {
+    "@astrojs/markdown-remark": "^7.3.1",
+    "@eslint/css": "^2.0.0",
+    "@eslint/js": "^10.0.1",
+    "@pandacss/dev": "^1.12.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitest/coverage-v8": "5.0.0",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.11.0",
+    "husky": "^9.1.7",
+    "knip": "^6.35.1",
+    "lint-staged": "^17.5.0",
+    "markdownlint-cli2": "^0.23.2",
+    "playwright": "^1.63.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^1.0.0",
+    "remark-directive": "^4.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.67.0",
+    "unist-util-visit": "^5.1.0",
+    "vitest": "^5.0.0",
+    "wireit": "^0.14.13"
+  }
+}
