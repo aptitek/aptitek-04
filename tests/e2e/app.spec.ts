@@ -6,7 +6,7 @@ test('English landing page renders SeasonHero with Milkshake font and M3e slider
   await page.goto('/');
   await expect(page).toHaveTitle(/Aptitek/i);
   await expect(page.locator('#app-root')).toBeVisible();
-  await expect(page.locator('.app-header')).toBeVisible();
+  await expect(page.locator('[data-testid="site-appbar"]')).toBeVisible();
 
   // Verify SeasonHero organism
   const seasonHero = page.locator('[data-testid="season-hero"]');
@@ -38,12 +38,13 @@ test('French localized page renders Petit Apti and French proverb', async ({ pag
   await page.goto('/fr');
   await expect(page).toHaveTitle(/Aptitek 04/i);
 
-  // Check language switch link
-  const localeSwitch = page.locator('[data-testid="locale-switch"]');
+  // Check language switch
+  const localeSwitch = page.locator('[data-testid="language-switch"]');
   await expect(localeSwitch).toBeVisible();
-  await expect(localeSwitch).toHaveText('EN');
+  await expect(localeSwitch).toHaveAttribute('aria-label', /English/i);
 
   // Verify French copy
+
   const ticker = page.locator('[data-testid="season-hero-ticker"]');
   await expect(ticker).toBeVisible();
   await expect(ticker).toContainText('Petit');

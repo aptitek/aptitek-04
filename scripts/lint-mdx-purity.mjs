@@ -67,9 +67,42 @@ for (const filePath of targetFiles) {
   });
 }
 
+function findAstroPages(dir, fileList = []) {
+  try {
+    const entries = readdirSync(dir);
+    for (const entry of entries) {
+      if (entry.startsWith('.') || entry === 'node_modules') continue;
+      const fullPath = join(dir, entry);
+      const stat = statSync(fullPath);
+      if (stat.isDirectory()) {
+        findAstroPages(fullPath, fileList);
+      } else if (entry.endsWith('.astro')) {
+        fileList.push(fullPath);
+      }
+    }
+  } catch {
+    // Directory might not exist in some contexts
+  }
+  return fileList;
+}
+
+const pagesDir = resolve(process.cwd(), 'src/pages');
+const forbiddenAstroPages = findAstroPages(pagesDir);
+for (const pagePath of forbiddenAstroPages) {
+  console.error(`❌ [Page Architecture Error] Forbidden .astro page found: ${pagePath}`);
+  console.error(
+    '   Violation: All pages in src/pages must be written as MDX (.mdx) files. Configure redirects in astro.config.mjs.',
+  );
+  violationCount++;
+}
+
 if (violationCount > 0) {
-  console.error(`\nFatal: Found ${violationCount} styling violation(s) in MDX content files.`);
+  console.error(
+    `\nFatal: Found ${violationCount} violation(s) in MDX content & page architecture.`,
+  );
   process.exit(1);
 } else {
-  console.log(`✅ MDX content purity verified across ${targetFiles.length} file(s).`);
+  console.log(
+    `✅ MDX content purity & page architecture verified across ${targetFiles.length} file(s).`,
+  );
 }

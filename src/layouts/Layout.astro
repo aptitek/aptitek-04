@@ -1,6 +1,6 @@
 ---
 import { useTranslations, type SupportedLocale } from '../i18n/index.ts';
-import { ThemeSwitch } from '../theme/index.ts';
+import { AppNavigation } from '../components/AppNavigation.tsx';
 import '../styles/global.css';
 
 interface Props {
@@ -20,8 +20,7 @@ const {
   description = frontmatter?.description ?? t.siteDescription,
 } = Astro.props;
 
-const targetHref = currentLocale === 'en' ? '/fr' : '/';
-const homeHref = currentLocale === 'en' ? '/' : '/fr';
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -53,22 +52,12 @@ const homeHref = currentLocale === 'en' ? '/' : '/fr';
   </head>
   <body>
     <div id="app-root">
-      <header class="app-header">
-        <a href={homeHref} class="brand-link">
-          <span class="brand-title">{t.siteTitle}</span>
-        </a>
-        <div class="header-controls">
-          <a
-            href={targetHref}
-            class="locale-switch-link"
-            aria-label={t.localeSwitchAriaLabel}
-            data-testid="locale-switch"
-          >
-            {t.localeSwitchLabel}
-          </a>
-          <ThemeSwitch client:only="react" ariaLabel={t.themeToggleAriaLabel} />
-        </div>
-      </header>
+      <AppNavigation
+        client:only="react"
+        currentLocale={currentLocale}
+        currentPath={currentPath}
+        scrollContainerId="main-content"
+      />
       <main id="main-content">
         <slot />
       </main>

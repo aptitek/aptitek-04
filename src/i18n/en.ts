@@ -1,0 +1,140 @@
+/**
+ * English translations dictionary.
+ */
+export const en = {
+  siteTitle: 'Aptitek 04 - Modern Web Architecture',
+  siteDescription: 'High performance modular web architecture combining Astro, React, and Reapti.',
+  heroPrefix: 'Step by step,',
+  heroBrand: 'Apti',
+  heroBrandSuffix: '-tude for',
+  heroPhrases: ['knowledge', 'talent', 'craftsmanship', 'ingenuity', 'passion'],
+  heroSuffix: 'takes its flight !',
+  holdButtonLabel: 'Hold to Verify Architecture',
+  themeToggleAriaLabel: 'Toggle dark or light mode',
+  seasonSliderAriaLabel: 'Seasonal cycle progress control',
+  seasonProgressLabel: 'Season Cycle',
+  spring: 'Spring',
+  summer: 'Summer',
+  fall: 'Fall',
+  winter: 'Winter',
+  localeSwitchLabel: 'FR',
+  localeSwitchAriaLabel: 'Passer en français',
+  localeEnGlyph: 'EN',
+  localeFrGlyph: 'FR',
+  appBarAriaLabel: 'Application navigation bar',
+  homeAriaLabel: 'Aptitek — Return to home',
+  brandFaceAlt: 'Aptiface',
+  brandLogoAlt: 'Aptitek',
+  socialLinksGroupAria: 'Social media links',
+  linkedinAria: 'Antoine Gréa on LinkedIn',
+  githubAria: 'Aptitek on GitHub',
+  blueskyAria: 'Aptitek on Bluesky',
+  telegramAria: 'Aptitek on Telegram',
+  xAria: 'Aptitek on X (formerly Twitter)',
+  navHome: 'Home',
+  navClasses: 'Classes',
+  navAptispace: 'Aptispace',
+  navAbout: 'About',
+  classesTitle: 'Courses & Formations — Aptitek',
+  classesDescription:
+    'Higher education curriculum in computer science, software engineering, AI, robotics, and system architecture.',
+  classesBadge: 'Curriculum & Pedagogy',
+  classesHeroTitle: 'Higher Education & Engineering Formations',
+  classesHeroSubtitle:
+    'Comprehensive courses in Artificial Intelligence, Explainable AI, Software Engineering, Distributed Systems, and Robotics. Taught across top engineering and tech schools in France.',
+  classesSectionTitle: 'Teaching Domains & Expertise',
+  classesAiTitle: 'Artificial Intelligence & Robotics',
+  classesAiDesc:
+    'Machine learning fundamentals, deep learning, explainable AI (XAI), cognitive architectures, and autonomous robotic control systems.',
+  classesAiTags: ['Explainable AI', 'Robotics', 'PyTorch', 'Autonomous Systems'],
+  classesSeTitle: 'Software Engineering & Architecture',
+  classesSeDesc:
+    'Modular architecture, domain-driven design, clean code, reactive streams, fullstack web applications, and high-performance distributed backends.',
+  classesSeTags: ['TypeScript', 'Python', 'Rust', 'System Design'],
+  classesDevOpsTitle: 'Systems, DevOps & Infrastructure',
+  classesDevOpsDesc:
+    'Linux internals, containerization, CI/CD pipelines, container orchestration, microservices resilience, and security best practices.',
+  classesDevOpsTags: ['Linux', 'Docker', 'Kubernetes', 'Cloud Native'],
+  classesDesignTitle: 'Design Systems & UI Engineering',
+  classesDesignDesc:
+    'Material Design 3 (M3e), accessibility WCAG 2.2 standards, atomic design, web components, and token-driven frontend ecosystems.',
+  classesDesignTags: ['Material 3', 'A11y', 'Design Tokens', 'Web Components'],
+  classesPartnersTitle: 'Partner Engineering & Tech Schools',
+  classesPartnersSubtitle:
+    'Antoine Gréa delivers masterclasses, intensive bootcamps, and semester courses at recognized institutions:',
+  partnerYnov: 'Ynov Campus',
+  partnerEstiam: 'ESTIAM',
+  partnerGema: 'GEMA',
+  partnerIpi: 'IPI',
+  partnerIpssi: 'IPSSI',
+  partnerScienceU: 'Sciences-U Lyon',
+  classesCtaTitle: 'Interested in an educational intervention or training program?',
+  classesCtaDesc:
+    'Custom training programs, university semester modules, and technical workshops available in English or French.',
+  classesCtaBtn: 'Contact Antoine Gréa',
+  aptispaceTitle: 'Aptispace LMS — Aptitek',
+  aptispaceDescription:
+    'Aptispace pedagogical platform: interactive workspaces, coding labs, and adaptive learning curricula.',
+  aptispaceBadge: 'Learning Management System',
+  aptispaceHeroTitle: 'Aptispace: Pedagogical Excellence in Code',
+  aptispaceHeroSubtitle:
+    'A cutting-edge learning platform engineered by Aptitek to bridge theoretical concepts and industry-standard engineering practices through interactive, browser-executable environments.',
+  aptispaceSectionTitle: 'Core Platform Features',
+  aptispaceWorkspacesTitle: 'Zero-Setup In-Browser Workspaces',
+  aptispaceWorkspacesDesc:
+    'Instant cloud containers providing complete Linux shells, Jupyter notebooks, Node.js, and Python runtimes without installing local tooling.',
+  aptispaceWorkspacesTags: ['WebAssembly', 'Jupyter', 'Linux Containers'],
+  aptispaceFeedbackTitle: 'Live Feedback & Automated Testing',
+  aptispaceFeedbackDesc:
+    'Automated test suites (Vitest, Pytest) that evaluate student commits and solution algorithms in real time with actionable hints and code suggestions.',
+  aptispaceFeedbackTags: ['Automated Grading', 'CI/CD Checks', 'Realtime Feedback'],
+  aptispaceSkillTitle: 'Skill Matrix & Progress Analytics',
+  aptispaceSkillDesc:
+    'Granular tracking of student competencies across algorithms, design patterns, security standards, and system architecture.',
+  aptispaceSkillTags: ['Skill Graph', 'Analytics', 'Pedagogy'],
+  aptispaceModularTitle: 'Modular Interactive Curricula',
+  aptispaceModularDesc:
+    'Rich interactive chapters combining markdown theory, live diagrams (Mermaid, PlantUML), interactive 3D simulations, and hands-on drills.',
+  aptispaceModularTags: ['Interactive MDX', 'Simulations', '3D WebGL'],
+  aptispaceCalloutBold: 'Built for Higher Education:',
+  aptispaceCalloutText:
+    'Aptispace powers real-time classroom sessions across partner universities and engineering schools, managing hundreds of active students with instant workspace deployments.',
+  aptispaceCtaTitle: 'Ready to explore Aptispace for your institution?',
+  aptispaceCtaDesc:
+    'Discover customized pedagogical instances and classroom integration capabilities.',
+  aptispaceCtaBtn: 'Learn More & Inquire',
+  aboutTitle: 'About Dr. Antoine Gréa — Aptitek',
+  aboutDescription:
+    'Doctor in AI & Robotics, engineering background, educator and founder of Aptitek.',
+  aboutBadge: 'About & Pedagogy',
+  aboutHeroTitle: 'Dr. Antoine Gréa',
+  aboutHeroSubtitle:
+    'Doctor in Artificial Intelligence & Robotics, Engineer by training, Educator & Software Architect.',
+  aboutQuoteText:
+    '"Holding a PhD in AI & robotics focused on Explainable AI (XAI) and trained as an engineer, I teach computer science in English and French across all its dimensions: code, systems, AI, design systems, and pedagogical architecture."',
+  aboutSectionTitle: 'Background & Philosophy',
+  aboutResearchTitle: 'Academic & Doctoral Research',
+  aboutResearchDesc:
+    'Doctoral thesis focusing on explainable cognitive models, symbolic reasoning, and autonomous multi-agent systems at the crossroads of robotics and artificial intelligence.',
+  aboutPhilosophyTitle: 'The Aptitek Philosophy',
+  aboutPhilosophyQuote: 'Petit Apti, le talent fait son nid.',
+  aboutPhilosophyDesc:
+    'Nurturing talent with patient, rigorous, and deep craftsmanship. Creating tools and environments where every developer can thrive.',
+  aboutCraftTitle: 'Software Craftsmanship',
+  aboutCraftDesc:
+    'Strong commitment to clean architecture, type safety, open web standards, and high-performance interactive graphics (WebGL, Web Components, Material Design 3).',
+  aboutMentorshipTitle: 'Pedagogical Mentorship',
+  aboutMentorshipDesc:
+    'Hundreds of engineers and students trained each year in Paris, Lyon, and online, with hands-on real-world projects and empathetic mentorship.',
+  aboutContactTitle: 'Get in Touch',
+  aboutContactSubtitle:
+    'Feel free to connect directly via social media or reach out regarding teaching, consulting, or technical advisory:',
+  aboutContactLinkedin: 'LinkedIn',
+  aboutContactLinkedinUrl: 'fr.linkedin.com/in/grea09',
+  aboutContactGithub: 'GitHub',
+  aboutContactGithubUrl: 'github.com/aptitek',
+  aboutContactBluesky: 'Bluesky',
+  aboutContactBlueskyUrl: '@aptitek.bsky.social',
+  aboutContactTelegram: 'Telegram',
+  aboutContactTelegramUrl: 't.me/aptitek',
+} as const;

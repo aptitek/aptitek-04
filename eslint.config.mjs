@@ -11,6 +11,7 @@ import css from '@eslint/css';
 import { createA11yConfig } from './scripts/eslint/a11y-config.js';
 import { m3TokensPlugin } from './scripts/eslint/m3-tokens-plugin.js';
 import { cssTokensPlugin } from './scripts/eslint/css-tokens-plugin.js';
+import { pageArchitecturePlugin } from './scripts/eslint/page-architecture-plugin.js';
 import { restrictedImportsRule, restrictedSyntaxRules } from './scripts/eslint/restricted-rules.js';
 
 export default defineConfig([
@@ -107,9 +108,13 @@ export default defineConfig([
   ...eslintPluginAstro.configs['flat/jsx-a11y-recommended'],
   {
     files: ['**/*.astro'],
+    plugins: {
+      'page-architecture': pageArchitecturePlugin,
+    },
     rules: {
       // In Astro templates, allow intrinsic HTML tags while enforcing no hardcoded content and clean styles
       'no-restricted-syntax': ['error', ...restrictedSyntaxRules.slice(1)],
+      'page-architecture/no-astro-pages': 'error',
     },
   },
   // CSS Design Token & Hygiene enforcement
@@ -133,6 +138,7 @@ export default defineConfig([
       'css-tokens/no-unperformant-transitions': 'error',
       'css-tokens/no-raw-font-family': 'error',
       'css-tokens/no-tailwind-directives': 'error',
+      'css-tokens/enforce-theme': 'error',
     },
   },
   // Theme definitions are the designated source of truth for raw colors and fonts
@@ -141,6 +147,7 @@ export default defineConfig([
     rules: {
       'css-tokens/no-raw-colors': 'off',
       'css-tokens/no-raw-font-family': 'off',
+      'css-tokens/enforce-theme': 'off',
     },
   },
 ]);

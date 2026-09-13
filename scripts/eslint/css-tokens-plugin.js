@@ -287,5 +287,115 @@ export const cssTokensPlugin = {
         };
       },
     },
+
+    'enforce-theme': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description:
+            'Enforce that all CSS colors originate strictly from the Solarized theme system (--theme-*, --colors-*, --md-sys-color-*, --m3e-*), exempting only background canvas shaders.',
+        },
+        messages: {
+          invalidThemeColor:
+            'Color "{{value}}" does not conform to the theme system. Use pure Solarized theme variables (var(--theme-*), var(--colors-*), var(--md-sys-color-*), var(--m3e-*)) or allowed keywords (transparent, currentColor, inherit).',
+          rawColorFallback:
+            'Raw color fallback "{{value}}" detected inside theme variable. Remove raw fallbacks to ensure 100% pure Solarized theme adherence.',
+        },
+      },
+      create(context) {
+        let isBackgroundCanvas = false;
+
+        return {
+          Rule(node) {
+            if (!node.prelude) {
+              isBackgroundCanvas = false;
+              return;
+            }
+            const selectorText = context.sourceCode.getText(node.prelude);
+            isBackgroundCanvas =
+              /#season-canvas|\.season-hero-canvas|\.season-hero-wrapper|\.season-background/.test(
+                selectorText,
+              );
+          },
+          'Rule:exit'() {
+            isBackgroundCanvas = false;
+          },
+          Declaration(node) {
+            if (isBackgroundCanvas) return;
+            const prop = node.property?.toLowerCase();
+            if (!prop) return;
+
+            const isColorProp =
+              COLOR_PROPS.has(prop) ||
+              prop.endsWith('-color') ||
+              prop.startsWith('border') ||
+              prop.startsWith('outline') ||
+              prop === 'box-shadow' ||
+              prop === 'background';
+
+            if (!isColorProp) return;
+
+            for (const child of node.value?.children || []) {
+              if (child.type === 'Hash') {
+                context.report({
+                  node: child,
+                  messageId: 'invalidThemeColor',
+                  data: { value: `#${child.value}` },
+                });
+              } else if (child.type === 'Function') {
+                const funcName = child.name?.toLowerCase();
+                if (COLOR_FUNCS.has(funcName)) {
+                  context.report({
+                    node: child,
+                    messageId: 'invalidThemeColor',
+                    data: { value: `${child.name}(...)` },
+                  });
+                } else if (funcName === 'var') {
+                  const varText = context.sourceCode.getText(child);
+                  const varMatch = varText.match(
+                    /^var\(\s*(--[a-zA-Z0-9_-]+)(?:\s*,\s*([^)]+))?\s*\)/,
+                  );
+                  if (varMatch) {
+                    const varName = varMatch[1];
+                    const fallback = varMatch[2]?.trim();
+                    const isThemeToken =
+                      varName.startsWith('--theme-') ||
+                      varName.startsWith('--colors-') ||
+                      varName.startsWith('--md-sys-color-') ||
+                      varName.startsWith('--m3e-') ||
+                      varName.startsWith('--vertical-nav-bar-') ||
+                      varName.startsWith('--vertical-app-bar-') ||
+                      varName.startsWith('--shadows-');
+                    if (!isThemeToken && (COLOR_PROPS.has(prop) || prop.endsWith('-color'))) {
+                      context.report({
+                        node: child,
+                        messageId: 'invalidThemeColor',
+                        data: { value: varName },
+                      });
+                    }
+                    if (fallback && (fallback.startsWith('#') || /^(rgb|hsl)/i.test(fallback))) {
+                      context.report({
+                        node: child,
+                        messageId: 'rawColorFallback',
+                        data: { value: fallback },
+                      });
+                    }
+                  }
+                }
+              } else if (child.type === 'Identifier') {
+                const idName = child.name?.toLowerCase();
+                if (COLOR_PROPS.has(prop) && !ALLOWED_COLOR_IDS.has(idName)) {
+                  context.report({
+                    node: child,
+                    messageId: 'invalidThemeColor',
+                    data: { value: child.name },
+                  });
+                }
+              }
+            }
+          },
+        };
+      },
+    },
   },
 };

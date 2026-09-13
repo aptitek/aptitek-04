@@ -18,6 +18,12 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+  redirects: {
+    '/formations': '/classes',
+    '/a-propos': '/about',
+    '/fr/classes': '/fr/formations',
+    '/fr/about': '/fr/a-propos',
+  },
   markdown: {
     processor: unified({
       remarkPlugins: [remarkDirective, remarkFencedDivsPlugin],

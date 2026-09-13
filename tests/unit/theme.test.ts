@@ -13,6 +13,7 @@ import { solarizedTheme as localSolarizedTheme } from '../../src/theme/solarized
 import { PROGRESS_THEME_COLORS } from '../../src/tokens/solarized.ts';
 import { md3SemanticTokens } from '../../src/tokens/md3.ts';
 import { holoGradient, sheenGradient } from '../../src/tokens/holo.ts';
+import { cssTokensPlugin } from '../../scripts/eslint/css-tokens-plugin.js';
 
 describe('Theme and Tokens Specifications', () => {
   it('re-exports theme constructs from reapti as single source of truth', () => {
@@ -56,5 +57,12 @@ describe('Theme and Tokens Specifications', () => {
     expect(holoGradient).toContain('rgba(211, 54, 130, 0)');
     expect(sheenGradient).toContain('rgba(253, 246, 227, 0.15)');
     expect(sheenGradient).not.toContain('rgba(255, 255, 255');
+  });
+
+  it('enforces that all elements except background use pure Solarized theme tokens via enforce-theme rule', () => {
+    const enforceThemeRule = cssTokensPlugin.rules['enforce-theme'];
+    expect(enforceThemeRule).toBeDefined();
+    expect(enforceThemeRule.meta.messages.invalidThemeColor).toBeDefined();
+    expect(enforceThemeRule.meta.messages.rawColorFallback).toBeDefined();
   });
 });

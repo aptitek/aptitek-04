@@ -82,7 +82,7 @@ export const restrictedSyntaxRules = [
   // Rule 4: Prohibition of Tailwind Utility Classes in className
   {
     selector:
-      "JSXAttribute[name.name='className'] > Literal[value=/(!size-|flex-col|items-center|justify-between|p-|m-|text-|bg-)/]",
+      "JSXAttribute[name.name='className'] > Literal[value=/(?:^|\\s)(?:!size-|flex-col|items-center|justify-between|p-\\d|m-\\d|text-[a-z0-9]|bg-[a-z0-9])/]",
     message:
       'Tailwind utility syntax is forbidden in className. Use Panda CSS atomic components or MD3 component tokens.',
   },
