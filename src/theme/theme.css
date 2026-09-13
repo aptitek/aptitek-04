@@ -1,3 +1,11 @@
+/**
+ * Canonical Theme System Variables
+ *
+ * Defines the complete CSS custom properties dictionary for the application,
+ * strictly mapped to Solarized color harmonies with zero pure white (#ffffff),
+ * zero pure black (#000000), and zero M3e fallback colors.
+ */
+
 @font-face {
   font-family: 'Milkshake';
   src: url('/milkshake.woff2') format('woff2');
@@ -43,28 +51,47 @@
 
   /* Default Light Theme (Solarized Light) */
   --theme-primary: #859900;
-  --theme-on-primary: #ffffff;
+  --theme-on-primary: #fdf6e3;
   --theme-primary-container: #eef5ce;
-  --theme-on-primary-container: #283200;
+  --theme-on-primary-container: #073642;
 
   --theme-secondary: #d33682;
-  --theme-on-secondary: #ffffff;
+  --theme-on-secondary: #fdf6e3;
   --theme-secondary-container: #fde4ef;
-  --theme-on-secondary-container: #470025;
+  --theme-on-secondary-container: #073642;
 
   --theme-tertiary: #268bd2;
-  --theme-on-tertiary: #ffffff;
+  --theme-on-tertiary: #fdf6e3;
   --theme-tertiary-container: #d8eefc;
-  --theme-on-tertiary-container: #002947;
+  --theme-on-tertiary-container: #073642;
+
+  --theme-error: #dc322f;
+  --theme-on-error: #fdf6e3;
+  --theme-error-container: #fdd9d7;
+  --theme-on-error-container: #073642;
 
   --theme-background: #fdf6e3;
+  --theme-on-background: #073642;
   --theme-surface: #eee8d5;
+  --theme-on-surface: #073642;
+  --theme-surface-variant: #f5eedc;
+  --theme-on-surface-variant: #586e75;
+  --theme-surface-dim: #e6dfca;
+  --theme-surface-bright: #fdf6e3;
+  --theme-surface-container-lowest: #fdf6e3;
+  --theme-surface-container-low: #f9f2e0;
   --theme-surface-container: #f5eedc;
   --theme-surface-container-high: #ebe3cd;
-  --theme-on-surface: #073642;
-  --theme-on-surface-variant: #586e75;
-  --theme-outline: rgba(7, 54, 66, 0.16);
-  --theme-outline-variant: rgba(7, 54, 66, 0.08);
+  --theme-surface-container-highest: #e3dbbe;
+
+  --theme-outline: rgba(7, 54, 66, 0.2);
+  --theme-outline-variant: rgba(7, 54, 66, 0.1);
+  --theme-shadow: rgba(7, 54, 66, 0.25);
+  --theme-scrim: rgba(0, 43, 54, 0.6);
+  --theme-inverse-surface: #073642;
+  --theme-inverse-on-surface: #fdf6e3;
+  --theme-inverse-primary: #9ec43b;
+  --theme-surface-tint: var(--theme-primary);
 
   /* Light Elevation: Soft Warm Shadows */
   --theme-elevation-0: none;
@@ -75,7 +102,7 @@
   --theme-elevation-4:
     0 24px 52px -10px rgba(7, 54, 66, 0.18), 0 6px 18px -3px rgba(7, 54, 66, 0.08);
 
-  /* MD3 Bridge Mappings */
+  /* Complete MD3 Bridge Mappings */
   --md-sys-color-primary: var(--theme-primary);
   --md-sys-color-on-primary: var(--theme-on-primary);
   --md-sys-color-primary-container: var(--theme-primary-container);
@@ -86,15 +113,100 @@
   --md-sys-color-on-secondary-container: var(--theme-on-secondary-container);
   --md-sys-color-tertiary: var(--theme-tertiary);
   --md-sys-color-on-tertiary: var(--theme-on-tertiary);
+  --md-sys-color-tertiary-container: var(--theme-tertiary-container);
+  --md-sys-color-on-tertiary-container: var(--theme-on-tertiary-container);
+  --md-sys-color-error: var(--theme-error);
+  --md-sys-color-on-error: var(--theme-on-error);
+  --md-sys-color-error-container: var(--theme-error-container);
+  --md-sys-color-on-error-container: var(--theme-on-error-container);
+  --md-sys-color-background: var(--theme-background);
+  --md-sys-color-on-background: var(--theme-on-background);
   --md-sys-color-surface: var(--theme-surface);
-  --md-sys-color-surface-container: var(--theme-surface-container);
   --md-sys-color-on-surface: var(--theme-on-surface);
+  --md-sys-color-surface-variant: var(--theme-surface-variant);
   --md-sys-color-on-surface-variant: var(--theme-on-surface-variant);
+  --md-sys-color-surface-dim: var(--theme-surface-dim);
+  --md-sys-color-surface-bright: var(--theme-surface-bright);
+  --md-sys-color-surface-container-lowest: var(--theme-surface-container-lowest);
+  --md-sys-color-surface-container-low: var(--theme-surface-container-low);
+  --md-sys-color-surface-container: var(--theme-surface-container);
+  --md-sys-color-surface-container-high: var(--theme-surface-container-high);
+  --md-sys-color-surface-container-highest: var(--theme-surface-container-highest);
   --md-sys-color-outline: var(--theme-outline);
   --md-sys-color-outline-variant: var(--theme-outline-variant);
+  --md-sys-color-shadow: var(--theme-shadow);
+  --md-sys-color-scrim: var(--theme-scrim);
+  --md-sys-color-inverse-surface: var(--theme-inverse-surface);
+  --md-sys-color-inverse-on-surface: var(--theme-inverse-on-surface);
+  --md-sys-color-inverse-primary: var(--theme-inverse-primary);
+  --md-sys-color-surface-tint: var(--theme-surface-tint);
+
+  /* MD3 Shape Tokens */
+  --md-sys-shape-corner-extra-small: var(--radius-xs);
+  --md-sys-shape-corner-small: var(--radius-sm);
   --md-sys-shape-corner-medium: var(--radius-md);
   --md-sys-shape-corner-large: var(--radius-lg);
+  --md-sys-shape-corner-extra-large: var(--radius-xl);
   --md-sys-shape-corner-full: var(--radius-full);
+
+  /* MD3 Elevation Tokens */
+  --md-sys-elevation-level0: var(--theme-elevation-0);
+  --md-sys-elevation-level1: var(--theme-elevation-1);
+  --md-sys-elevation-level2: var(--theme-elevation-2);
+  --md-sys-elevation-level3: var(--theme-elevation-3);
+  --md-sys-elevation-level4: var(--theme-elevation-4);
+
+  /* Explicit M3e Web Component Bridges */
+  --m3e-color-primary: var(--theme-primary);
+  --m3e-color-on-primary: var(--theme-on-primary);
+  --m3e-color-surface: var(--theme-surface);
+  --m3e-color-on-surface: var(--theme-on-surface);
+  --m3e-slider-track-active-color: var(--theme-primary);
+  --m3e-slider-track-inactive-color: var(--theme-surface-container-high);
+  --m3e-slider-handle-color: var(--theme-primary);
+  --m3e-switch-selected-track-color: var(--theme-primary);
+  --m3e-switch-selected-handle-color: var(--theme-on-primary);
+  --m3e-switch-unselected-track-color: var(--theme-surface-container-highest);
+  --m3e-switch-unselected-handle-color: var(--theme-outline);
+
+  /* Panda CSS Bridge Mappings */
+  --colors-primary: var(--theme-primary);
+  --colors-on-primary: var(--theme-on-primary);
+  --colors-primary-container: var(--theme-primary-container);
+  --colors-on-primary-container: var(--theme-on-primary-container);
+  --colors-secondary: var(--theme-secondary);
+  --colors-on-secondary: var(--theme-on-secondary);
+  --colors-secondary-container: var(--theme-secondary-container);
+  --colors-on-secondary-container: var(--theme-on-secondary-container);
+  --colors-tertiary: var(--theme-tertiary);
+  --colors-on-tertiary: var(--theme-on-tertiary);
+  --colors-tertiary-container: var(--theme-tertiary-container);
+  --colors-on-tertiary-container: var(--theme-on-tertiary-container);
+  --colors-error: var(--theme-error);
+  --colors-on-error: var(--theme-on-error);
+  --colors-error-container: var(--theme-error-container);
+  --colors-on-error-container: var(--theme-on-error-container);
+  --colors-background: var(--theme-background);
+  --colors-on-background: var(--theme-on-background);
+  --colors-surface: var(--theme-surface);
+  --colors-surface-dim: var(--theme-surface-dim);
+  --colors-surface-bright: var(--theme-surface-bright);
+  --colors-surface-container-lowest: var(--theme-surface-container-lowest);
+  --colors-surface-container-low: var(--theme-surface-container-low);
+  --colors-surface-container: var(--theme-surface-container);
+  --colors-surface-container-high: var(--theme-surface-container-high);
+  --colors-surface-container-highest: var(--theme-surface-container-highest);
+  --colors-on-surface: var(--theme-on-surface);
+  --colors-on-surface-variant: var(--theme-on-surface-variant);
+  --colors-outline: var(--theme-outline);
+  --colors-outline-variant: var(--theme-outline-variant);
+  --colors-shadow: var(--theme-shadow);
+  --colors-scrim: var(--theme-scrim);
+  --colors-inverse-surface: var(--theme-inverse-surface);
+  --colors-inverse-on-surface: var(--theme-inverse-on-surface);
+  --colors-inverse-primary: var(--theme-inverse-primary);
+  --fonts-logo: var(--font-title);
+  --fonts-brand: var(--font-body);
 }
 
 :root[data-theme='light'] {
@@ -119,16 +231,34 @@
   --theme-tertiary-container: #0e3550;
   --theme-on-tertiary-container: #c5e5fd;
 
+  --theme-error: #dc322f;
+  --theme-on-error: #002b36;
+  --theme-error-container: #4c1010;
+  --theme-on-error-container: #ffb4ab;
+
   --theme-background: #002b36;
+  --theme-on-background: #fdf6e3;
   --theme-surface: #073642;
+  --theme-on-surface: #fdf6e3;
+  --theme-surface-variant: #0a3d4a;
+  --theme-on-surface-variant: #839496;
+  --theme-surface-dim: #00242e;
+  --theme-surface-bright: #0f4857;
+  --theme-surface-container-lowest: #002028;
+  --theme-surface-container-low: #042831;
   --theme-surface-container: #0a3d4a;
   --theme-surface-container-high: #0f4857;
-  --theme-on-surface: #fdf6e3;
-  --theme-on-surface-variant: #839496;
+  --theme-surface-container-highest: #155364;
+
   --theme-outline: rgba(147, 161, 161, 0.22);
   --theme-outline-variant: rgba(147, 161, 161, 0.12);
+  --theme-shadow: rgba(0, 43, 54, 0.7);
+  --theme-scrim: rgba(0, 43, 54, 0.85);
+  --theme-inverse-surface: #eee8d5;
+  --theme-inverse-on-surface: #073642;
+  --theme-inverse-primary: #859900;
+  --theme-surface-tint: var(--theme-primary);
 
-  /* In dark mode: shadows become highlights! Specular top edge, luminous border, ambient glow */
   --theme-elevation-0: none;
   --theme-elevation-1:
     inset 0 1px 0 0 rgba(253, 246, 227, 0.14), 0 0 0 1px rgba(158, 196, 59, 0.18);
@@ -162,14 +292,33 @@
     --theme-tertiary-container: #0e3550;
     --theme-on-tertiary-container: #c5e5fd;
 
+    --theme-error: #dc322f;
+    --theme-on-error: #002b36;
+    --theme-error-container: #4c1010;
+    --theme-on-error-container: #ffb4ab;
+
     --theme-background: #002b36;
+    --theme-on-background: #fdf6e3;
     --theme-surface: #073642;
+    --theme-on-surface: #fdf6e3;
+    --theme-surface-variant: #0a3d4a;
+    --theme-on-surface-variant: #839496;
+    --theme-surface-dim: #00242e;
+    --theme-surface-bright: #0f4857;
+    --theme-surface-container-lowest: #002028;
+    --theme-surface-container-low: #042831;
     --theme-surface-container: #0a3d4a;
     --theme-surface-container-high: #0f4857;
-    --theme-on-surface: #fdf6e3;
-    --theme-on-surface-variant: #839496;
+    --theme-surface-container-highest: #155364;
+
     --theme-outline: rgba(147, 161, 161, 0.22);
     --theme-outline-variant: rgba(147, 161, 161, 0.12);
+    --theme-shadow: rgba(0, 43, 54, 0.7);
+    --theme-scrim: rgba(0, 43, 54, 0.85);
+    --theme-inverse-surface: #eee8d5;
+    --theme-inverse-on-surface: #073642;
+    --theme-inverse-primary: #859900;
+    --theme-surface-tint: var(--theme-primary);
 
     --theme-elevation-0: none;
     --theme-elevation-1:

@@ -67,7 +67,7 @@ export const PROGRESS_THEME_COLORS = {
   red: '#dc322f',
   magenta: '#d33682',
   darkContrast: '#002b36',
-  lightContrast: '#ffffff',
+  lightContrast: '#fdf6e3',
 } as const;
 
 export const SEASON_COLORS = {

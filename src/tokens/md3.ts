@@ -1,6 +1,7 @@
 /**
  * Material Design 3 Design System Tokens
  * Mathematical definitions for MD3 color roles, motion physics, elevation lattices, and spacing.
+ * Calibrated strictly to Solarized color harmonies with zero pure white/black or M3e fallbacks.
  */
 
 export const md3Tokens = {
@@ -37,8 +38,6 @@ export const md3Tokens = {
     '12': { value: '48px' },
     '14': { value: '56px' },
     '16': { value: '64px' },
-    '20': { value: '80px' },
-    '24': { value: '96px' },
   },
   durations: {
     short1: { value: '50ms' },
@@ -59,76 +58,81 @@ export const md3Tokens = {
     extraLong4: { value: '1000ms' },
   },
   easings: {
-    emphasized: { value: 'cubic-bezier(0.2, 0.0, 0.0, 1.0)' },
-    emphasizedDecelerate: { value: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)' },
-    emphasizedAccelerate: { value: 'cubic-bezier(0.3, 0.0, 0.8, 0.15)' },
-    standard: { value: 'cubic-bezier(0.2, 0.0, 0.0, 1.0)' },
-    standardDecelerate: { value: 'cubic-bezier(0.0, 0.0, 0.2, 1.0)' },
-    standardAccelerate: { value: 'cubic-bezier(0.3, 0.0, 1.0, 1.0)' },
+    linear: { value: 'cubic-bezier(0, 0, 1, 1)' },
+    standard: { value: 'cubic-bezier(0.2, 0, 0, 1)' },
+    standardAccelerate: { value: 'cubic-bezier(0.3, 0, 1, 1)' },
+    standardDecelerate: { value: 'cubic-bezier(0, 0, 0, 1)' },
+    emphasized: { value: 'cubic-bezier(0.2, 0, 0, 1)' },
+    emphasizedAccelerate: { value: 'cubic-bezier(0.3, 0, 0.8, 0.15)' },
+    emphasizedDecelerate: { value: 'cubic-bezier(0.05, 0.7, 0.1, 1)' },
   },
-  fonts: {
-    logo: { value: "'Milkshake', cursive, sans-serif" },
-    brand: { value: "'Recursive', sans-serif" },
-  },
-};
+} as const;
 
+// Helper to generate light/dark semantic color tokens
 const c = (light: string, dark: string) => ({
-  value: { base: light, _light: light, _dark: dark },
+  value: {
+    base: light,
+    _light: light,
+    _dark: dark,
+  },
 });
 
 export const md3SemanticTokens = {
   colors: {
-    primary: c('#006874', '#80d5e3'),
-    onPrimary: c('#ffffff', '#00363d'),
-    primaryContainer: c('#97f0ff', '#004f58'),
-    onPrimaryContainer: c('#001f24', '#97f0ff'),
-    secondary: c('#4a6267', '#b1cbd1'),
-    onSecondary: c('#ffffff', '#1c3438'),
-    secondaryContainer: c('#cde7ed', '#334a4f'),
-    onSecondaryContainer: c('#051f23', '#cde7ed'),
-    tertiary: c('#535e7d', '#bac6ea'),
-    onTertiary: c('#ffffff', '#25304d'),
-    tertiaryContainer: c('#dae2ff', '#3c4665'),
-    onTertiaryContainer: c('#0f1b37', '#dae2ff'),
-    error: c('#ba1a1a', '#ffb4ab'),
-    onError: c('#ffffff', '#690005'),
-    errorContainer: c('#ffdad6', '#93000a'),
-    onErrorContainer: c('#410002', '#ffdad6'),
-    surface: c('#f8fafb', '#191c1d'),
-    onSurface: c('#191c1d', '#e1e3e4'),
-    surfaceVariant: c('#dbe4e6', '#3f484a'),
-    onSurfaceVariant: c('#3f484a', '#bfc8ca'),
-    surfaceDim: c('#d8dadb', '#101415'),
-    surfaceBright: c('#f8fafb', '#373a3b'),
-    surfaceContainerLowest: c('#ffffff', '#0e1213'),
-    surfaceContainerLow: c('#f2f4f5', '#171b1c'),
-    surfaceContainer: c('#eceeef', '#1b1f20'),
-    surfaceContainerHigh: c('#e6e9ea', '#25292a'),
-    surfaceContainerHighest: c('#e1e3e4', '#303435'),
-    outline: c('#6f797a', '#899294'),
-    outlineVariant: c('#bfc8ca', '#3f484a'),
-    shadow: c('#000000', '#000000'),
-    scrim: c('#000000', '#000000'),
-    inverseSurface: c('#2e3132', '#e1e3e4'),
-    inverseOnSurface: c('#eff1f2', '#191c1d'),
-    inversePrimary: c('#80d5e3', '#006874'),
+    primary: c('#859900', '#9ec43b'),
+    onPrimary: c('#fdf6e3', '#002b36'),
+    primaryContainer: c('#eef5ce', '#24420e'),
+    onPrimaryContainer: c('#073642', '#d8f085'),
+    secondary: c('#d33682', '#e25c9e'),
+    onSecondary: c('#fdf6e3', '#002b36'),
+    secondaryContainer: c('#fde4ef', '#4e1232'),
+    onSecondaryContainer: c('#073642', '#ffb6d8'),
+    tertiary: c('#268bd2', '#4ba3e3'),
+    onTertiary: c('#fdf6e3', '#002b36'),
+    tertiaryContainer: c('#d8eefc', '#0e3550'),
+    onTertiaryContainer: c('#073642', '#c5e5fd'),
+    error: c('#dc322f', '#dc322f'),
+    onError: c('#fdf6e3', '#002b36'),
+    errorContainer: c('#fdd9d7', '#4c1010'),
+    onErrorContainer: c('#073642', '#ffb4ab'),
+    surface: c('#eee8d5', '#073642'),
+    onSurface: c('#073642', '#fdf6e3'),
+    surfaceVariant: c('#f5eedc', '#0a3d4a'),
+    onSurfaceVariant: c('#586e75', '#839496'),
+    surfaceDim: c('#e6dfca', '#00242e'),
+    surfaceBright: c('#fdf6e3', '#0f4857'),
+    surfaceContainerLowest: c('#fdf6e3', '#002028'),
+    surfaceContainerLow: c('#f9f2e0', '#042831'),
+    surfaceContainer: c('#f5eedc', '#0a3d4a'),
+    surfaceContainerHigh: c('#ebe3cd', '#0f4857'),
+    surfaceContainerHighest: c('#e3dbbe', '#155364'),
+    outline: c('rgba(7, 54, 66, 0.20)', 'rgba(147, 161, 161, 0.25)'),
+    outlineVariant: c('rgba(7, 54, 66, 0.10)', 'rgba(147, 161, 161, 0.12)'),
+    shadow: c('rgba(7, 54, 66, 0.25)', 'rgba(0, 43, 54, 0.70)'),
+    scrim: c('rgba(0, 43, 54, 0.60)', 'rgba(0, 43, 54, 0.85)'),
+    inverseSurface: c('#073642', '#eee8d5'),
+    inverseOnSurface: c('#fdf6e3', '#073642'),
+    inversePrimary: c('#9ec43b', '#859900'),
+    background: c('#fdf6e3', '#002b36'),
+    onBackground: c('#073642', '#fdf6e3'),
+    surfaceTint: c('#859900', '#9ec43b'),
   },
   shadows: {
     elevation0: { value: 'none' },
     elevation1: {
-      value: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
+      value: '0px 1px 2px rgba(7, 54, 66, 0.12), 0px 1px 3px 1px rgba(7, 54, 66, 0.08)',
     },
     elevation2: {
-      value: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
+      value: '0px 1px 2px rgba(7, 54, 66, 0.14), 0px 2px 6px 2px rgba(7, 54, 66, 0.10)',
     },
     elevation3: {
-      value: '0px 1px 3px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15)',
+      value: '0px 1px 3px rgba(7, 54, 66, 0.16), 0px 4px 8px 3px rgba(7, 54, 66, 0.12)',
     },
     elevation4: {
-      value: '0px 2px 3px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15)',
+      value: '0px 2px 3px rgba(7, 54, 66, 0.18), 0px 6px 10px 4px rgba(7, 54, 66, 0.14)',
     },
     elevation5: {
-      value: '0px 4px 4px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15)',
+      value: '0px 4px 4px rgba(7, 54, 66, 0.20), 0px 8px 12px 6px rgba(7, 54, 66, 0.16)',
     },
   },
-};
+} as const;

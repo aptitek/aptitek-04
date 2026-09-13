@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
-import { useCallback, useState } from 'react';
-import { Switch } from 'reapti';
+import { useCallback } from 'react';
+import { Switch, useThemeMode } from 'reapti';
 import { M3eIcon } from '@m3e/react/icon';
 import '@m3e/icons/rounded/dark_mode';
 import '@m3e/icons/rounded/light_mode';
@@ -20,15 +20,10 @@ export interface ThemeSwitchProps {
  * - Peeking icon: reveals contrasting celestial icon on hover
  */
 export function ThemeSwitch({ ariaLabel }: ThemeSwitchProps): ReactElement {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return currentTheme === 'dark' || (!currentTheme && systemPrefersDark);
-  });
+  const mode = useThemeMode();
+  const isDark = mode === 'dark';
 
   const handleToggle = useCallback((checked: boolean) => {
-    setIsDark(checked);
     const targetTheme = checked ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', targetTheme);
     try {
