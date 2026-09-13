@@ -25,6 +25,7 @@ export default defineConfig([
     'node_modules',
     'playwright-report',
     'test-results',
+    'packages',
   ]),
   // Scripts and tooling config files run under Node.js
   {

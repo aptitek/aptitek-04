@@ -1,19 +1,24 @@
 {
   "$schema": "https://unpkg.com/knip@5/overview/configuration-schema.json",
-  "entry": [
-    "src/pages/**/*.{astro,mdx,ts,tsx}",
-    "src/layouts/**/*.{astro,ts,tsx}",
-    "src/tokens/*.ts",
-    "src/theme/**/*.{ts,tsx}",
-    "tests/**/*.{ts,tsx}"
-  ],
-  "project": ["src/**/*.{astro,mdx,ts,tsx}", "tests/**/*.{ts,tsx}"],
-  "ignoreDependencies": [
-    "@astrojs/check",
-    "maplibre-gl",
-    "react-map-gl",
-    "ogl",
-    "eslint-config-prettier",
-    "unist-util-visit"
-  ]
+  "ignoreWorkspaces": ["packages/*"],
+  "workspaces": {
+    ".": {
+      "entry": [
+        "src/pages/**/*.{astro,mdx,ts,tsx}",
+        "src/layouts/**/*.{astro,ts,tsx}",
+        "src/tokens/*.ts",
+        "src/theme/**/*.{ts,tsx}",
+        "tests/**/*.{ts,tsx}"
+      ],
+      "project": ["src/**/*.{astro,mdx,ts,tsx}", "tests/**/*.{ts,tsx}"],
+      "ignoreDependencies": [
+        "@astrojs/check",
+        "maplibre-gl",
+        "react-map-gl",
+        "ogl",
+        "eslint-config-prettier",
+        "unist-util-visit"
+      ]
+    }
+  }
 }

@@ -21,7 +21,8 @@ function findMdxFiles(dir, fileList = []) {
       entry.startsWith('.') ||
       entry === 'node_modules' ||
       entry === 'dist' ||
-      entry === 'storybook-static'
+      entry === 'storybook-static' ||
+      entry === 'packages'
     ) {
       continue;
     }

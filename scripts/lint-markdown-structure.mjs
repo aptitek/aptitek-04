@@ -120,6 +120,7 @@ const IGNORED_DIRS = new Set([
   '.git',
   'coverage',
   '.wireit',
+  'packages',
 ]);
 
 function findMarkdownFiles(dir, fileList = []) {

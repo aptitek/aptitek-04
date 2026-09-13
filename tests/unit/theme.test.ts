@@ -33,7 +33,7 @@ describe('Theme and Tokens Specifications', () => {
     expect(localSolarizedTheme.light.colors.onTertiary).toBe('#fdf6e3');
     expect(localSolarizedTheme.light.colors.surface).toBe('#eee8d5');
     expect(localSolarizedTheme.light.colors.onSurface).toBe('#073642');
-    expect(localSolarizedTheme.dark.colors.primary).toBe('#9ec43b');
+    expect(localSolarizedTheme.dark.colors.primary).toBe('#859900');
     expect(localSolarizedTheme.dark.colors.onPrimary).toBe('#002b36');
     expect(localSolarizedTheme.dark.colors.surface).toBe('#073642');
     expect(localSolarizedTheme.dark.colors.onSurface).toBe('#fdf6e3');
@@ -44,7 +44,7 @@ describe('Theme and Tokens Specifications', () => {
 
   it('validates MD3 semantic tokens are calibrated strictly to Solarized', () => {
     expect(md3SemanticTokens.colors.primary.value._light).toBe('#859900');
-    expect(md3SemanticTokens.colors.primary.value._dark).toBe('#9ec43b');
+    expect(md3SemanticTokens.colors.primary.value._dark).toBe('#859900');
     expect(md3SemanticTokens.colors.onPrimary.value._light).toBe('#fdf6e3');
     expect(md3SemanticTokens.colors.onPrimary.value._dark).toBe('#002b36');
     expect(md3SemanticTokens.colors.surface.value._light).toBe('#eee8d5');

@@ -4,9 +4,9 @@ import type { ThemeTokens } from './types.ts';
  * Solarized Design Theme
  *
  * Canonical theme featuring Solarized color harmonies:
- * - Primary: Solarized Green (#859900 / #9ec43b)
- * - Secondary: Solarized Magenta (#d33682 / #e25c9e)
- * - Tertiary: Solarized Blue (#268bd2 / #4ba3e3)
+ * - Primary: Solarized Green (#859900)
+ * - Secondary: Solarized Magenta (#d33682)
+ * - Tertiary: Solarized Blue (#268bd2)
  * - Typography: Milkshake for titles, Recursive Casual for body
  * - Geometry: Quite rounded pill surfaces
  * - Elevation: Soft shadows in light mode, luminous specular highlights in dark mode
@@ -48,15 +48,15 @@ export const solarizedTheme: ThemeTokens = {
   },
   dark: {
     colors: {
-      primary: '#9ec43b',
+      primary: '#859900',
       onPrimary: '#002b36',
       primaryContainer: '#24420e',
       onPrimaryContainer: '#d8f085',
-      secondary: '#e25c9e',
+      secondary: '#d33682',
       onSecondary: '#002b36',
       secondaryContainer: '#4e1232',
       onSecondaryContainer: '#ffb6d8',
-      tertiary: '#4ba3e3',
+      tertiary: '#268bd2',
       onTertiary: '#002b36',
       tertiaryContainer: '#0e3550',
       onTertiaryContainer: '#c5e5fd',
@@ -72,13 +72,13 @@ export const solarizedTheme: ThemeTokens = {
     // In dark mode: shadows become luminous highlights, specular top edges, and ambient rim glows
     elevation: {
       level0: 'none',
-      level1: 'inset 0 1px 0 0 rgba(253, 246, 227, 0.14), 0 0 0 1px rgba(158, 196, 59, 0.18)',
+      level1: 'inset 0 1px 0 0 rgba(253, 246, 227, 0.14), 0 0 0 1px rgba(133, 153, 0, 0.18)',
       level2:
-        'inset 0 1px 0 0 rgba(253, 246, 227, 0.22), 0 0 0 1px rgba(158, 196, 59, 0.26), 0 0 20px -2px rgba(158, 196, 59, 0.16)',
+        'inset 0 1px 0 0 rgba(253, 246, 227, 0.22), 0 0 0 1px rgba(133, 153, 0, 0.26), 0 0 20px -2px rgba(133, 153, 0, 0.16)',
       level3:
-        'inset 0 1.5px 0 0 rgba(253, 246, 227, 0.30), 0 0 0 1px rgba(158, 196, 59, 0.34), 0 0 32px -4px rgba(158, 196, 59, 0.24)',
+        'inset 0 1.5px 0 0 rgba(253, 246, 227, 0.30), 0 0 0 1px rgba(133, 153, 0, 0.34), 0 0 32px -4px rgba(133, 153, 0, 0.24)',
       level4:
-        'inset 0 2px 0 0 rgba(253, 246, 227, 0.38), 0 0 0 1.5px rgba(158, 196, 59, 0.42), 0 0 48px -6px rgba(158, 196, 59, 0.32)',
+        'inset 0 2px 0 0 rgba(253, 246, 227, 0.38), 0 0 0 1.5px rgba(133, 153, 0, 0.42), 0 0 48px -6px rgba(133, 153, 0, 0.32)',
     },
   },
   radii: {

@@ -79,15 +79,15 @@ const c = (light: string, dark: string) => ({
 
 export const md3SemanticTokens = {
   colors: {
-    primary: c('#859900', '#9ec43b'),
+    primary: c('#859900', '#859900'),
     onPrimary: c('#fdf6e3', '#002b36'),
     primaryContainer: c('#eef5ce', '#24420e'),
     onPrimaryContainer: c('#073642', '#d8f085'),
-    secondary: c('#d33682', '#e25c9e'),
+    secondary: c('#d33682', '#d33682'),
     onSecondary: c('#fdf6e3', '#002b36'),
     secondaryContainer: c('#fde4ef', '#4e1232'),
     onSecondaryContainer: c('#073642', '#ffb6d8'),
-    tertiary: c('#268bd2', '#4ba3e3'),
+    tertiary: c('#268bd2', '#268bd2'),
     onTertiary: c('#fdf6e3', '#002b36'),
     tertiaryContainer: c('#d8eefc', '#0e3550'),
     onTertiaryContainer: c('#073642', '#c5e5fd'),
@@ -112,10 +112,10 @@ export const md3SemanticTokens = {
     scrim: c('rgba(0, 43, 54, 0.60)', 'rgba(0, 43, 54, 0.85)'),
     inverseSurface: c('#073642', '#eee8d5'),
     inverseOnSurface: c('#fdf6e3', '#073642'),
-    inversePrimary: c('#9ec43b', '#859900'),
+    inversePrimary: c('#859900', '#859900'),
     background: c('#fdf6e3', '#002b36'),
     onBackground: c('#073642', '#fdf6e3'),
-    surfaceTint: c('#859900', '#9ec43b'),
+    surfaceTint: c('#859900', '#859900'),
   },
   shadows: {
     elevation0: { value: 'none' },

@@ -9,6 +9,8 @@ ignores:
   - '.astro'
   - 'playwright-report'
   - 'test-results'
+  - 'packages/**'
+  - 'packages'
 config:
   default: true
   MD013: false
