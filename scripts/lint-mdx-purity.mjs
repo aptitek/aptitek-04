@@ -18,20 +18,23 @@ function findMdxFiles(dir, fileList = []) {
   const entries = readdirSync(dir);
   for (const entry of entries) {
     if (
+      entry.startsWith('.') ||
       entry === 'node_modules' ||
       entry === 'dist' ||
-      entry === '.agents' ||
-      entry === '.git' ||
       entry === 'storybook-static'
     ) {
       continue;
     }
     const fullPath = join(dir, entry);
-    const stat = statSync(fullPath);
-    if (stat.isDirectory()) {
-      findMdxFiles(fullPath, fileList);
-    } else if (entry.endsWith('.mdx')) {
-      fileList.push(fullPath);
+    try {
+      const stat = statSync(fullPath);
+      if (stat.isDirectory()) {
+        findMdxFiles(fullPath, fileList);
+      } else if (entry.endsWith('.mdx')) {
+        fileList.push(fullPath);
+      }
+    } catch {
+      // Ignore transient files deleted during concurrent tasks
     }
   }
   return fileList;

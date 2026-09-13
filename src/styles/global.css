@@ -124,6 +124,8 @@ h3,
 .font-milkshake {
   font-family: var(--font-title);
   font-weight: 400;
+  font-style: normal;
+  font-variation-settings: normal;
 }
 
 .hero-ticker-brand-prefix {
@@ -134,6 +136,8 @@ h3,
 
 .brand-name-milkshake {
   font-family: var(--font-title);
+  font-style: normal;
+  font-variation-settings: normal;
   font-weight: 400;
   color: var(--theme-primary);
   letter-spacing: 0.02em;

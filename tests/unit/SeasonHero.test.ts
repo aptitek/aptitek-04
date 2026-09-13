@@ -38,4 +38,13 @@ describe('SeasonHero & i18n specifications', () => {
     expect(tFr.seasonSliderAriaLabel).toBeTruthy();
     expect(tEn.seasonSliderAriaLabel).toBeTruthy();
   });
+
+  it('ensures brand-name-milkshake enforces font-style: normal and neutral font-variation-settings in global.css', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { resolve } = await import('node:path');
+    const cssPath = resolve(process.cwd(), 'src/styles/global.css');
+    const css = readFileSync(cssPath, 'utf-8');
+    expect(css).toMatch(/\.brand-name-milkshake\s*\{[^}]*font-style:\s*normal;/);
+    expect(css).toMatch(/\.brand-name-milkshake\s*\{[^}]*font-variation-settings:\s*normal;/);
+  });
 });

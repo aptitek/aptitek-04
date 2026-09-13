@@ -24,6 +24,7 @@ test('English landing page renders SeasonHero with Milkshake font and M3e slider
   const brandMilkshake = page.locator('.brand-name-milkshake');
   await expect(brandMilkshake).toBeVisible();
   await expect(brandMilkshake).toContainText('Apti');
+  await expect(brandMilkshake).toHaveCSS('font-style', 'normal');
 
   // Verify M3e Season Slider Dock
   const sliderDock = page.locator('[data-testid="season-slider-dock"]');
