@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import {
   solarizedTheme,
   md3Theme,
@@ -64,5 +66,10 @@ describe('Theme and Tokens Specifications', () => {
     expect(enforceThemeRule).toBeDefined();
     expect(enforceThemeRule.meta.messages.invalidThemeColor).toBeDefined();
     expect(enforceThemeRule.meta.messages.rawColorFallback).toBeDefined();
+  });
+
+  it('verifies theme.css defines purple alias for violet', () => {
+    const themeCss = readFileSync(resolve(process.cwd(), 'src/theme/theme.css'), 'utf-8');
+    expect(themeCss).toContain('--colors-purple: var(--colors-violet);');
   });
 });

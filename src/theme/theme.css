@@ -40,6 +40,7 @@
   --colors-red: #dc322f;
   --colors-magenta: #d33682;
   --colors-violet: #6c71c4;
+  --colors-purple: var(--colors-violet);
   --colors-blue: #268bd2;
   --colors-cyan: #2aa198;
   --colors-green: #859900;

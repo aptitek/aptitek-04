@@ -75,6 +75,12 @@ describe('MiddleSection Assets & Integration', () => {
     expect(css).toContain('.partner-marquee-track');
     expect(css).toContain('.partner-logo-card');
     expect(css).toContain('@keyframes partner_marquee');
+    expect(css).toContain('padding-block: var(--spacing-xl);');
+    expect(css).toContain('.partner-logo-card--estiam');
+    expect(css).toContain('var(--colors-violet)');
+    expect(css).toContain('.partner-logo-card--ynov');
+    expect(css).toContain('var(--colors-cyan)');
+    expect(css).toContain('brightness(75%) contrast(100%)');
   });
 
   it('ensures index.mdx and fr/index.mdx reference aptitek-section directive below hero', () => {

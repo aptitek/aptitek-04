@@ -1,5 +1,9 @@
 @import 'reapti/style.css';
 
+:root {
+  --colors-purple: var(--colors-violet);
+}
+
 html {
   font-size: var(--font-size-base, 16px);
   min-inline-size: 320px;
@@ -963,7 +967,7 @@ h3,
   inline-size: 100%;
   overflow: hidden;
   position: relative;
-  padding-block: var(--spacing-sm);
+  padding-block: var(--spacing-xl);
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(
     to right,
@@ -1034,26 +1038,26 @@ h3,
 }
 
 .partner-logo-card--estiam {
-  border-color: var(--colors-cyan);
+  border-color: var(--colors-violet);
 }
 
 .partner-logo-card--estiam:hover,
 .partner-logo-card--estiam:focus-visible {
-  border-color: var(--colors-cyan);
+  border-color: var(--colors-violet);
   box-shadow:
-    0 0 20px -2px var(--colors-cyan),
+    0 0 20px -2px var(--colors-violet),
     var(--theme-elevation-3);
 }
 
 .partner-logo-card--gema {
-  border-color: var(--colors-yellow);
+  border-color: var(--colors-magenta);
 }
 
 .partner-logo-card--gema:hover,
 .partner-logo-card--gema:focus-visible {
-  border-color: var(--colors-yellow);
+  border-color: var(--colors-magenta);
   box-shadow:
-    0 0 20px -2px var(--colors-yellow),
+    0 0 20px -2px var(--colors-magenta),
     var(--theme-elevation-3);
 }
 
@@ -1082,26 +1086,26 @@ h3,
 }
 
 .partner-logo-card--sciences-u {
-  border-color: var(--colors-magenta);
+  border-color: var(--colors-blue);
 }
 
 .partner-logo-card--sciences-u:hover,
 .partner-logo-card--sciences-u:focus-visible {
-  border-color: var(--colors-magenta);
+  border-color: var(--colors-blue);
   box-shadow:
-    0 0 20px -2px var(--colors-magenta),
+    0 0 20px -2px var(--colors-blue),
     var(--theme-elevation-3);
 }
 
 .partner-logo-card--ynov {
-  border-color: var(--colors-blue);
+  border-color: var(--colors-cyan);
 }
 
 .partner-logo-card--ynov:hover,
 .partner-logo-card--ynov:focus-visible {
-  border-color: var(--colors-blue);
+  border-color: var(--colors-cyan);
   box-shadow:
-    0 0 20px -2px var(--colors-blue),
+    0 0 20px -2px var(--colors-cyan),
     var(--theme-elevation-3);
 }
 
@@ -1119,7 +1123,7 @@ h3,
 
 :root[data-theme='light'] .partner-logo-img,
 :root:not([data-theme='dark']) .partner-logo-img {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(90%) sepia(100%) saturate(950%) hue-rotate(160deg) brightness(75%) contrast(100%);
 }
 
 :root[data-theme='dark'] .partner-logo-img {
