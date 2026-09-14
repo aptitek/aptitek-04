@@ -29,9 +29,9 @@ describe('Theme and Tokens Specifications', () => {
 
   it('validates solarized theme tokens have zero pure white or pure black', () => {
     expect(localSolarizedTheme.light.colors.primary).toBe('#859900');
-    expect(localSolarizedTheme.light.colors.onPrimary).toBe('#fdf6e3');
+    expect(localSolarizedTheme.light.colors.onPrimary).toBe('#002b36');
     expect(localSolarizedTheme.light.colors.onSecondary).toBe('#fdf6e3');
-    expect(localSolarizedTheme.light.colors.onTertiary).toBe('#fdf6e3');
+    expect(localSolarizedTheme.light.colors.onTertiary).toBe('#002b36');
     expect(localSolarizedTheme.light.colors.surface).toBe('#eee8d5');
     expect(localSolarizedTheme.light.colors.onSurface).toBe('#073642');
     expect(localSolarizedTheme.dark.colors.primary).toBe('#859900');
@@ -46,7 +46,7 @@ describe('Theme and Tokens Specifications', () => {
   it('validates MD3 semantic tokens are calibrated strictly to Solarized', () => {
     expect(md3SemanticTokens.colors.primary.value._light).toBe('#859900');
     expect(md3SemanticTokens.colors.primary.value._dark).toBe('#859900');
-    expect(md3SemanticTokens.colors.onPrimary.value._light).toBe('#fdf6e3');
+    expect(md3SemanticTokens.colors.onPrimary.value._light).toBe('#002b36');
     expect(md3SemanticTokens.colors.onPrimary.value._dark).toBe('#002b36');
     expect(md3SemanticTokens.colors.surface.value._light).toBe('#eee8d5');
     expect(md3SemanticTokens.colors.surface.value._dark).toBe('#073642');

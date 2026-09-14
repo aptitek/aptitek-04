@@ -79,7 +79,7 @@ body {
   border-radius: var(--radius-full);
   border: 1px solid var(--theme-outline-variant);
   background-color: var(--theme-surface);
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
   font-family: var(--font-body);
   font-variation-settings: var(--font-variation-body);
   font-size: 0.875rem;
@@ -91,8 +91,8 @@ body {
 }
 
 .locale-switch-link:hover {
-  background-color: var(--theme-primary-container);
-  color: var(--theme-on-primary-container);
+  background-color: var(--theme-primary);
+  color: var(--theme-on-primary);
   border-color: var(--theme-primary);
   transform: scale(1.05);
 }
@@ -102,14 +102,14 @@ body {
   align-items: center;
   gap: var(--spacing-xs);
   text-decoration: none;
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
 }
 
 .brand-title {
   font-family: var(--font-title);
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
   margin-block: 0;
   margin-inline: 0;
 }
@@ -144,9 +144,13 @@ h3,
   font-style: normal;
   font-variation-settings: normal;
   font-weight: 400;
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
   letter-spacing: 0.02em;
   font-size: 1.15em;
+}
+
+:root[data-theme='dark'] .brand-name-milkshake {
+  color: var(--theme-primary);
 }
 
 .hero-brand-compound {
@@ -594,7 +598,7 @@ h3,
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
 }
 
 .feature-card p {
@@ -714,8 +718,8 @@ h3,
 
 .cta-btn:hover {
   transform: translateY(-1px);
-  background-color: var(--theme-on-primary-container);
-  color: var(--theme-primary-container);
+  background-color: var(--theme-on-surface);
+  color: var(--theme-surface);
 }
 
 /* About Quote & Contacts */
@@ -760,7 +764,7 @@ h3,
 
 .contact-card strong {
   font-size: 0.95rem;
-  color: var(--theme-primary);
+  color: var(--theme-on-surface);
 }
 
 .contact-card span {
