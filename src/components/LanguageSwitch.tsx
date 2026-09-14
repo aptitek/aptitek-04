@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useCallback, useMemo } from 'react';
-import { Switch } from 'reapti';
+import { MeridianSwitch } from 'reapti';
 import { Box } from 'styled-system/jsx';
 import { useTranslations, type SupportedLocale } from '../i18n/index.ts';
 
@@ -52,10 +52,9 @@ export const LanguageSwitch: FC<LanguageSwitchProps> = ({
 
   const effectiveAriaLabel = ariaLabel ?? t.localeSwitchAriaLabel;
 
-  const handleToggle = useCallback(
-    (checked: boolean) => {
-      const nextLocale = checked ? 'fr' : 'en';
-      const targetPath = getTargetLocalePath(resolvedPath, nextLocale);
+  const handleLanguageChange = useCallback(
+    (nextLang: 'en' | 'fr') => {
+      const targetPath = getTargetLocalePath(resolvedPath, nextLang);
       if (typeof window !== 'undefined') {
         window.location.href = targetPath;
       }
@@ -63,42 +62,14 @@ export const LanguageSwitch: FC<LanguageSwitchProps> = ({
     [resolvedPath],
   );
 
-  const enGlyph = t.localeEnGlyph;
-  const frGlyph = t.localeFrGlyph;
-
-  const enIcon = useMemo(
-    () => (
-      <Box as="span" className="switch-glyph" aria-hidden="true">
-        {enGlyph}
-      </Box>
-    ),
-    [enGlyph],
-  );
-
-  const frIcon = useMemo(
-    () => (
-      <Box as="span" className="switch-glyph" aria-hidden="true">
-        {frGlyph}
-      </Box>
-    ),
-    [frGlyph],
-  );
-
   return (
     <Box className="language-switch-wrapper">
-      <Switch
-        checked={isFrench}
-        onChange={handleToggle}
+      <MeridianSwitch
+        language={isFrench ? 'fr' : 'en'}
+        onLanguageChange={handleLanguageChange}
         size="medium"
-        icons="both"
         ariaLabel={effectiveAriaLabel}
         dataTestId="language-switch"
-        handleIconOn={frIcon}
-        handleIconOff={enIcon}
-        ghostIconOn={enIcon}
-        ghostIconOff={frIcon}
-        peekingIconOn={enIcon}
-        peekingIconOff={frIcon}
       />
     </Box>
   );

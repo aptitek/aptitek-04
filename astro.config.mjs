@@ -7,7 +7,7 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkDirective from 'remark-directive';
 import { remarkFencedDivsPlugin } from './scripts/remark/fenced-divs.js';
 
-const reaptiPath = path.resolve('../reapti-02');
+const reaptiPath = path.resolve('packages/reapti');
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,7 +49,7 @@ export default defineConfig({
         allow: ['.', reaptiPath],
       },
       watch: {
-        ignored: ['!**/reapti-02/**'],
+        ignored: ['!**/packages/reapti/**'],
       },
     },
     optimizeDeps: {
