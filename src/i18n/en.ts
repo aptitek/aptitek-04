@@ -136,4 +136,10 @@ export const en = {
   aboutContactBlueskyUrl: '@aptitek.bsky.social',
   aboutContactTelegram: 'Telegram',
   aboutContactTelegramUrl: 't.me/aptitek',
+  aptitekBrandAlt: 'Aptitek',
+  middleIntroTitle: 'The tech training that earns you XP. Explore your talent tree.',
+  middleIntroSubtitle:
+    'Aptitek transforms technical learning into an interactive journey, marked by stimulating challenges. An engaging format that guarantees genuine skill advancement, to overcome the most ambitious evaluations with flying colors.',
+  middlePartnerTitle: 'The network of schools engaged in this pedagogical adventure.',
+  middlePartnerAria: 'Partner schools and universities carousel',
 } as const;

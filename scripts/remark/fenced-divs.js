@@ -93,6 +93,7 @@ export function remarkFencedDivsPlugin() {
   return (tree, file) => {
     let hasInjectedReaptiImports = false;
     let hasInjectedSeasonHeroImports = false;
+    let hasInjectedMiddleSectionImports = false;
     const filePath = file.path || file.history?.[0] || 'document';
 
     visit(tree, (node) => {
@@ -197,6 +198,28 @@ export function remarkFencedDivsPlugin() {
           node.data = { isGeneratedDirective: true };
 
           injectSeasonHeroImports(tree, filePath);
+          return;
+        }
+
+        if (
+          directiveName === 'middle-section' ||
+          directiveName === 'middlesection' ||
+          directiveName === 'aptitek-section' ||
+          directiveName === 'aptiteksection'
+        ) {
+          const attrs = node.attributes || {};
+          const locale = attrs.locale || 'fr';
+
+          node.type = 'mdxJsxFlowElement';
+          node.name = 'MiddleSection';
+          node.attributes = [
+            { type: 'mdxJsxAttribute', name: 'client:only', value: 'react' },
+            { type: 'mdxJsxAttribute', name: 'locale', value: locale },
+          ];
+          node.children = [];
+          node.data = { isGeneratedDirective: true };
+
+          injectMiddleSectionImports(tree, filePath);
           return;
         }
 
@@ -306,6 +329,8 @@ export function remarkFencedDivsPlugin() {
             'season-hero',
             'hero-ticker',
             'hold-button',
+            'middle-section',
+            'aptitek-section',
           ].join(', ');
           throw new Error(
             `[Markdown Semantic Violation in ${filePath}]: ` +
@@ -393,6 +418,58 @@ export function remarkFencedDivsPlugin() {
                       type: 'ImportSpecifier',
                       imported: { type: 'Identifier', name: 'SeasonHero' },
                       local: { type: 'Identifier', name: 'SeasonHero' },
+                    },
+                  ],
+                  source: {
+                    type: 'Literal',
+                    value: relPath,
+                    raw: JSON.stringify(relPath),
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+    }
+
+    function injectMiddleSectionImports(rootTree, currentFilePath) {
+      if (hasInjectedMiddleSectionImports) return;
+      hasInjectedMiddleSectionImports = true;
+
+      const hasImport = rootTree.children.some(
+        (child) =>
+          child.type === 'mdxjsEsm' &&
+          typeof child.value === 'string' &&
+          (child.value.includes('MiddleSection') || child.value.includes('AptitekSection')),
+      );
+
+      if (!hasImport) {
+        const targetFile = path.resolve('src/components/MiddleSection.tsx');
+        const fromDir =
+          currentFilePath && currentFilePath !== 'document'
+            ? path.dirname(path.resolve(currentFilePath))
+            : path.resolve('src/pages');
+        let relPath = path.relative(fromDir, targetFile).replace(/\\/g, '/');
+        if (!relPath.startsWith('.')) {
+          relPath = './' + relPath;
+        }
+
+        rootTree.children.unshift({
+          type: 'mdxjsEsm',
+          value: `import { MiddleSection } from '${relPath}';`,
+          data: {
+            estree: {
+              type: 'Program',
+              sourceType: 'module',
+              body: [
+                {
+                  type: 'ImportDeclaration',
+                  specifiers: [
+                    {
+                      type: 'ImportSpecifier',
+                      imported: { type: 'Identifier', name: 'MiddleSection' },
+                      local: { type: 'Identifier', name: 'MiddleSection' },
                     },
                   ],
                   source: {
