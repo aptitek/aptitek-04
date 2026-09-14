@@ -150,6 +150,9 @@
     },
     "test:unit": {
       "command": "vitest run --project=unit --passWithNoTests",
+      "dependencies": [
+        "build:reapti"
+      ],
       "files": [
         "src/**/*.{ts,tsx,js,jsx}",
         "tests/unit/**/*.{ts,tsx,js,jsx}",

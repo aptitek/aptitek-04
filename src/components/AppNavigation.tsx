@@ -92,7 +92,7 @@ function getNavItems(
         href: '/fr',
       },
       { id: 'formations', label: t.navClasses, icon: 'school', href: '/fr/formations' },
-      { id: 'aptispace', label: t.navAptispace, icon: 'terminal', href: '/fr/aptispace' },
+      { id: 'aptispace', label: t.navAptispace, icon: 'rocket_launch', href: '/fr/aptispace' },
       { id: 'about', label: t.navAbout, icon: 'person', href: '/fr/a-propos' },
     ];
   }
@@ -105,7 +105,7 @@ function getNavItems(
       href: '/',
     },
     { id: 'classes', label: t.navClasses, icon: 'school', href: '/classes' },
-    { id: 'aptispace', label: t.navAptispace, icon: 'terminal', href: '/aptispace' },
+    { id: 'aptispace', label: t.navAptispace, icon: 'rocket_launch', href: '/aptispace' },
     { id: 'about', label: t.navAbout, icon: 'person', href: '/about' },
   ];
 }

@@ -30,7 +30,6 @@ export const en = {
   githubAria: 'Aptitek on GitHub',
   blueskyAria: 'Aptitek on Bluesky',
   telegramAria: 'Aptitek on Telegram',
-  xAria: 'Aptitek on X (formerly Twitter)',
   navHome: 'Home',
   navClasses: 'Classes',
   navAptispace: 'Aptispace',

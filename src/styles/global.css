@@ -395,6 +395,84 @@ h3,
   transform: translateY(-2px);
 }
 
+.social-icon-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.social-icon-btn:focus-visible {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+}
+
+/* Solarized Social Color Mappings */
+.social-icon-btn--linkedin,
+.social-icon-btn[data-social='linkedin'] {
+  color: var(--colors-cyan);
+}
+
+.social-icon-btn--linkedin:hover,
+.social-icon-btn[data-social='linkedin']:hover {
+  background-color: var(--theme-primary-container);
+  color: var(--colors-cyan);
+}
+
+.social-icon-btn--github,
+.social-icon-btn[data-social='github'] {
+  color: var(--colors-base02);
+}
+
+.social-icon-btn--github:hover,
+.social-icon-btn[data-social='github']:hover {
+  background-color: var(--theme-surface-container-highest);
+  color: var(--colors-base03);
+}
+
+:root[data-theme='dark'] .social-icon-btn--github,
+:root[data-theme='dark'] .social-icon-btn[data-social='github'] {
+  color: var(--colors-base2);
+}
+
+:root[data-theme='dark'] .social-icon-btn--github:hover,
+:root[data-theme='dark'] .social-icon-btn[data-social='github']:hover {
+  background-color: var(--theme-surface-container-highest);
+  color: var(--colors-base3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .social-icon-btn--github,
+  :root:not([data-theme='light']) .social-icon-btn[data-social='github'] {
+    color: var(--colors-base2);
+  }
+
+  :root:not([data-theme='light']) .social-icon-btn--github:hover,
+  :root:not([data-theme='light']) .social-icon-btn[data-social='github']:hover {
+    background-color: var(--theme-surface-container-highest);
+    color: var(--colors-base3);
+  }
+}
+
+.social-icon-btn--bluesky,
+.social-icon-btn[data-social='bluesky'] {
+  color: var(--colors-blue);
+}
+
+.social-icon-btn--bluesky:hover,
+.social-icon-btn[data-social='bluesky']:hover {
+  background-color: var(--theme-tertiary-container);
+  color: var(--colors-blue);
+}
+
+.social-icon-btn--telegram,
+.social-icon-btn[data-social='telegram'] {
+  color: var(--colors-blue);
+}
+
+.social-icon-btn--telegram:hover,
+.social-icon-btn[data-social='telegram']:hover {
+  background-color: var(--theme-tertiary-container);
+  color: var(--colors-blue);
+}
+
 .social-icon-svg {
   fill: currentColor;
 }
