@@ -90,8 +90,16 @@
   --theme-error-container: rgba(220, 50, 47, 0.14);
   --theme-on-error-container: #073642;
 
-  --theme-background: #fdf6e3;
+  --theme-background: #eee8d5;
   --theme-on-background: #073642;
+
+  /* Terminal Solarized Tokens */
+  --theme-terminal-bg: var(--colors-base3);
+  --theme-terminal-header-bg: var(--colors-base2);
+  --theme-terminal-header-border: var(--colors-base1);
+  --theme-terminal-header-title: var(--colors-base01);
+  --theme-terminal-text: var(--colors-base03);
+  --theme-terminal-border: var(--colors-cyan);
   --theme-surface: #eee8d5;
   --theme-on-surface: #073642;
   --theme-surface-variant: #eee8d5;
@@ -327,8 +335,16 @@
   --theme-error-container: rgba(220, 50, 47, 0.2);
   --theme-on-error-container: #fdf6e3;
 
-  --theme-background: #002b36;
+  --theme-background: #073642;
   --theme-on-background: #fdf6e3;
+
+  /* Terminal Solarized Tokens */
+  --theme-terminal-bg: var(--colors-base03);
+  --theme-terminal-header-bg: var(--colors-base02);
+  --theme-terminal-header-border: var(--colors-base01);
+  --theme-terminal-header-title: var(--colors-base1);
+  --theme-terminal-text: var(--colors-base3);
+  --theme-terminal-border: var(--colors-cyan);
   --theme-surface: #073642;
   --theme-on-surface: #fdf6e3;
   --theme-surface-variant: #073642;
@@ -398,8 +414,16 @@
     --theme-error-container: rgba(220, 50, 47, 0.2);
     --theme-on-error-container: #fdf6e3;
 
-    --theme-background: #002b36;
+    --theme-background: #073642;
     --theme-on-background: #fdf6e3;
+
+    /* Terminal Solarized Tokens */
+    --theme-terminal-bg: var(--colors-base03);
+    --theme-terminal-header-bg: var(--colors-base02);
+    --theme-terminal-header-border: var(--colors-base01);
+    --theme-terminal-header-title: var(--colors-base1);
+    --theme-terminal-text: var(--colors-base3);
+    --theme-terminal-border: var(--colors-cyan);
     --theme-surface: #073642;
     --theme-on-surface: #fdf6e3;
     --theme-surface-variant: #073642;

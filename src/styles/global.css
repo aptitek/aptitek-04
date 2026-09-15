@@ -488,7 +488,8 @@ h3,
   gap: 10px;
 }
 
-.language-switch-wrapper {
+.language-switch-wrapper,
+.sound-switch-wrapper {
   display: inline-flex;
   align-items: center;
 }

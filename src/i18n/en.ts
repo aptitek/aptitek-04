@@ -142,8 +142,9 @@ export const en = {
     'Aptitek transforms technical learning into an interactive journey, marked by stimulating challenges. An engaging format that guarantees genuine skill advancement, to overcome the most ambitious evaluations with flying colors.',
   middlePartnerTitle: 'The network of schools engaged in this pedagogical adventure.',
   middlePartnerAria: 'Partner schools and universities carousel',
-  mascotName: 'Aptitek Mascot',
-  mascotAlt: 'Robo-Bird Mascot',
+  mascotName: 'Aptipiou',
+  mascotAlt: 'Aptipiou',
+  soundToggleAriaLabel: 'Toggle mascot sound',
   mascotSummon: 'Call Mascot',
   mascotRefly: 'Re-fly',
   mascotClose: 'Close',
@@ -152,4 +153,10 @@ export const en = {
   mascotSkip: 'Click to skip',
   mascotNext: 'Click next ▶',
   mascotDone: 'Done ✓',
+  mascotReplay: 'Replay ↺',
+  mascotTerminalTitle: 'aptipiou-terminal ~ v0.4',
+  mascotDialogueStep1: "Pik-pik! [wave] Hi there! I'm Aptipiou, your Aptitek companion.",
+  mascotDialogueStep2:
+    '[thinking] Ready to level up your engineering XP with hands-on talent trees?',
+  mascotDialogueStep3: '[celebrate] Explore our interactive modules and master modern web craft!',
 } as const;

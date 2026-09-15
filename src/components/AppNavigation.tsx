@@ -3,6 +3,7 @@ import { VerticalAppBar, VerticalNavBar, type VerticalNavBarItemConfig } from 'r
 import { Box } from 'styled-system/jsx';
 import { SocialLinks } from './SocialLinks.tsx';
 import { LanguageSwitch } from './LanguageSwitch.tsx';
+import { SoundSwitch } from './SoundSwitch.tsx';
 import { ThemeSwitch } from '../theme/index.ts';
 import { useTranslations, type SupportedLocale } from '../i18n/index.ts';
 
@@ -66,12 +67,14 @@ const AppFooter: FC<{
   currentLocale: SupportedLocale;
   currentPath: string;
   themeToggleAria: string;
-}> = ({ currentLocale, currentPath, themeToggleAria }) => (
+  soundToggleAria: string;
+}> = ({ currentLocale, currentPath, themeToggleAria, soundToggleAria }) => (
   <Box className="appbar-footer-container">
     <SocialLinks locale={currentLocale} className="appbar-social-links" />
     <Box className="appbar-switches-row">
       <LanguageSwitch currentLocale={currentLocale} currentPath={currentPath} />
       <ThemeSwitch ariaLabel={themeToggleAria} />
+      <SoundSwitch ariaLabel={soundToggleAria} />
     </Box>
   </Box>
 );
@@ -142,6 +145,7 @@ export const AppNavigation: FC<AppNavigationProps> = ({
           currentLocale={currentLocale}
           currentPath={currentPath}
           themeToggleAria={t.themeToggleAriaLabel}
+          soundToggleAria={t.soundToggleAriaLabel}
         />
       }
     >

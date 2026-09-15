@@ -94,40 +94,44 @@ test('Season presets update the active season badge', async ({ page }) => {
   }
 });
 
-test('MiddleSection / AptitekSection renders big logo, XP intro copy, and partner marquee on French page', async ({
+test('MiddleSection / AptitekSection renders MascotDialog terminal with mascot and speech bubble', async ({
   page,
 }) => {
   await page.goto('/fr');
   const middleSection = page.locator('[data-testid="aptitek-middle-section"]');
   await expect(middleSection).toBeVisible();
 
-  // Big brand logo
-  const brandLogo = page.locator('.aptitek-brand-hero-logo-img');
-  await expect(brandLogo).toBeVisible();
-  await expect(brandLogo).toHaveAttribute('src', '/aptitek-logo.svg');
+  // Terminal bubble and title
+  const terminalBubble = middleSection.locator('.mascot-terminal-bubble');
+  await expect(terminalBubble).toBeVisible();
 
-  // H1 and H2
-  const h1 = page.locator('.aptitek-intro-h1');
-  await expect(h1).toBeVisible();
-  await expect(h1).toContainText("La formation tech qui vous fait gagner de l'XP");
+  const terminalTitle = middleSection.locator('.mascot-terminal-title');
+  await expect(terminalTitle).toBeVisible();
+  await expect(terminalTitle).toContainText('aptipiou-terminal');
 
-  const h2 = page.locator('.aptitek-intro-h2');
-  await expect(h2).toBeVisible();
-  await expect(h2).toContainText("Aptitek transforme l'apprentissage technique");
+  // Mascot on the left
+  const mascotStage = middleSection.locator('.mascot-stage');
+  await expect(mascotStage).toBeVisible();
+  const mascotSvg = mascotStage.locator('.aptipiou-vector-svg');
+  await expect(mascotSvg).toBeVisible();
 
-  // Partner carousel and cards
-  const partnerTitle = page.locator('.partner-carousel-title');
-  await expect(partnerTitle).toBeVisible();
-  await expect(partnerTitle).toContainText("Le réseau d'écoles");
+  // Dialogue mono text in Recursive Casual Mono
+  const dialogText = middleSection.locator('.mascot-dialog-mono-text');
+  await expect(dialogText).toBeVisible();
+  await expect(dialogText).toContainText('Aptipiou', { timeout: 5000 });
 
-  const partnerCards = page.locator('.partner-logo-card');
-  await expect(partnerCards.first()).toBeVisible();
-  const count = await partnerCards.count();
-  expect(count).toBeGreaterThanOrEqual(5);
+  // Advance to next step
+  const nextBtn = middleSection.locator('.mascot-action-btn-next');
+  if (await nextBtn.isVisible()) {
+    await nextBtn.click();
+    await page.waitForTimeout(100);
+    if (await nextBtn.isVisible()) {
+      await nextBtn.click();
+    }
+    await expect(dialogText).toContainText('XP', { timeout: 5000 });
+  }
 
-  // Verify partner cards have links configured
-  const firstCard = partnerCards.first();
-  await expect(firstCard).toHaveAttribute('href', /https?:\/\//);
-  await expect(firstCard).toHaveAttribute('target', '_blank');
-  await expect(firstCard).toHaveAttribute('rel', /noopener/);
+  // Sound switch in the appbar
+  const soundSwitch = page.locator('[data-testid="sound-switch"]');
+  await expect(soundSwitch).toBeVisible();
 });

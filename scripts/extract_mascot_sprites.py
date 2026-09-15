@@ -677,6 +677,99 @@ def main():
         processed_files[sid] = f"/sprites/mascot/{sid}.png"
         print(f"Saved {sid}.png ({canvas.shape[1]}x{canvas.shape[0]}) [Nano Banana Action]")
 
+    # =========================================================================
+    # Normalize speech visemes and eye-closed on top of canonical idle body
+    # =========================================================================
+    idle_path = os.path.join(OUTPUT_DIR, "idle.png")
+    if os.path.exists(idle_path):
+        idle_bgra = cv2.imread(idle_path, cv2.IMREAD_UNCHANGED)
+
+        # 1. Normalize eye-closed sprite
+        closed_bgra = idle_bgra.copy()
+        for y in range(145, 195):
+            for x in range(208, 265):
+                if (x - 236)**2 + (y - 172)**2 < 28**2:
+                    closed_bgra[y, x] = [227, 246, 253, 255]
+        for y in range(145, 195):
+            for x in range(112, 168):
+                if (x - 139)**2 + (y - 172)**2 < 28**2:
+                    closed_bgra[y, x] = [227, 246, 253, 255]
+        for cx in [139, 236]:
+            for dx in range(-16, 17):
+                dy = 173 + int(round(5.0 * ((dx / 16.0) ** 2)))
+                closed_bgra[dy:dy+3, cx+dx] = [54, 43, 0, 255]
+        cv2.imwrite(os.path.join(OUTPUT_DIR, "eye-closed.png"), closed_bgra)
+        processed_files["eye-closed"] = "/sprites/mascot/eye-closed.png"
+        print("Normalized eye-closed.png on canonical idle body")
+
+        # 2. Normalize all visemes with proper open mouth and lower beak (mandible)
+        viseme_configs = {
+            "talk-a":     {"h": 12, "w": 22, "tw": 16, "th": 6, "tongue": True},
+            "talk-e":     {"h": 10, "w": 24, "tw": 18, "th": 5, "tongue": True},
+            "talk-i":     {"h": 7,  "w": 14, "tw": 8,  "th": 3, "tongue": False},
+            "talk-o":     {"h": 14, "w": 18, "tw": 12, "th": 6, "tongue": True},
+            "talk-u":     {"h": 9,  "w": 13, "tw": 8,  "th": 4, "tongue": False},
+            "talk-wide":  {"h": 16, "w": 26, "tw": 20, "th": 8, "tongue": True},
+            "talk-t":     {"h": 5,  "w": 16, "tw": 8,  "th": 2, "tongue": False},
+            "talk-smile": {"h": 12, "w": 24, "tw": 18, "th": 6, "tongue": True},
+            "talk-grin":  {"h": 10, "w": 22, "tw": 16, "th": 5, "tongue": True},
+            "talk-fv":    {"h": 8,  "w": 18, "tw": 10, "th": 4, "tongue": True},
+            "talk-lth":   {"h": 12, "w": 20, "tw": 16, "th": 7, "tongue": True},
+            "talk-woo":   {"h": 12, "w": 15, "tw": 10, "th": 5, "tongue": False},
+            "talk-shch":  {"h": 9,  "w": 20, "tw": 14, "th": 4, "tongue": True},
+        }
+
+        for vid, cfg in viseme_configs.items():
+            v_path = os.path.join(OUTPUT_DIR, f"{vid}.png")
+            norm_v = idle_bgra.copy()
+            h = cfg["h"]
+            hw = cfg["w"] // 2
+            start_y = 195
+            end_y = start_y + h
+
+            # Dark mouth cavity opening directly below upper beak
+            for y in range(start_y, end_y + 1):
+                progress = (y - start_y) / float(h)
+                cur_hw = int(round(hw * np.sqrt(max(0, 1.0 - (progress - 0.4)**2 / 0.45))))
+                cur_hw = max(4, min(hw, cur_hw))
+                for dx in range(-cur_hw, cur_hw + 1):
+                    norm_v[y, 192 + dx] = [54, 43, 0, 255]
+
+            # Red tongue inside mouth
+            if cfg["tongue"]:
+                th = cfg["th"]
+                thw = cfg["tw"] // 2
+                ty_start = end_y - th + 1
+                for y in range(ty_start, end_y + 1):
+                    t_prog = (y - ty_start) / float(th)
+                    cur_thw = int(round(thw * np.sqrt(max(0, 1.0 - (t_prog - 0.5)**2 / 0.35))))
+                    for dx in range(-cur_thw, cur_thw + 1):
+                        norm_v[y, 192 + dx] = [47, 50, 220, 255]
+
+            # Yellow lower beak (mandible) framing bottom of mouth
+            lower_y_start = end_y + 1
+            lower_hw = min(11, max(7, hw - 1))
+            for dy in range(0, 4):
+                y = lower_y_start + dy
+                taper = dy * 2
+                cur_lhw = max(3, lower_hw - taper)
+                for dx in range(-cur_lhw, cur_lhw + 1):
+                    norm_v[y, 192 + dx] = [0, 137, 181, 255]
+
+            # Dark outline framing bottom of lower beak
+            for dy in range(0, 4):
+                y = lower_y_start + dy
+                taper = dy * 2
+                cur_lhw = max(3, lower_hw - taper)
+                norm_v[y, 192 - cur_lhw - 1] = [54, 43, 0, 255]
+                norm_v[y, 192 + cur_lhw + 1] = [54, 43, 0, 255]
+            last_y = lower_y_start + 4
+            for dx in range(-4, 5):
+                norm_v[last_y, 192 + dx] = [54, 43, 0, 255]
+
+            cv2.imwrite(v_path, norm_v)
+            print(f"Normalized {vid}.png (frozen eyes & body, lower beak lines)")
+
     manifest["files"] = processed_files
 
     # Animation Definitions

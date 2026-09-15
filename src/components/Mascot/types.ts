@@ -66,11 +66,13 @@ export interface MascotProps {
 }
 
 export interface MascotDialogProps {
-  script: DialogStep[];
+  script?: DialogStep[] | undefined;
   onVisemeChange?: ((viseme: MascotViseme) => void) | undefined;
   onExpressionChange?: ((expression: MascotExpression) => void) | undefined;
   onComplete?: (() => void) | undefined;
   soundEnabled?: boolean | undefined;
   onSoundToggle?: (() => void) | undefined;
   locale?: SupportedLocale | undefined;
+  className?: string | undefined;
+  'data-testid'?: string | undefined;
 }

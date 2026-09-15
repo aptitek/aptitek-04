@@ -94,16 +94,13 @@ describe('MiddleSection Assets & Integration', () => {
     expect(enMdx).toContain('::aptitek-section{locale="en"}');
   });
 
-  it('verifies that partner schools have valid official or Lyon campus links', () => {
+  it('verifies that MiddleSection renders MascotDialog with proper locale and testid', () => {
     const fileContent = readFileSync(
       resolve(process.cwd(), 'src/components/MiddleSection.tsx'),
       'utf-8',
     );
-    expect(fileContent).toContain('https://www.estiam.education/');
-    expect(fileContent).toContain('https://www.groupe-gema.com/campus/lyon/');
-    expect(fileContent).toContain('https://www.ipi-ecoles.com/lyon/');
-    expect(fileContent).toContain('https://ecole-ipssi.com/#');
-    expect(fileContent).toContain('https://www.sciences-u-lyon.fr/');
-    expect(fileContent).toContain('https://www.ynov.com/campus/lyon/');
+    expect(fileContent).toContain('MascotDialog');
+    expect(fileContent).toContain('locale={locale}');
+    expect(fileContent).toContain('data-testid={dataTestId}');
   });
 });

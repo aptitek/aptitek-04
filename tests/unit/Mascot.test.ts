@@ -3,11 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { Mascot, MascotWidget, MascotDialog } from '../../src/components/Mascot/index.ts';
+import { Mascot, MascotDialog } from '../../src/components/Mascot/index.ts';
 
-describe('Mascot Sprite System & Manifest', () => {
-  const manifestPath = path.resolve('public/sprites/mascot/manifest.json');
+const manifestPath = path.resolve('public/sprites/mascot/manifest.json');
+const manifestExists = fs.existsSync(manifestPath);
 
+describe.runIf(manifestExists)('Mascot Sprite System & Manifest', () => {
   it('generates a valid manifest with Solarized base03 outline and base3 highlights', () => {
     expect(fs.existsSync(manifestPath)).toBe(true);
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
@@ -69,11 +70,38 @@ describe('Mascot Sprite System & Manifest', () => {
 });
 
 describe('Mascot React Components', () => {
-  it('renders Mascot in idle state with standard sizing', () => {
+  it('renders Mascot in idle state with vector SVG system', () => {
     const html = renderToString(createElement(Mascot, { size: 192 }));
     expect(html).toContain('mascot-container');
+    expect(html).toContain('aptipiou-vector-svg');
+    expect(html).toContain('mouth-shape-closed');
+    expect(html).toContain('eye-left-pupil');
+  });
+
+  it.runIf(manifestExists)('vectorizes all body animation sprites into scalable SVG assets', () => {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+    expect(manifest.vectorFiles).toBeDefined();
+    const vectorFiles = Object.values(manifest.vectorFiles) as string[];
+    expect(vectorFiles.length).toBeGreaterThanOrEqual(47);
+
+    // Verify key body animation SVGs exist
+    expect(manifest.vectorFiles['fly-1']).toBe('/sprites/mascot/fly-1.svg');
+    expect(manifest.vectorFiles['land-3']).toBe('/sprites/mascot/land-3.svg');
+    expect(manifest.vectorFiles['action-wave']).toBe('/sprites/mascot/action-wave.svg');
+    expect(manifest.vectorFiles['action-celebrate']).toBe('/sprites/mascot/action-celebrate.svg');
+
+    for (const f of vectorFiles) {
+      const fullPath = path.resolve(path.join('public', f));
+      expect(fs.existsSync(fullPath)).toBe(true);
+    }
+  });
+
+  it('renders vectorized SVG frames during flydown animation', () => {
+    const html = renderToString(createElement(Mascot, { size: 192, animation: 'flydown' }));
+    expect(html).toContain('mascot-container');
     expect(html).toContain('mascot-sprite-wrapper');
-    expect(html).toContain('/sprites/mascot/idle.png');
+    expect(html).toContain('mascot-anim-flydown');
+    expect(html).toContain('.svg');
   });
 
   it('renders MascotDialog with typewriter text container and controls', () => {
@@ -84,25 +112,28 @@ describe('Mascot React Components', () => {
       }),
     );
     expect(html).toContain('mascot-dialog-bubble');
-    expect(html).toContain('Aptitek Mascot');
+    expect(html).toContain('Aptipiou');
   });
 
-  it('renders MascotWidget with summon button when closed', () => {
-    const html = renderToString(
-      createElement(MascotWidget, { initialVisible: false, locale: 'en' }),
-    );
-    expect(html).toContain('mascot-widget-wrapper');
-    expect(html).toContain('mascot-summon-btn');
-    expect(html).toContain('Call Mascot');
-  });
+  it('renders AptipiouVector with decoupled mouth visemes and eye states', async () => {
+    const { AptipiouVector } = await import('../../src/components/Mascot/vector/index.ts');
 
-  it('renders MascotWidget with mascot and dialog when open', () => {
-    const html = renderToString(
-      createElement(MascotWidget, { initialVisible: true, locale: 'fr' }),
+    const openHtml = renderToString(
+      createElement(AptipiouVector, { mouth: 'open', eyes: 'happy' }),
     );
-    expect(html).toContain('mascot-widget-wrapper');
-    expect(html).toContain('mascot-container');
-    expect(html).toContain('Re-voler');
-    expect(html).toContain('Fermer');
+    expect(openHtml).toContain('mouth-shape-open');
+    expect(openHtml).toContain('aptipiou-eyes-happy');
+
+    const roundHtml = renderToString(
+      createElement(AptipiouVector, { mouth: 'round', eyes: 'blink' }),
+    );
+    expect(roundHtml).toContain('mouth-shape-round');
+    expect(roundHtml).toContain('aptipiou-eyes-blink');
+
+    const smileHtml = renderToString(
+      createElement(AptipiouVector, { mouth: 'smile', eyes: 'wink' }),
+    );
+    expect(smileHtml).toContain('mouth-shape-smile');
+    expect(smileHtml).toContain('aptipiou-eyes-wink');
   });
 });

@@ -3,6 +3,7 @@ import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { ThemeSwitch } from '../../src/theme/ThemeSwitch.tsx';
 import { LanguageSwitch } from '../../src/components/LanguageSwitch.tsx';
+import { SoundSwitch } from '../../src/components/SoundSwitch.tsx';
 
 describe('Appbar Fancy Switches Specifications', () => {
   it('renders ThemeSwitch using ZenithSwitch with data-testid="theme-switch"', () => {
@@ -35,5 +36,13 @@ describe('Appbar Fancy Switches Specifications', () => {
     expect(html).toContain('data-testid="language-switch"');
     expect(html).toContain('fancy_switch_meridian');
     expect(html).toContain('Switch to English');
+  });
+
+  it('renders SoundSwitch with MDI volume icons and data-testid="sound-switch"', () => {
+    const html = renderToString(createElement(SoundSwitch, { ariaLabel: 'Toggle mascot sound' }));
+    expect(html).toContain('data-testid="sound-switch"');
+    expect(html).toContain('volume_up');
+    expect(html).toContain('volume_off');
+    expect(html).toContain('aria-label="Toggle mascot sound"');
   });
 });

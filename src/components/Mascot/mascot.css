@@ -10,14 +10,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  inline-size: 192px;
+  block-size: 192px;
 }
 
 .mascot-sprite-wrapper {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
+  inline-size: 192px;
+  block-size: 192px;
 }
 
 .mascot-sprite-img {
@@ -59,22 +64,12 @@
   animation: mascot-fly-entrance 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Idle Breathing Bob (Subtle 2px integer step) */
-@keyframes mascot-idle-bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
+/* Idle State (Zero permanent bouncing) */
 .mascot-anim-idle {
-  animation: mascot-idle-bob 2.4s ease-in-out infinite;
+  transform: none;
 }
 
-/* Happy Dance Bounce */
+/* Happy / Celebrate Reaction (Single bounce on trigger, never permanent) */
 @keyframes mascot-happy-bounce {
   0%,
   100% {
@@ -86,107 +81,232 @@
 }
 
 .mascot-anim-happy {
-  animation: mascot-happy-bounce 0.45s ease-in-out infinite;
+  animation: mascot-happy-bounce 0.45s ease-in-out 1;
 }
 
-/* Speech Bubble UI */
-.mascot-dialog-bubble {
-  position: absolute;
-  inset-block-end: calc(100% + 14px);
-  min-inline-size: 200px;
-  max-inline-size: 320px;
-  background-color: var(--colors-base3);
-  color: var(--colors-base03);
-  border: 2px solid var(--colors-base03);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
-  z-index: 50;
+/* ==========================================================================
+   Mascot Rounded Terminal / Speech Bubble Section
+   ========================================================================== */
+
+.mascot-terminal-section {
+  inline-size: 100%;
+  max-inline-size: 1140px;
+  margin-inline: auto;
+  margin-block: var(--spacing-airy);
+  padding-inline: var(--spacing-md);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--spacing-lg);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .mascot-terminal-section {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding-inline: var(--spacing-sm);
+  }
+}
+
+.mascot-stage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-block-end: var(--spacing-xs);
+}
+
+.mascot-stage {
+  position: relative;
   cursor: pointer;
-  animation: mascot-bubble-pop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: 192px;
+  block-size: 192px;
+  transition: transform var(--motion-fast) var(--motion-ease);
 }
 
-[data-theme='dark'] .mascot-dialog-bubble {
-  background-color: var(--colors-base02);
-  color: var(--colors-base3);
-  border-color: var(--colors-base01);
+.mascot-stage:hover {
+  transform: translateY(-4px);
 }
 
-@keyframes mascot-bubble-pop {
-  0% {
-    transform: scale(0.85) translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+.mascot-stage:active {
+  transform: scale(0.96);
 }
 
-/* Bubble Tail pointing to Mascot */
-.mascot-dialog-bubble::after,
-.mascot-dialog-bubble::before {
-  content: '';
-  position: absolute;
-  inset-block-start: 100%;
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
-  border-style: solid;
+/* Terminal Bubble Container (Wider and Bigger) */
+.mascot-terminal-bubble,
+.mascot-speech-bubble,
+.mascot-dialog-bubble {
+  position: relative;
+  flex: 1;
+  min-inline-size: 0;
+  min-block-size: 220px;
+  background: var(--theme-terminal-bg);
+  border: 1px solid var(--theme-terminal-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--theme-elevation-2);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: visible;
+  transition:
+    border-color var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease);
 }
 
-.mascot-dialog-bubble::before {
-  border-width: 10px 10px 0 10px;
-  border-color: var(--colors-base03) transparent transparent transparent;
-  margin-block-start: 0;
-}
-
-[data-theme='dark'] .mascot-dialog-bubble::before {
-  border-color: var(--colors-base01) transparent transparent transparent;
-}
-
+/* Suppress all legacy bottom-pointing pseudo-element triangles */
+.mascot-terminal-bubble::before,
+.mascot-terminal-bubble::after,
+.mascot-speech-bubble::before,
+.mascot-speech-bubble::after,
+.mascot-dialog-bubble::before,
 .mascot-dialog-bubble::after {
-  border-width: 8px 8px 0 8px;
-  border-color: var(--colors-base3) transparent transparent transparent;
-  margin-block-start: -2px;
+  content: none;
+  display: none;
 }
 
-[data-theme='dark'] .mascot-dialog-bubble::after {
-  border-color: var(--colors-base02) transparent transparent transparent;
+.mascot-terminal-bubble:hover,
+.mascot-speech-bubble:hover,
+.mascot-dialog-bubble:hover {
+  border-color: var(--colors-green);
 }
 
-.mascot-dialog-header {
+/* Clean Speech Bubble Tail pointing Left toward Aptipiou */
+.mascot-bubble-tail {
+  position: absolute;
+  inset-inline-start: -9px;
+  inset-block-end: 88px;
+  transform: rotate(45deg);
+  inline-size: 16px;
+  block-size: 16px;
+  background: var(--theme-terminal-bg);
+  border-inline-start: 1px solid var(--theme-terminal-border);
+  border-block-end: 1px solid var(--theme-terminal-border);
+  z-index: 2;
+  transition: border-color var(--motion-fast) var(--motion-ease);
+}
+
+.mascot-terminal-bubble:hover .mascot-bubble-tail,
+.mascot-speech-bubble:hover .mascot-bubble-tail,
+.mascot-dialog-bubble:hover .mascot-bubble-tail {
+  border-inline-start-color: var(--colors-green);
+  border-block-end-color: var(--colors-green);
+}
+
+@media (max-width: 768px) {
+  .mascot-bubble-tail {
+    inset-inline-start: 50%;
+    inset-block-start: -9px;
+    inset-block-end: auto;
+    transform: translateX(-50%) rotate(45deg);
+    border-inline-start: 1px solid var(--theme-terminal-border);
+    border-block-start: 1px solid var(--theme-terminal-border);
+    border-block-end: none;
+  }
+}
+
+.mascot-terminal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-block-end: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--colors-base01);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--theme-terminal-header-bg);
+  border-block-end: 1px solid var(--theme-terminal-header-border);
+  border-start-start-radius: calc(var(--radius-lg) - 1px);
+  border-start-end-radius: calc(var(--radius-lg) - 1px);
+  font-family: var(--font-body);
+  font-variation-settings:
+    'CASL' 0,
+    'CRSV' 0,
+    'MONO' 1;
 }
 
-[data-theme='dark'] .mascot-dialog-header {
-  color: var(--colors-base1);
+.mascot-terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-.mascot-dialog-text {
-  font-family: inherit;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+.mascot-dot {
+  inline-size: 11px;
+  block-size: 11px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.mascot-dot-red {
+  background-color: var(--colors-red);
+}
+
+.mascot-dot-yellow {
+  background-color: var(--colors-yellow);
+}
+
+.mascot-dot-green {
+  background-color: var(--colors-green);
+}
+
+.mascot-terminal-title {
+  color: var(--theme-terminal-header-title);
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.mascot-terminal-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.mascot-step-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--theme-terminal-bg);
+  border: 1px solid var(--colors-cyan);
+  color: var(--colors-cyan);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.mascot-bubble-body {
+  padding: var(--spacing-lg) var(--spacing-airy);
+  min-block-size: 140px;
+  display: flex;
+  align-items: center;
+}
+
+/* Recursive Casual Mono Dialogue Text */
+.mascot-dialog-mono-text {
+  font-family: var(--font-body);
+  font-variation-settings:
+    'CASL' 1,
+    'CRSV' 0,
+    'MONO' 1;
+  font-size: clamp(1.15rem, 2.2vi, 1.35rem);
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  margin-block: 0;
+  margin-inline: 0;
+  color: var(--theme-terminal-text);
   overflow-wrap: break-word;
 }
 
 .mascot-cursor {
   display: inline-block;
-  inline-size: 7px;
-  block-size: 1.1em;
+  inline-size: 8px;
+  block-size: 1.15em;
   background-color: var(--colors-cyan);
   vertical-align: -0.15em;
-  margin-inline-start: 3px;
+  margin-inline-start: 4px;
   animation: mascot-blink 0.8s infinite;
 }
 
@@ -201,78 +321,94 @@
   }
 }
 
-.mascot-dialog-footer {
+.mascot-terminal-toolbar {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 8px;
-  margin-block-start: 8px;
-  font-size: 0.72rem;
-  color: var(--colors-base01);
+  justify-content: space-between;
+  padding-inline: var(--spacing-md);
+  padding-block-end: var(--spacing-sm);
 }
 
-[data-theme='dark'] .mascot-dialog-footer {
-  color: var(--colors-base1);
-}
-
-.mascot-sound-btn {
-  background-color: transparent;
-  border: none;
-  padding: 4px;
-  cursor: pointer;
-  color: var(--colors-base01);
-  border-radius: var(--radius-xs);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    color 0.15s,
-    background-color 0.15s;
-}
-
-.mascot-sound-btn:hover {
-  color: var(--colors-base03);
-  background-color: var(--colors-base2);
-}
-
-[data-theme='dark'] .mascot-sound-btn {
-  color: var(--colors-base1);
-}
-
-[data-theme='dark'] .mascot-sound-btn:hover {
-  color: var(--colors-base3);
-  background-color: var(--colors-base03);
-}
-
-/* Mascot Interactive Widget Floating in Corner */
-.mascot-widget-wrapper {
-  position: fixed;
-  inset-block-end: 24px;
-  inset-inline-end: 24px;
-  z-index: 1000;
+.mascot-step-dots {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-.mascot-summon-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--colors-base03);
-  color: var(--colors-base3);
-  border: 1px solid var(--colors-base01);
-  padding: 8px 14px;
+.mascot-step-dot {
+  inline-size: 9px;
+  block-size: 9px;
   border-radius: var(--radius-full);
+  background: var(--colors-base01);
+  cursor: pointer;
+  transition:
+    background-color var(--motion-fast) var(--motion-ease),
+    inline-size var(--motion-fast) var(--motion-ease);
+}
+
+.mascot-step-dot:hover {
+  background: var(--colors-cyan);
+}
+
+.mascot-step-dot--active {
+  background: var(--colors-cyan);
+  inline-size: 22px;
+  border-radius: var(--radius-xs);
+}
+
+.mascot-toolbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.mascot-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-variation-settings:
+    'CASL' 1,
+    'CRSV' 0,
+    'MONO' 1;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition:
-    transform 0.2s,
-    background-color 0.2s;
+    transform var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease);
 }
 
-.mascot-summon-btn:hover {
+.mascot-action-btn-next {
+  background: var(--colors-cyan);
+  color: var(--colors-base03);
+  border: none;
+}
+
+.mascot-action-btn-next:hover {
   transform: translateY(-2px);
-  background-color: var(--colors-base02);
+  background: var(--colors-blue);
+}
+
+.mascot-action-btn-next:active {
+  transform: scale(0.96);
+}
+
+.mascot-action-btn-replay {
+  background: var(--theme-terminal-header-bg);
+  color: var(--colors-yellow);
+  border: 1px solid var(--colors-yellow);
+}
+
+.mascot-action-btn-replay:hover {
+  background: var(--colors-base01);
+  color: var(--colors-base3);
+  transform: translateY(-2px);
+}
+
+.mascot-action-btn-replay:active {
+  transform: scale(0.96);
 }
