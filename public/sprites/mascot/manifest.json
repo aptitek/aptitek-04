@@ -1,0 +1,157 @@
+{
+  "name": "Robo-Bird Mascot",
+  "description": "Pixel-art animated mascot in Solarized indexed palette with flydown, acrobatic landing, expressions, and speech visemes",
+  "frameSize": {
+    "width": 384,
+    "height": 384
+  },
+  "groundBaseline": 360,
+  "palette": {
+    "OUTLINE": "#002b36",
+    "PINK_BODY": "#f48498",
+    "PINK_SHADOW": "#da5780",
+    "YELLOW_BEAK": "#b58900",
+    "GREEN_HEADSET": "#859900",
+    "BLUE_ACCENT": "#268bd2",
+    "RED_ACCENT": "#dc322f",
+    "BASE3_GLINT": "#fdf6e3"
+  },
+  "animations": {
+    "flydown": {
+      "frames": ["fly-1", "fly-2", "fly-3", "fly-4"],
+      "fps": 8,
+      "loop": true
+    },
+    "landing": {
+      "frames": ["land-1", "land-2", "land-3", "land-4", "land-5"],
+      "fps": 12,
+      "loop": false
+    },
+    "happy": {
+      "frames": ["happy-1", "happy-2", "happy-3", "happy-2"],
+      "fps": 8,
+      "loop": true
+    },
+    "wakeup": {
+      "frames": ["wakeup-1", "wakeup-2", "eye-open"],
+      "fps": 8,
+      "loop": false
+    },
+    "blink": {
+      "frames": ["idle", "eye-closed", "idle"],
+      "fps": 10,
+      "loop": false
+    },
+    "sleep": {
+      "frames": ["eye-sleep"],
+      "fps": 1,
+      "loop": true
+    }
+  },
+  "visemes": {
+    "default": "idle",
+    "closed": "talk-closed",
+    "shapes": {
+      "A": "talk-a",
+      "E": "talk-e",
+      "I": "talk-i",
+      "O": "talk-o",
+      "U": "talk-u",
+      "WIDE": "talk-wide",
+      "SMILE": "talk-smile",
+      "GRIN": "talk-grin",
+      "T": "talk-t",
+      "CLOSED": "talk-closed"
+    },
+    "charMap": {
+      "a": "talk-a",
+      "h": "talk-a",
+      "k": "talk-a",
+      "g": "talk-a",
+      "e": "talk-e",
+      "c": "talk-e",
+      "d": "talk-e",
+      "n": "talk-e",
+      "i": "talk-i",
+      "y": "talk-i",
+      "o": "talk-o",
+      "u": "talk-u",
+      "w": "talk-u",
+      "q": "talk-o",
+      "l": "talk-wide",
+      "r": "talk-wide",
+      "t": "talk-smile",
+      "s": "talk-smile",
+      "z": "talk-smile",
+      "j": "talk-smile",
+      "f": "talk-smile",
+      "v": "talk-smile",
+      "m": "talk-closed",
+      "p": "talk-closed",
+      "b": "talk-closed",
+      " ": "talk-closed",
+      ".": "talk-closed",
+      ",": "talk-closed",
+      "!": "talk-wide",
+      "?": "talk-smile"
+    }
+  },
+  "expressions": {
+    "idle": "idle",
+    "happy": "happy-1",
+    "grin": "talk-grin",
+    "curious": "expr-curious",
+    "alert": "expr-alert",
+    "cry": "expr-cry",
+    "sweat": "expr-sweat",
+    "shocked": "expr-shocked",
+    "surprise": "expr-surprise",
+    "dizzy": "expr-dizzy",
+    "love": "expr-love",
+    "blush": "expr-blush-hearts",
+    "wink": "expr-wink",
+    "laugh": "expr-laugh",
+    "sleep": "eye-sleep"
+  },
+  "files": {
+    "fly-1": "/sprites/mascot/fly-1.png",
+    "fly-2": "/sprites/mascot/fly-2.png",
+    "fly-3": "/sprites/mascot/fly-3.png",
+    "fly-4": "/sprites/mascot/fly-4.png",
+    "land-1": "/sprites/mascot/land-1.png",
+    "land-2": "/sprites/mascot/land-2.png",
+    "land-3": "/sprites/mascot/land-3.png",
+    "land-4": "/sprites/mascot/land-4.png",
+    "land-5": "/sprites/mascot/land-5.png",
+    "happy-1": "/sprites/mascot/happy-1.png",
+    "happy-2": "/sprites/mascot/happy-2.png",
+    "happy-3": "/sprites/mascot/happy-3.png",
+    "talk-a": "/sprites/mascot/talk-a.png",
+    "talk-e": "/sprites/mascot/talk-e.png",
+    "talk-grin": "/sprites/mascot/talk-grin.png",
+    "talk-o": "/sprites/mascot/talk-o.png",
+    "talk-u": "/sprites/mascot/talk-u.png",
+    "talk-i": "/sprites/mascot/talk-i.png",
+    "talk-closed": "/sprites/mascot/talk-closed.png",
+    "talk-wide": "/sprites/mascot/talk-wide.png",
+    "talk-t": "/sprites/mascot/talk-t.png",
+    "talk-smile": "/sprites/mascot/talk-smile.png",
+    "idle": "/sprites/mascot/idle.png",
+    "eye-open": "/sprites/mascot/eye-open.png",
+    "wakeup-2": "/sprites/mascot/wakeup-2.png",
+    "wakeup-1": "/sprites/mascot/wakeup-1.png",
+    "eye-sleep": "/sprites/mascot/eye-sleep.png",
+    "expr-curious": "/sprites/mascot/expr-curious.png",
+    "expr-alert": "/sprites/mascot/expr-alert.png",
+    "expr-cry": "/sprites/mascot/expr-cry.png",
+    "expr-sweat": "/sprites/mascot/expr-sweat.png",
+    "expr-laugh": "/sprites/mascot/expr-laugh.png",
+    "expr-shocked": "/sprites/mascot/expr-shocked.png",
+    "expr-surprise": "/sprites/mascot/expr-surprise.png",
+    "expr-dizzy": "/sprites/mascot/expr-dizzy.png",
+    "expr-love": "/sprites/mascot/expr-love.png",
+    "expr-blush-hearts": "/sprites/mascot/expr-blush-hearts.png",
+    "expr-wink": "/sprites/mascot/expr-wink.png",
+    "eye-closed": "/sprites/mascot/eye-closed.png"
+  }
+}

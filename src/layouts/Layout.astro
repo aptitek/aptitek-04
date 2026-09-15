@@ -1,6 +1,7 @@
 ---
 import { useTranslations, type SupportedLocale } from '../i18n/index.ts';
 import { AppNavigation } from '../components/AppNavigation.tsx';
+import { MascotWidget } from '../components/Mascot/index.ts';
 import '../styles/global.css';
 
 interface Props {
@@ -61,6 +62,7 @@ const currentPath = Astro.url.pathname;
       <main id="main-content">
         <slot />
       </main>
+      <MascotWidget client:only="react" locale={currentLocale} />
     </div>
   </body>
 </html>
