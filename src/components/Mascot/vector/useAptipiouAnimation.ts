@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import type { AptipiouBody, AptipiouEyes, AptipiouMood, AptipiouMouth } from './types.ts';
 
 export interface UseAptipiouAnimationOptions {
-  mouth?: AptipiouMouth | undefined;
-  eyes?: AptipiouEyes | undefined;
-  body?: AptipiouBody | undefined;
+  mouth?: AptipiouMouth | string | undefined;
+  eyes?: AptipiouEyes | string | undefined;
+  body?: AptipiouBody | string | undefined;
   mood?: AptipiouMood | undefined;
   isTyping?: boolean | undefined;
   disableBlink?: boolean | undefined;
@@ -57,10 +57,10 @@ function runBlinkCycle(setBlink: (b: boolean) => void) {
 }
 
 function deriveEyes(
-  propEyes: AptipiouEyes | undefined,
+  propEyes: AptipiouEyes | string | undefined,
   isBlinking: boolean,
   mood: AptipiouMood,
-): AptipiouEyes {
+): string {
   if (propEyes) return propEyes;
   if (isBlinking) return 'blink';
   if (mood === 'happy' || mood === 'love') return 'happy';
@@ -68,7 +68,7 @@ function deriveEyes(
   return 'open';
 }
 
-function deriveMouth(propMouth: AptipiouMouth | undefined, mood: AptipiouMood): AptipiouMouth {
+function deriveMouth(propMouth: AptipiouMouth | string | undefined, mood: AptipiouMood): string {
   if (propMouth) return propMouth;
   if (mood === 'happy' || mood === 'love') return 'smile';
   if (mood === 'surprised') return 'round';
@@ -76,10 +76,10 @@ function deriveMouth(propMouth: AptipiouMouth | undefined, mood: AptipiouMood): 
 }
 
 function deriveBody(
-  propBody: AptipiouBody | undefined,
+  propBody: AptipiouBody | string | undefined,
   isTyping: boolean,
   mood: AptipiouMood,
-): AptipiouBody {
+): string {
   if (propBody) return propBody;
   if (isTyping) return 'talk';
   if (mood === 'thinking') return 'think';

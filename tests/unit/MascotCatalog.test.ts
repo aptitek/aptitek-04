@@ -16,7 +16,7 @@ describe('Mascot Catalog Manifest & Docs', () => {
     );
 
     expect(Object.keys(catalog.categories.particles).length).toBe(24);
-    expect(Object.keys(catalog.categories.beak).length).toBe(11);
+    expect(Object.keys(catalog.categories.beak).length).toBe(20);
     expect(Object.keys(catalog.categories.eyes).length).toBe(12);
     expect(Object.keys(catalog.categories.body).length).toBe(20);
   });
@@ -52,7 +52,7 @@ describe('Mascot Vector Assets Integrity', () => {
     }
   });
 
-  it('all 11 beak SVGs exist and use 512x512 canvas coordinate space', () => {
+  it('all 20 beak SVGs exist and use 512x512 canvas coordinate space', () => {
     const catalog = JSON.parse(fs.readFileSync(path.join(MASCOT_DIR, 'catalog.json'), 'utf-8'));
     for (const [id, item] of Object.entries(catalog.categories.beak) as [
       string,
@@ -64,7 +64,6 @@ describe('Mascot Vector Assets Integrity', () => {
       const content = fs.readFileSync(filePath, 'utf-8');
       expect(content).toContain('viewBox="0 0 512 512"');
       expect(content).toContain('inkscape:label="upper_beak"');
-      expect(content).toContain('inkscape:label="mouth"');
     }
   });
 

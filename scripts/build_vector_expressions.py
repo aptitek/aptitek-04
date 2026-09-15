@@ -254,9 +254,242 @@ BEAKS = {
        d="m 242 236 c 4 -10 18 -22 28 -22 c 10 0 24 12 28 22 c -12 4 -44 4 -56 0 z"
        id="upper_beak"
        inkscape:label="upper_beak" />
-"""
-    }
+""",
+    },
+    "talk-closed.svg": {
+        "label": "Speech Viseme: Closed / M-B-P",
+        "description": "Resting bilabial consonant beak shape with closed center seam",
+        "tags": ["speech", "viseme", "closed", "m", "b", "p"],
+        "bbox": "235 210 70 55",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 246 238 c 6 12 16 20 24 20 c 8 0 18 -8 24 -20 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 242 236 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 4 -44 4 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+    <path
+       style="fill:none;stroke:#002b36;stroke-width:10;stroke-linecap:round"
+       d="m 244 237 c 12 3 38 3 50 0"
+       id="mouth"
+       inkscape:label="mouth" />
+""",
+    },
+    "talk-a.svg": {
+        "label": "Speech Viseme: A / Open",
+        "description": "Open vowel viseme with dropped mandible, oral cavity and visible tongue",
+        "tags": ["speech", "viseme", "vowel", "open", "a", "ah"],
+        "bbox": "235 210 70 75",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 246 238 c 4 18 14 34 24 34 c 10 0 20 -16 24 -34 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:none"
+       d="m 248 238 c 4 16 12 26 22 26 c 10 0 18 -10 22 -26 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#da5780;stroke:none"
+       d="m 258 256 c 4 -4 16 -4 20 0 c -2 6 -18 6 -20 0 z"
+       id="tongue"
+       inkscape:label="tongue" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 242 236 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 4 -44 4 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-e.svg": {
+        "label": "Speech Viseme: E / Stretched",
+        "description": "Stretched smiling vowel viseme with horizontal oral cavity and teeth line",
+        "tags": ["speech", "viseme", "vowel", "stretched", "e", "eh"],
+        "bbox": "235 210 70 65",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 238 c 8 10 20 15 30 15 c 10 0 22 -5 30 -15 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:none"
+       d="m 244 239 c 8 7 16 10 26 10 c 10 0 18 -3 26 -10 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:none;stroke:#fdf6e3;stroke-width:5;stroke-linecap:round"
+       d="m 248 240 c 8 3 16 4 22 4 c 6 0 14 -1 22 -4"
+       id="teeth"
+       inkscape:label="teeth" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 236 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 4 -44 4 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-i.svg": {
+        "label": "Speech Viseme: I / High",
+        "description": "High front vowel viseme with taut horizontal slit aperture",
+        "tags": ["speech", "viseme", "vowel", "high", "i", "ee"],
+        "bbox": "235 210 70 60",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 238 c 8 8 20 12 30 12 c 10 0 22 -4 30 -12 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:none"
+       d="m 244 238 c 8 5 16 7 26 7 c 10 0 18 -2 26 -7 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:none;stroke:#fdf6e3;stroke-width:4;stroke-linecap:round"
+       d="m 246 239 c 10 2 16 3 24 3 c 8 0 14 -1 24 -3"
+       id="teeth"
+       inkscape:label="teeth" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 236 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 4 -44 4 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-o.svg": {
+        "label": "Speech Viseme: O / Round",
+        "description": "Open rounded vowel viseme with circular oral aperture and red cavity",
+        "tags": ["speech", "viseme", "vowel", "round", "o", "oh"],
+        "bbox": "235 210 70 70",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 248 238 c 4 16 12 28 22 28 c 10 0 18 -12 22 -28 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:#002b36;stroke-width:8;stroke-linecap:round;stroke-linejoin:round"
+       d="m 256 244 c 0 -8 28 -8 28 0 c 0 14 -28 14 -28 0 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#da5780;stroke:none"
+       d="m 262 249 c 2 -3 10 -3 12 0 c -1 3 -11 3 -12 0 z"
+       id="tongue"
+       inkscape:label="tongue" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 244 236 c 4 -12 16 -24 26 -24 c 10 0 22 12 26 24 c -10 4 -42 4 -52 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-u.svg": {
+        "label": "Speech Viseme: U / Woo",
+        "description": "Tightly puckered rounded vowel viseme for U, OO, and W sounds",
+        "tags": ["speech", "viseme", "vowel", "pucker", "u", "woo"],
+        "bbox": "235 210 70 60",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 252 238 c 2 10 8 18 18 18 c 10 0 16 -8 18 -18 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:#002b36;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+       d="m 264 243 c 0 -5 12 -5 12 0 c 0 8 -12 8 -12 0 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 246 236 c 4 -12 14 -24 24 -24 c 10 0 20 12 24 24 c -8 4 -40 4 -48 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-t.svg": {
+        "label": "Speech Viseme: T-D-N / Dental",
+        "description": "Alveolar consonant viseme showing tongue/teeth contact line",
+        "tags": ["speech", "viseme", "consonant", "dental", "t", "d", "n", "l"],
+        "bbox": "235 210 70 55",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 246 238 c 4 8 14 14 24 14 c 10 0 20 -6 24 -14 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:none;stroke:#002b36;stroke-width:8;stroke-linecap:round"
+       d="m 254 240 c 6 2 10 2 16 2 c 6 0 10 0 16 -2"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#da5780;stroke:none"
+       d="m 266 241 c 2 -2 6 -2 8 0 c -1 3 -7 3 -8 0 z"
+       id="tongue"
+       inkscape:label="tongue" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 242 236 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 4 -44 4 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-fv.svg": {
+        "label": "Speech Viseme: F-V / Labiodental",
+        "description": "Labiodental consonant viseme with tucked lower beak under upper mandible",
+        "tags": ["speech", "viseme", "consonant", "f", "v"],
+        "bbox": "235 210 70 55",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 250 238 c 2 8 10 14 20 14 c 10 0 18 -6 20 -14 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 236 c 4 -12 18 -24 30 -24 c 12 0 26 12 30 24 c -12 6 -48 6 -60 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
+    "talk-wide.svg": {
+        "label": "Speech Viseme: Wide / Exclamation",
+        "description": "Energetic wide open speech cavity for emphasis, shouts, and exclamation",
+        "tags": ["speech", "viseme", "wide", "shout", "exclamation"],
+        "bbox": "235 210 70 80",
+        "content": f"""
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 242 238 c 4 20 16 38 28 38 c 12 0 24 -18 28 -38 z"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <path
+       style="fill:#dc322f;stroke:#002b36;stroke-width:8;stroke-linecap:round;stroke-linejoin:round"
+       d="m 246 238 c 4 18 14 30 24 30 c 10 0 20 -12 24 -30 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#da5780;stroke:none"
+       d="m 256 258 c 4 -6 16 -6 20 0 c -2 8 -18 8 -20 0 z"
+       id="tongue"
+       inkscape:label="tongue" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 240 235 c 4 -12 18 -25 30 -25 c 12 0 26 13 30 25 c -12 4 -48 4 -60 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+""",
+    },
 }
+
 
 for file_name, data in BEAKS.items():
     full_path = os.path.join(BEAK_DIR, file_name)

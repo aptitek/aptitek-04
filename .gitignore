@@ -49,6 +49,3 @@ coverage
 public/documents/*.pdf
 *.pdf
 *.tgz
-
-# Generated Mascot Assets
-public/sprites/mascot/

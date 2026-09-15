@@ -299,6 +299,78 @@
         "tags": ["sleep", "rest", "relaxed"],
         "viewBox": "0 0 512 512",
         "bboxTight": "235 210 70 60"
+      },
+      "talk-closed": {
+        "path": "/mascot/beak/talk-closed.svg",
+        "label": "Speech Viseme: Closed / M-B-P",
+        "description": "Resting bilabial consonant beak shape with closed center seam",
+        "tags": ["speech", "viseme", "closed", "m", "b", "p"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 55"
+      },
+      "talk-a": {
+        "path": "/mascot/beak/talk-a.svg",
+        "label": "Speech Viseme: A / Open",
+        "description": "Open vowel viseme with dropped mandible, oral cavity and visible tongue",
+        "tags": ["speech", "viseme", "vowel", "open", "a", "ah"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 75"
+      },
+      "talk-e": {
+        "path": "/mascot/beak/talk-e.svg",
+        "label": "Speech Viseme: E / Stretched",
+        "description": "Stretched smiling vowel viseme with horizontal oral cavity and teeth line",
+        "tags": ["speech", "viseme", "vowel", "stretched", "e", "eh"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 65"
+      },
+      "talk-i": {
+        "path": "/mascot/beak/talk-i.svg",
+        "label": "Speech Viseme: I / High",
+        "description": "High front vowel viseme with taut horizontal slit aperture",
+        "tags": ["speech", "viseme", "vowel", "high", "i", "ee"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "talk-o": {
+        "path": "/mascot/beak/talk-o.svg",
+        "label": "Speech Viseme: O / Round",
+        "description": "Open rounded vowel viseme with circular oral aperture and red cavity",
+        "tags": ["speech", "viseme", "vowel", "round", "o", "oh"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 70"
+      },
+      "talk-u": {
+        "path": "/mascot/beak/talk-u.svg",
+        "label": "Speech Viseme: U / Woo",
+        "description": "Tightly puckered rounded vowel viseme for U, OO, and W sounds",
+        "tags": ["speech", "viseme", "vowel", "pucker", "u", "woo"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "talk-t": {
+        "path": "/mascot/beak/talk-t.svg",
+        "label": "Speech Viseme: T-D-N / Dental",
+        "description": "Alveolar consonant viseme showing tongue/teeth contact line",
+        "tags": ["speech", "viseme", "consonant", "dental", "t", "d", "n", "l"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 55"
+      },
+      "talk-fv": {
+        "path": "/mascot/beak/talk-fv.svg",
+        "label": "Speech Viseme: F-V / Labiodental",
+        "description": "Labiodental consonant viseme with tucked lower beak under upper mandible",
+        "tags": ["speech", "viseme", "consonant", "f", "v"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 55"
+      },
+      "talk-wide": {
+        "path": "/mascot/beak/talk-wide.svg",
+        "label": "Speech Viseme: Wide / Exclamation",
+        "description": "Energetic wide open speech cavity for emphasis, shouts, and exclamation",
+        "tags": ["speech", "viseme", "wide", "shout", "exclamation"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 80"
       }
     },
     "eyes": {

@@ -5,105 +5,108 @@ import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { Mascot, MascotDialog } from '../../src/components/Mascot/index.ts';
 
-const manifestPath = path.resolve('public/sprites/mascot/manifest.json');
-const manifestExists = fs.existsSync(manifestPath);
+const MASCOT_DIR = path.resolve('public/mascot');
 
-describe.runIf(manifestExists)('Mascot Sprite System & Manifest', () => {
-  it('generates a valid manifest with Solarized base03 outline and base3 highlights', () => {
-    expect(fs.existsSync(manifestPath)).toBe(true);
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+describe('Mascot Modular Vector Catalog', () => {
+  it('manifest catalog.json exists and specifies 20 bodies, 20 beaks, 12 eyes, and 24 particles', () => {
+    const catalogPath = path.join(MASCOT_DIR, 'catalog.json');
+    expect(fs.existsSync(catalogPath)).toBe(true);
 
-    expect(manifest.name).toBe('Robo-Bird Mascot');
-    expect(manifest.palette.OUTLINE).toBe('#002b36'); // Solarized base03 (avoids black)
-    expect(manifest.palette.BASE3_GLINT).toBe('#fdf6e3'); // Solarized base3 (avoids pure white)
-    expect(Object.keys(manifest.palette).length).toBe(8);
-    expect(manifest.frameSize).toEqual({ width: 384, height: 384 });
-    expect(manifest.groundBaseline).toBe(360);
+    const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
+    expect(catalog.version).toBe('2.0.0');
+    expect(Object.keys(catalog.categories.body).length).toBe(20);
+    expect(Object.keys(catalog.categories.beak).length).toBe(20);
+    expect(Object.keys(catalog.categories.eyes).length).toBe(12);
+    expect(Object.keys(catalog.categories.particles).length).toBe(24);
+  });
 
-    // Verify all sprite files are referenced and exist
-    const files = Object.values(manifest.files) as string[];
-    expect(files.length).toBeGreaterThanOrEqual(38);
-    expect(manifest.files['eye-closed']).toBe('/sprites/mascot/eye-closed.png');
-    expect(manifest.files['idle']).toBe('/sprites/mascot/idle.png');
+  it('includes all 9 speech viseme beaks in the modular catalog', () => {
+    const speechVisemes = [
+      'talk-closed',
+      'talk-a',
+      'talk-e',
+      'talk-i',
+      'talk-o',
+      'talk-u',
+      'talk-t',
+      'talk-fv',
+      'talk-wide',
+    ];
 
-    for (const f of files) {
-      const fullPath = path.resolve(path.join('public', f));
-      expect(fs.existsSync(fullPath)).toBe(true);
+    for (const viseme of speechVisemes) {
+      const filePath = path.join(MASCOT_DIR, 'beak', `${viseme}.svg`);
+      expect(fs.existsSync(filePath), `Speech viseme beak ${viseme}.svg must exist`).toBe(true);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      expect(content).toContain('viewBox="0 0 512 512"');
     }
   });
 
-  it('omits consonant 4 (lipstick lips) and eye-half as specified', () => {
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-    expect(manifest.files['consonant-4']).toBeUndefined();
-    expect(manifest.files['talk-rw']).toBeUndefined();
-    expect(manifest.files['eye-half']).toBeUndefined();
-  });
+  it('includes full flight and landing modular body sequences', () => {
+    const flightBodies = ['fly-upstroke', 'fly-glide', 'fly-downstroke', 'fly-bank'];
+    for (const f of flightBodies) {
+      const filePath = path.join(MASCOT_DIR, 'body', `${f}.svg`);
+      expect(fs.existsSync(filePath), `Flight body ${f}.svg must exist`).toBe(true);
+    }
 
-  it('preserves full landing dust cloud on land-3', () => {
-    const land3Path = path.resolve('public/sprites/mascot/land-3.png');
-    expect(fs.existsSync(land3Path)).toBe(true);
-    const stat = fs.statSync(land3Path);
-    expect(stat.size).toBeGreaterThan(5000);
-  });
-
-  it('incorporates supplemental Nano Banana visemes and action sprites', () => {
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-    const files = Object.keys(manifest.files);
-    expect(files.length).toBe(47);
-
-    // Supplemental Visemes
-    expect(manifest.files['talk-fv']).toBe('/sprites/mascot/talk-fv.png');
-    expect(manifest.files['talk-lth']).toBe('/sprites/mascot/talk-lth.png');
-    expect(manifest.files['talk-woo']).toBe('/sprites/mascot/talk-woo.png');
-    expect(manifest.files['talk-shch']).toBe('/sprites/mascot/talk-shch.png');
-
-    // Supplemental Actions
-    expect(manifest.files['action-wave']).toBe('/sprites/mascot/action-wave.png');
-    expect(manifest.files['action-thumbsup']).toBe('/sprites/mascot/action-thumbsup.png');
-    expect(manifest.files['action-thinking']).toBe('/sprites/mascot/action-thinking.png');
-    expect(manifest.files['action-celebrate']).toBe('/sprites/mascot/action-celebrate.png');
-
-    // Supplemental Animations
-    expect(manifest.animations['wave']).toBeDefined();
-    expect(manifest.animations['celebrate']).toBeDefined();
+    const landingBodies = [
+      'land-touchdown',
+      'land-impact',
+      'land-settle',
+      'land-rebound',
+      'land-stand',
+    ];
+    for (const l of landingBodies) {
+      const filePath = path.join(MASCOT_DIR, 'body', `${l}.svg`);
+      expect(fs.existsSync(filePath), `Landing body ${l}.svg must exist`).toBe(true);
+    }
   });
 });
 
-describe('Mascot React Components', () => {
-  it('renders Mascot in idle state with vector SVG system', () => {
+describe('Mascot Core States & Animations', () => {
+  it('renders Mascot in idle state with modular vector SVG system', () => {
     const html = renderToString(createElement(Mascot, { size: 192 }));
     expect(html).toContain('mascot-container');
     expect(html).toContain('aptipiou-vector-svg');
+    expect(html).toContain('/mascot/body/standing.svg');
+    expect(html).toContain('/mascot/eyes/open.svg');
+    expect(html).toContain('/mascot/beak/default.svg');
     expect(html).toContain('mouth-shape-closed');
     expect(html).toContain('eye-left-pupil');
   });
 
-  it.runIf(manifestExists)('vectorizes all body animation sprites into scalable SVG assets', () => {
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-    expect(manifest.vectorFiles).toBeDefined();
-    const vectorFiles = Object.values(manifest.vectorFiles) as string[];
-    expect(vectorFiles.length).toBeGreaterThanOrEqual(47);
-
-    // Verify key body animation SVGs exist
-    expect(manifest.vectorFiles['fly-1']).toBe('/sprites/mascot/fly-1.svg');
-    expect(manifest.vectorFiles['land-3']).toBe('/sprites/mascot/land-3.svg');
-    expect(manifest.vectorFiles['action-wave']).toBe('/sprites/mascot/action-wave.svg');
-    expect(manifest.vectorFiles['action-celebrate']).toBe('/sprites/mascot/action-celebrate.svg');
-
-    for (const f of vectorFiles) {
-      const fullPath = path.resolve(path.join('public', f));
-      expect(fs.existsSync(fullPath)).toBe(true);
-    }
-  });
-
-  it('renders vectorized SVG frames during flydown animation', () => {
+  it('renders modular vector SVG frames during flydown animation', () => {
     const html = renderToString(createElement(Mascot, { size: 192, animation: 'flydown' }));
     expect(html).toContain('mascot-container');
-    expect(html).toContain('mascot-sprite-wrapper');
+    expect(html).toContain('aptipiou-vector-svg');
     expect(html).toContain('mascot-anim-flydown');
-    expect(html).toContain('.svg');
+    expect(html).toContain('/mascot/body/fly-');
   });
 
+  it('renders modular speech viseme beaks when speaking', () => {
+    const htmlA = renderToString(createElement(Mascot, { size: 192, viseme: 'a' }));
+    expect(htmlA).toContain('/mascot/beak/talk-a.svg');
+
+    const htmlO = renderToString(createElement(Mascot, { size: 192, viseme: 'o' }));
+    expect(htmlO).toContain('/mascot/beak/talk-o.svg');
+
+    const htmlFV = renderToString(createElement(Mascot, { size: 192, viseme: 'fv' }));
+    expect(htmlFV).toContain('/mascot/beak/talk-fv.svg');
+  });
+
+  it('renders emotional expressions with modular eyes, beaks, and particles', () => {
+    const htmlShocked = renderToString(createElement(Mascot, { size: 192, expression: 'shocked' }));
+    expect(htmlShocked).toContain('/mascot/eyes/shocked.svg');
+    expect(htmlShocked).toContain('/mascot/beak/shocked.svg');
+    expect(htmlShocked).toContain('/mascot/particles/emotes/shock-lines.svg');
+
+    const htmlLove = renderToString(createElement(Mascot, { size: 192, expression: 'love' }));
+    expect(htmlLove).toContain('/mascot/eyes/love.svg');
+    expect(htmlLove).toContain('/mascot/beak/smile.svg');
+    expect(htmlLove).toContain('/mascot/particles/hearts/heart-large.svg');
+  });
+});
+
+describe('Mascot Dialog & Modular Vector Primitives', () => {
   it('renders MascotDialog with typewriter text container and controls', () => {
     const html = renderToString(
       createElement(MascotDialog, {

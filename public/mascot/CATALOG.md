@@ -64,19 +64,28 @@ All body postures share the standardized `0 0 512 512` canvas. Beak and eye posi
 
 All beak expressions are mapped to the 512×512 space and snap into place at `(x: 238..300, y: 215..270)` under the glasses bridge.
 
-| File                                  | Label                 | Description                                                         | Tags                               |
-| :------------------------------------ | :-------------------- | :------------------------------------------------------------------ | :--------------------------------- |
-| [`default.svg`](./beak/default.svg)   | **Neutral / Default** | Resting, calm closed beak with upper yellow beak and red lower lip  | `neutral, calm, default, idle`     |
-| [`smile.svg`](./beak/smile.svg)       | **Smile**             | Cheerful upturned smiling beak with warm curve                      | `smile, happy, friendly, cheerful` |
-| [`laugh.svg`](./beak/laugh.svg)       | **Laugh / Joy**       | Wide open laughing mouth showing deep oral cavity and tongue        | `laugh, joy, glee, open`           |
-| [`grin.svg`](./beak/grin.svg)         | **Grin**              | Broad cheerful beaming smile with open energy                       | `grin, beaming, happy`             |
-| [`surprise.svg`](./beak/surprise.svg) | **Surprise / Gasp**   | Rounded dropped jaw 'O' gasp in surprise                            | `surprise, gasp, alert, curious`   |
-| [`shocked.svg`](./beak/shocked.svg)   | **Shocked**           | Wide dropped jaw agape in disbelief and shock                       | `shocked, stunned, disbelief`      |
-| [`smirk.svg`](./beak/smirk.svg)       | **Smirk / Coy**       | Asymmetric confident sly smirk tilted cheerfully                    | `smirk, coy, confident, wink`      |
-| [`pout.svg`](./beak/pout.svg)         | **Pout / Sad**        | Downturned frowning lower beak with quivering pout                  | `pout, sad, cry, frown`            |
-| [`dizzy.svg`](./beak/dizzy.svg)       | **Dizzy / Wavy**      | Wobbly squiggly undulating mouth line for dizziness                 | `dizzy, wavy, confused`            |
-| [`grimace.svg`](./beak/grimace.svg)   | **Grimace / Tense**   | Tense horizontal wavy grimace line with slight sweat tension        | `grimace, tense, sweat, nervous`   |
-| [`sleep.svg`](./beak/sleep.svg)       | **Sleep / Peaceful**  | Completely relaxed gentle resting beak with subtle peaceful parting | `sleep, peaceful, relaxed, dream`  |
+| File                                        | Label                          | Description                                                         | Tags                               |
+| :------------------------------------------ | :----------------------------- | :------------------------------------------------------------------ | :--------------------------------- |
+| [`default.svg`](./beak/default.svg)         | **Neutral / Default**          | Resting, calm closed beak with upper yellow beak and red lower lip  | `neutral, calm, default, idle`     |
+| [`smile.svg`](./beak/smile.svg)             | **Smile**                      | Cheerful upturned smiling beak with warm curve                      | `smile, happy, friendly, cheerful` |
+| [`laugh.svg`](./beak/laugh.svg)             | **Laugh / Joy**                | Wide open laughing mouth showing deep oral cavity and tongue        | `laugh, joy, glee, open`           |
+| [`grin.svg`](./beak/grin.svg)               | **Grin**                       | Broad cheerful beaming smile with open energy                       | `grin, beaming, happy`             |
+| [`surprise.svg`](./beak/surprise.svg)       | **Surprise / Gasp**            | Rounded dropped jaw 'O' gasp in surprise                            | `surprise, gasp, alert, curious`   |
+| [`shocked.svg`](./beak/shocked.svg)         | **Shocked**                    | Wide dropped jaw agape in disbelief and shock                       | `shocked, stunned, disbelief`      |
+| [`smirk.svg`](./beak/smirk.svg)             | **Smirk / Coy**                | Asymmetric confident sly smirk tilted cheerfully                    | `smirk, coy, confident, wink`      |
+| [`pout.svg`](./beak/pout.svg)               | **Pout / Sad**                 | Downturned frowning lower beak with quivering pout                  | `pout, sad, cry, frown`            |
+| [`dizzy.svg`](./beak/dizzy.svg)             | **Dizzy / Wavy**               | Wobbly squiggly undulating mouth line for dizziness                 | `dizzy, wavy, confused`            |
+| [`grimace.svg`](./beak/grimace.svg)         | **Grimace / Tense**            | Tense horizontal wavy grimace line with slight sweat tension        | `grimace, tense, sweat, nervous`   |
+| [`sleep.svg`](./beak/sleep.svg)             | **Sleep / Peaceful**           | Completely relaxed gentle resting beak with subtle peaceful parting | `sleep, peaceful, relaxed, dream`  |
+| [`talk-closed.svg`](./beak/talk-closed.svg) | **Speech: Closed / M-B-P**     | Resting bilabial consonant beak shape with closed center seam       | `speech, viseme, closed, m, b, p`  |
+| [`talk-a.svg`](./beak/talk-a.svg)           | **Speech: A / Open**           | Open vowel viseme with dropped mandible, oral cavity and tongue     | `speech, viseme, vowel, open, a`   |
+| [`talk-e.svg`](./beak/talk-e.svg)           | **Speech: E / Stretched**      | Stretched smiling vowel viseme with horizontal oral aperture        | `speech, viseme, vowel, e, eh`     |
+| [`talk-i.svg`](./beak/talk-i.svg)           | **Speech: I / High**           | High front vowel viseme with taut horizontal slit aperture          | `speech, viseme, vowel, i, ee`     |
+| [`talk-o.svg`](./beak/talk-o.svg)           | **Speech: O / Round**          | Open rounded vowel viseme with circular oral aperture               | `speech, viseme, vowel, round, o`  |
+| [`talk-u.svg`](./beak/talk-u.svg)           | **Speech: U / Woo**            | Tightly puckered rounded vowel viseme for U, OO, and W sounds       | `speech, viseme, vowel, pucker, u` |
+| [`talk-t.svg`](./beak/talk-t.svg)           | **Speech: T-D-N / Dental**     | Alveolar consonant viseme showing tongue/teeth contact line         | `speech, viseme, consonant, t, d`  |
+| [`talk-fv.svg`](./beak/talk-fv.svg)         | **Speech: F-V / Labiodental**  | Labiodental consonant viseme with tucked lower beak                 | `speech, viseme, consonant, f, v`  |
+| [`talk-wide.svg`](./beak/talk-wide.svg)     | **Speech: Wide / Exclamation** | Energetic wide open speech cavity for emphasis and shouts           | `speech, viseme, wide, shout`      |
 
 ---
 

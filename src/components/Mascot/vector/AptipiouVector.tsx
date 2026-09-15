@@ -4,15 +4,116 @@ import type {
   AptipiouEyes as EyesType,
   AptipiouMouth as MouthType,
   AptipiouVectorProps,
+  ParticlePlacement,
 } from './types.ts';
-import { Svg } from './svg-primitives.ts';
-import { AptipiouBaseSvg } from './AptipiouBaseSvg.tsx';
+import { G, Svg, SvgImage } from './svg-primitives.ts';
 import { AptipiouEyes } from './AptipiouEyes.tsx';
 import { AptipiouMouth } from './AptipiouMouth.tsx';
+import { resolveParticle } from './particles.ts';
 import { useAptipiouAnimation } from './useAptipiouAnimation.ts';
 import './aptipiou-vector.css';
 
-function renderSvg(eyes: EyesType, mouth: MouthType, bodyAnimClass: string): ReactNode {
+const BODY_MAP: Record<string, string> = {
+  idle: 'standing',
+  talk: 'standing',
+  bounce: 'happy-bounce',
+  think: 'action-thinking',
+  wave: 'action-wave',
+};
+
+const EYES_LOOKUP: Record<string, { asset: string; inline: EyesType }> = {
+  happy: { asset: 'happy', inline: 'happy' },
+  laugh: { asset: 'laugh', inline: 'happy' },
+  love: { asset: 'love', inline: 'happy' },
+  blink: { asset: 'blink', inline: 'blink' },
+  sleepy: { asset: 'sleepy', inline: 'blink' },
+  wink: { asset: 'wink', inline: 'wink' },
+  'wink-left': { asset: 'wink-left', inline: 'wink' },
+  squint: { asset: 'squint', inline: 'squint' },
+  dizzy: { asset: 'dizzy', inline: 'squint' },
+  shocked: { asset: 'shocked', inline: 'squint' },
+  cry: { asset: 'cry', inline: 'squint' },
+  open: { asset: 'open', inline: 'open' },
+};
+
+const BEAK_LOOKUP: Record<string, { asset: string; inline: MouthType }> = {
+  'talk-a': { asset: 'talk-a', inline: 'open' },
+  'talk-e': { asset: 'talk-e', inline: 'open' },
+  'talk-wide': { asset: 'talk-wide', inline: 'open' },
+  laugh: { asset: 'laugh', inline: 'open' },
+  'talk-o': { asset: 'talk-o', inline: 'round' },
+  'talk-u': { asset: 'talk-u', inline: 'round' },
+  surprise: { asset: 'surprise', inline: 'round' },
+  smile: { asset: 'smile', inline: 'smile' },
+  grin: { asset: 'grin', inline: 'smile' },
+  smirk: { asset: 'smirk', inline: 'smile' },
+  'talk-i': { asset: 'talk-i', inline: 'smile' },
+  'talk-closed': { asset: 'talk-closed', inline: 'closed' },
+  default: { asset: 'default', inline: 'closed' },
+  pout: { asset: 'pout', inline: 'closed' },
+  dizzy: { asset: 'dizzy', inline: 'closed' },
+  grimace: { asset: 'grimace', inline: 'closed' },
+  sleep: { asset: 'sleep', inline: 'closed' },
+  'talk-t': { asset: 'talk-t', inline: 'closed' },
+  'talk-fv': { asset: 'talk-fv', inline: 'closed' },
+};
+
+const MOUTH_LOOKUP: Record<string, { asset: string; inline: MouthType }> = {
+  open: { asset: 'talk-a', inline: 'open' },
+  a: { asset: 'talk-a', inline: 'open' },
+  round: { asset: 'talk-o', inline: 'round' },
+  o: { asset: 'talk-o', inline: 'round' },
+  smile: { asset: 'smile', inline: 'smile' },
+  i: { asset: 'smile', inline: 'smile' },
+  closed: { asset: 'talk-closed', inline: 'closed' },
+};
+
+function resolveBodyAsset(body?: string): string {
+  if (!body) return 'standing';
+  return BODY_MAP[body] ?? body;
+}
+
+function resolveEyesAsset(eyes?: string): { asset: string; inline: EyesType } {
+  if (!eyes) return { asset: 'open', inline: 'open' };
+  return EYES_LOOKUP[eyes] ?? { asset: eyes, inline: 'open' };
+}
+
+function resolveBeakAsset(beak?: string, mouth?: string): { asset: string; inline: MouthType } {
+  if (beak) {
+    return BEAK_LOOKUP[beak] ?? { asset: beak, inline: 'closed' };
+  }
+  if (mouth) {
+    return MOUTH_LOOKUP[mouth] ?? { asset: 'talk-closed', inline: 'closed' };
+  }
+  return { asset: 'default', inline: 'closed' };
+}
+
+interface RenderSvgOptions {
+  body: string;
+  eyesAsset: string;
+  inlineEyes: EyesType;
+  beakAsset: string;
+  inlineMouth: MouthType;
+  particle: ParticlePlacement | null;
+  bodyAnimClass: string;
+}
+
+const InlineFallback: FC<{ eyes: EyesType; mouth: MouthType }> = ({ eyes, mouth }) => (
+  <G className="aptipiou-vector-inline-fallback" aria-hidden="true">
+    <AptipiouEyes state={eyes} />
+    <AptipiouMouth viseme={mouth} />
+  </G>
+);
+
+function renderSvg({
+  body,
+  eyesAsset,
+  inlineEyes,
+  beakAsset,
+  inlineMouth,
+  particle,
+  bodyAnimClass,
+}: RenderSvgOptions): ReactNode {
   return (
     <Svg
       viewBox="0 0 512 512"
@@ -21,9 +122,19 @@ function renderSvg(eyes: EyesType, mouth: MouthType, bodyAnimClass: string): Rea
       className={`aptipiou-vector-svg ${bodyAnimClass}`}
       aria-hidden="true"
     >
-      <AptipiouBaseSvg />
-      <AptipiouEyes state={eyes} />
-      <AptipiouMouth viseme={mouth} />
+      <SvgImage href={`/mascot/body/${body}.svg`} x="0" y="0" width="512" height="512" />
+      <SvgImage href={`/mascot/eyes/${eyesAsset}.svg`} x="0" y="0" width="512" height="512" />
+      <SvgImage href={`/mascot/beak/${beakAsset}.svg`} x="0" y="0" width="512" height="512" />
+      {particle && (
+        <SvgImage
+          href={particle.path}
+          x={particle.x}
+          y={particle.y}
+          width={particle.width}
+          height={particle.height}
+        />
+      )}
+      <InlineFallback eyes={inlineEyes} mouth={inlineMouth} />
     </Svg>
   );
 }
@@ -36,9 +147,25 @@ export const AptipiouVector: FC<AptipiouVectorProps> = (props) => {
     mood: props.mood,
   });
 
+  const bodyAsset = resolveBodyAsset(props.body ?? animated.body);
+  const { asset: eyesAsset, inline: inlineEyes } = resolveEyesAsset(props.eyes ?? animated.eyes);
+  const { asset: beakAsset, inline: inlineMouth } = resolveBeakAsset(
+    props.beak,
+    props.mouth ?? animated.mouth,
+  );
+  const particle = resolveParticle(props.particle);
+
   const size = props.size ?? 192;
   const bodyAnimClass = `aptipiou-body-${animated.body}`;
-  const svgContent = renderSvg(animated.eyes, animated.mouth, bodyAnimClass);
+  const svgContent = renderSvg({
+    body: bodyAsset,
+    eyesAsset,
+    inlineEyes,
+    beakAsset,
+    inlineMouth,
+    particle,
+    bodyAnimClass,
+  });
   const className = `aptipiou-vector-container ${props.className ?? ''}`;
 
   if (props.onClick) {
