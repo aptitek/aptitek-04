@@ -10,14 +10,40 @@ interface CharEvent {
   expression?: MascotExpression | undefined;
 }
 
+const CHAR_VISEME_MAP: Record<string, MascotViseme> = {
+  a: 'a',
+  e: 'e',
+  i: 'i',
+  o: 'o',
+  u: 'u',
+  f: 'fv',
+  v: 'fv',
+  l: 'lth',
+  w: 'woo',
+  q: 'woo',
+  s: 'shch',
+  z: 'shch',
+  j: 'shch',
+  m: 'closed',
+  b: 'closed',
+  p: 'closed',
+  t: 't',
+  d: 't',
+  c: 't',
+  n: 't',
+  k: 'wide',
+  r: 'wide',
+  g: 'wide',
+  h: 'wide',
+  x: 'wide',
+  '!': 'smile',
+  '?': 'smile',
+  ':': 'smile',
+  ';': 'smile',
+};
+
 function charToViseme(char: string): MascotViseme {
-  const c = char.toLowerCase();
-  if ('aeiou'.includes(c)) return c as MascotViseme;
-  if ('mbp'.includes(c)) return 'closed';
-  if ('tdszcnj'.includes(c)) return 't';
-  if ('lkrghqxfv'.includes(c)) return 'wide';
-  if ('!?:;'.includes(c)) return 'smile';
-  return 'closed';
+  return CHAR_VISEME_MAP[char.toLowerCase()] || 'closed';
 }
 
 function parseTokens(raw: string): CharEvent[] {

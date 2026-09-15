@@ -11,6 +11,10 @@ const ANIM_CLASSES: Record<string, string> = {
   flydown: 'mascot-anim-flydown',
   happy: 'mascot-anim-happy',
   idle: 'mascot-anim-idle',
+  celebrate: 'mascot-anim-happy',
+  wave: 'mascot-anim-idle',
+  thinking: 'mascot-anim-idle',
+  thumbsup: 'mascot-anim-idle',
 };
 
 const EXPRESSION_MAP: Record<MascotExpression, string> = {
@@ -29,6 +33,10 @@ const EXPRESSION_MAP: Record<MascotExpression, string> = {
   wink: 'expr-wink',
   grin: 'talk-grin',
   sleep: 'eye-sleep',
+  wave: 'action-wave',
+  thumbsup: 'action-thumbsup',
+  thinking: 'action-thinking',
+  celebrate: 'action-celebrate',
 };
 
 const VISEME_MAP: Record<MascotViseme, string> = {
@@ -42,6 +50,10 @@ const VISEME_MAP: Record<MascotViseme, string> = {
   t: 'talk-t',
   smile: 'talk-smile',
   grin: 'talk-grin',
+  fv: 'talk-fv',
+  lth: 'talk-lth',
+  woo: 'talk-woo',
+  shch: 'talk-shch',
 };
 
 function runBlink(setFrame: (f: string) => void, schedule: () => void) {

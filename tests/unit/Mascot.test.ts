@@ -44,6 +44,28 @@ describe('Mascot Sprite System & Manifest', () => {
     const stat = fs.statSync(land3Path);
     expect(stat.size).toBeGreaterThan(5000);
   });
+
+  it('incorporates supplemental Nano Banana visemes and action sprites', () => {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+    const files = Object.keys(manifest.files);
+    expect(files.length).toBe(47);
+
+    // Supplemental Visemes
+    expect(manifest.files['talk-fv']).toBe('/sprites/mascot/talk-fv.png');
+    expect(manifest.files['talk-lth']).toBe('/sprites/mascot/talk-lth.png');
+    expect(manifest.files['talk-woo']).toBe('/sprites/mascot/talk-woo.png');
+    expect(manifest.files['talk-shch']).toBe('/sprites/mascot/talk-shch.png');
+
+    // Supplemental Actions
+    expect(manifest.files['action-wave']).toBe('/sprites/mascot/action-wave.png');
+    expect(manifest.files['action-thumbsup']).toBe('/sprites/mascot/action-thumbsup.png');
+    expect(manifest.files['action-thinking']).toBe('/sprites/mascot/action-thinking.png');
+    expect(manifest.files['action-celebrate']).toBe('/sprites/mascot/action-celebrate.png');
+
+    // Supplemental Animations
+    expect(manifest.animations['wave']).toBeDefined();
+    expect(manifest.animations['celebrate']).toBeDefined();
+  });
 });
 
 describe('Mascot React Components', () => {

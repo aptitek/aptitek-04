@@ -9,13 +9,13 @@ import type { MascotAnimation, MascotExpression, MascotViseme, DialogStep } from
 import './mascot.css';
 
 const DEFAULT_SCRIPT: DialogStep[] = [
-  { text: "Pik-pik! [surprise] Hi there! I'm your Aptitek Robo-Bird companion.", audioPitch: 580 },
+  { text: "Pik-pik! [wave] Hi there! I'm your Aptitek Robo-Bird companion.", audioPitch: 580 },
   {
-    text: '[love] Crafted with crisp Solarized pixel art and zero blurry interpolation!',
+    text: '[love] Crafted with crisp Solarized pixel art and 100% vector-snapped visemes!',
     audioPitch: 640,
   },
   {
-    text: '[happy] Click on me anytime to play, or test my visemes and animations!',
+    text: '[celebrate] Click on me anytime to play, poke my feathers, or chat!',
     audioPitch: 600,
   },
 ];

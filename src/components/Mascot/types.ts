@@ -1,6 +1,15 @@
 import type { SupportedLocale } from '../../i18n/index.ts';
 
-export type MascotAnimation = 'flydown' | 'landing' | 'happy' | 'idle' | 'speaking';
+export type MascotAnimation =
+  | 'flydown'
+  | 'landing'
+  | 'happy'
+  | 'idle'
+  | 'speaking'
+  | 'wave'
+  | 'celebrate'
+  | 'thinking'
+  | 'thumbsup';
 
 export type MascotExpression =
   | 'idle'
@@ -17,9 +26,27 @@ export type MascotExpression =
   | 'blush'
   | 'wink'
   | 'grin'
-  | 'sleep';
+  | 'sleep'
+  | 'wave'
+  | 'thumbsup'
+  | 'thinking'
+  | 'celebrate';
 
-export type MascotViseme = 'closed' | 'a' | 'e' | 'i' | 'o' | 'u' | 'wide' | 't' | 'smile' | 'grin';
+export type MascotViseme =
+  | 'closed'
+  | 'a'
+  | 'e'
+  | 'i'
+  | 'o'
+  | 'u'
+  | 'wide'
+  | 't'
+  | 'smile'
+  | 'grin'
+  | 'fv'
+  | 'lth'
+  | 'woo'
+  | 'shch';
 
 export interface DialogStep {
   text: string;

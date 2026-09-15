@@ -20,6 +20,9 @@ OUTPUT_DIR = "public/sprites/mascot"
 IMG1_PATH = "src/assets/mascot/mascot-sheet-actions-speech.jpg"
 IMG2_PATH = "src/assets/mascot/mascot-sheet-expressions.jpg"
 IMG_TRU_EYES = "src/assets/mascot/mascot-pose-eyes-closed.jpg"
+IMG_SUPP_VISEMES = "src/assets/mascot/mascot-sheet-supplemental-visemes.jpg"
+IMG_SUPP_ACTIONS = "src/assets/mascot/mascot-sheet-supplemental-actions.jpg"
+
 
 CANVAS_SIZE = 384
 GROUND_BASELINE = 360
@@ -269,6 +272,126 @@ def place_on_canvas(sprite_rgba, anchor_mode="ground", custom_offset=(0, 0)):
         ]
 
     return canvas
+
+
+def extract_supplemental_grid(img_path, names_and_anchors):
+    """
+    Extracts 2x2 grid supplemental sprites generated with Nano Banana,
+    quantizes to strict 8-color Solarized palette, cleans outlines, scales
+    to canonical idle mascot height with nearest-neighbor, and centers on beak.
+    """
+    if not os.path.exists(img_path):
+        return {}
+
+    img = cv2.imread(img_path)
+    h, w, _ = img.shape
+    cell_h, cell_w = h // 2, w // 2
+    coords = [
+        (0, cell_h, 0, cell_w),
+        (0, cell_h, cell_w, w),
+        (cell_h, h, 0, cell_w),
+        (cell_h, h, cell_w, w),
+    ]
+
+    idle_path = os.path.join(OUTPUT_DIR, "idle.png")
+    if os.path.exists(idle_path):
+        idle = np.array(Image.open(idle_path))
+        idle_coords = np.argwhere(idle[:, :, 3] > 0)
+        idle_h = idle_coords[:, 0].max() - idle_coords[:, 0].min() + 1
+    else:
+        idle_h = 301
+
+    extracted = {}
+    for (name, anchor_mode), (y0, y1, x0, x1) in zip(names_and_anchors, coords):
+        cell = img[y0:y1, x0:x1]
+        rgb = cv2.cvtColor(cell, cv2.COLOR_BGR2RGB)
+        ch, cw, _ = rgb.shape
+
+        gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+        flood_mask = np.zeros((ch + 2, cw + 2), np.uint8)
+        diff = (18, 18, 18)
+        flags = cv2.FLOODFILL_MASK_ONLY | cv2.FLOODFILL_FIXED_RANGE | (255 << 8)
+
+        for x in [0, cw - 1]:
+            for y in range(ch):
+                if gray[y, x] > 230:
+                    cv2.floodFill(rgb, flood_mask, (x, y), 0, loDiff=diff, upDiff=diff, flags=flags)
+        for y in [0, ch - 1]:
+            for x in range(cw):
+                if gray[y, x] > 230:
+                    cv2.floodFill(rgb, flood_mask, (x, y), 0, loDiff=diff, upDiff=diff, flags=flags)
+
+        bg = flood_mask[1:-1, 1:-1] == 255
+
+        clean_bg = bg.copy()
+        for _ in range(4):
+            dil = cv2.dilate(clean_bg.astype(np.uint8), np.ones((3, 3), np.uint8)) == 1
+            r_minus_g = np.abs(rgb[:, :, 0].astype(np.int16) - rgb[:, :, 1].astype(np.int16))
+            r_minus_b = np.abs(rgb[:, :, 0].astype(np.int16) - rgb[:, :, 2].astype(np.int16))
+            is_neutral = (r_minus_g < 25) & (r_minus_b < 25)
+            fringe = dil & (~clean_bg) & (gray > 125) & is_neutral
+            if not np.any(fringe):
+                break
+            clean_bg = clean_bg | fringe
+
+        fg = ~clean_bg
+
+        num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(fg.astype(np.uint8), 8)
+        valid_fg = np.zeros_like(fg)
+        for lbl in range(1, num_labels):
+            if stats[lbl, cv2.CC_STAT_AREA] > 250:
+                valid_fg |= (labels == lbl)
+        fg = valid_fg
+
+        quant_rgb = quantize_to_palette(rgb, fg)
+
+        dil_bg_1 = cv2.dilate((~fg).astype(np.uint8), np.ones((3, 3), np.uint8)) == 1
+        edge_1 = fg & dil_bg_1
+        quant_rgb[edge_1] = [0, 43, 54]
+
+        coords_fg = np.argwhere(fg)
+        if len(coords_fg) == 0:
+            continue
+        ymin, xmin = coords_fg.min(axis=0)
+        ymax, xmax = coords_fg.max(axis=0)
+
+        rgba = np.zeros((ch, cw, 4), dtype=np.uint8)
+        rgba[:, :, :3] = quant_rgb
+        rgba[:, :, 3] = np.where(fg, 255, 0)
+        cropped = rgba[ymin : ymax + 1, xmin : xmax + 1]
+
+        char_h = cropped.shape[0]
+        scale = idle_h / char_h if name not in ["action-celebrate", "action-thinking"] else (idle_h * 1.08) / char_h
+        new_w = int(round(cropped.shape[1] * scale))
+        new_h = int(round(cropped.shape[0] * scale))
+        resized = cv2.resize(cropped, (new_w, new_h), interpolation=cv2.INTER_NEAREST)
+
+        canvas = np.zeros((CANVAS_SIZE, CANVAS_SIZE, 4), dtype=np.uint8)
+        beak_pos = find_beak_in_sprite(resized)
+
+        if anchor_mode == "beak" and beak_pos is not None:
+            bx, by = beak_pos
+            dst_x = TARGET_BEAK_X - int(round(bx))
+            dst_y = TARGET_BEAK_Y - int(round(by))
+        elif anchor_mode == "ground":
+            dst_x = (CANVAS_SIZE - new_w) // 2
+            dst_y = 360 - new_h
+        else:
+            dst_x = (CANVAS_SIZE - new_w) // 2
+            dst_y = (CANVAS_SIZE - new_h) // 2
+
+        src_y0 = max(0, -dst_y)
+        src_x0 = max(0, -dst_x)
+        dst_y0 = max(0, dst_y)
+        dst_x0 = max(0, dst_x)
+        h_b = min(new_h - src_y0, CANVAS_SIZE - dst_y0)
+        w_b = min(new_w - src_x0, CANVAS_SIZE - dst_x0)
+
+        canvas[dst_y0 : dst_y0 + h_b, dst_x0 : dst_x0 + w_b] = resized[src_y0 : src_y0 + h_b, src_x0 : src_x0 + w_b]
+        extracted[name] = canvas
+
+    return extracted
+
 
 
 def main():
@@ -526,6 +649,34 @@ def main():
             processed_files["eye-closed"] = "/sprites/mascot/eye-closed.png"
             print("Saved eye-closed.png from mascot-pose-eyes-closed.jpg (beak centered at (192, 191))")
 
+    # Process supplemental visemes generated with Nano Banana
+    supp_visemes = [
+        ("talk-fv", "beak"),
+        ("talk-lth", "beak"),
+        ("talk-woo", "beak"),
+        ("talk-shch", "beak"),
+    ]
+    viseme_sprites = extract_supplemental_grid(IMG_SUPP_VISEMES, supp_visemes)
+    for sid, canvas in viseme_sprites.items():
+        out_path = os.path.join(OUTPUT_DIR, f"{sid}.png")
+        Image.fromarray(canvas, "RGBA").save(out_path)
+        processed_files[sid] = f"/sprites/mascot/{sid}.png"
+        print(f"Saved {sid}.png ({canvas.shape[1]}x{canvas.shape[0]}) [Nano Banana Viseme]")
+
+    # Process supplemental actions/expressions generated with Nano Banana
+    supp_actions = [
+        ("action-wave", "beak"),
+        ("action-thumbsup", "beak"),
+        ("action-thinking", "beak"),
+        ("action-celebrate", "beak"),
+    ]
+    action_sprites = extract_supplemental_grid(IMG_SUPP_ACTIONS, supp_actions)
+    for sid, canvas in action_sprites.items():
+        out_path = os.path.join(OUTPUT_DIR, f"{sid}.png")
+        Image.fromarray(canvas, "RGBA").save(out_path)
+        processed_files[sid] = f"/sprites/mascot/{sid}.png"
+        print(f"Saved {sid}.png ({canvas.shape[1]}x{canvas.shape[0]}) [Nano Banana Action]")
+
     manifest["files"] = processed_files
 
     # Animation Definitions
@@ -560,6 +711,26 @@ def main():
             "fps": 1,
             "loop": True,
         },
+        "wave": {
+            "frames": ["action-wave", "idle"],
+            "fps": 3,
+            "loop": False,
+        },
+        "celebrate": {
+            "frames": ["happy-1", "action-celebrate", "happy-3", "action-celebrate"],
+            "fps": 6,
+            "loop": True,
+        },
+        "thumbsup": {
+            "frames": ["action-thumbsup"],
+            "fps": 1,
+            "loop": False,
+        },
+        "thinking": {
+            "frames": ["action-thinking"],
+            "fps": 1,
+            "loop": False,
+        },
     }
 
     # Speech Visemes Definition (all standard speech visemes have open eyes for natural face sync)
@@ -572,6 +743,10 @@ def main():
             "I": "talk-i",
             "O": "talk-o",
             "U": "talk-u",
+            "FV": "talk-fv",
+            "LTH": "talk-lth",
+            "WOO": "talk-woo",
+            "SHCH": "talk-shch",
             "WIDE": "talk-wide",
             "SMILE": "talk-smile",
             "GRIN": "talk-grin",
@@ -591,16 +766,16 @@ def main():
             "y": "talk-i",
             "o": "talk-o",
             "u": "talk-u",
-            "w": "talk-u",
-            "q": "talk-o",
-            "l": "talk-wide",
-            "r": "talk-wide",
-            "t": "talk-smile",
-            "s": "talk-smile",
-            "z": "talk-smile",
-            "j": "talk-smile",
-            "f": "talk-smile",
-            "v": "talk-smile",
+            "w": "talk-woo",
+            "q": "talk-woo",
+            "f": "talk-fv",
+            "v": "talk-fv",
+            "l": "talk-lth",
+            "r": "talk-lth",
+            "s": "talk-shch",
+            "z": "talk-shch",
+            "j": "talk-shch",
+            "t": "talk-t",
             "m": "talk-closed",
             "p": "talk-closed",
             "b": "talk-closed",
@@ -629,6 +804,10 @@ def main():
         "wink": "expr-wink",
         "laugh": "expr-laugh",
         "sleep": "eye-sleep",
+        "wave": "action-wave",
+        "thumbsup": "action-thumbsup",
+        "thinking": "action-thinking",
+        "celebrate": "action-celebrate",
     }
 
     manifest["files"] = processed_files
