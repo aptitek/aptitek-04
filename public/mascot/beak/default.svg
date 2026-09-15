@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   data-bbox="235 210 70 60"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" inkscape:label="Layer 1">
+    <g id="mascot_beak" transform="translate(13.165564,1.2346624)" inkscape:label="Neutral / Default">
+<path
+       style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="m 238.37335,245.49172 c 5.59398,-15.85474 53.28268,-14.11077 49.39708,2.05821 -1.42667,15.22722 -17.63946,26.24808 -29.70765,21.36868 -14.70276,-5.94462 -19.72797,-21.28439 -19.68943,-23.42689 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="m 242.89176,235.45216 c 2.18499,-6.19281 12.05075,-28.81676 29.58678,-23.15489 9.70947,3.13491 31.00783,12.83479 27.78587,26.24221 -15.14988,18.36926 -57.44284,0.81377 -57.37265,-3.08732 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+    </g>
+  </g>
+</svg>

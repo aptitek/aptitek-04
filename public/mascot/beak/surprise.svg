@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   data-bbox="235 210 70 95"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" inkscape:label="Layer 1">
+    <g id="mascot_beak" transform="translate(13.165564,1.2346624)" inkscape:label="Surprise / Gasp">
+<!-- Deep dropped surprise mouth dropping down to Y=298 (matching original sprite Y=242) -->
+    <path
+       style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 245 234 c 5 -4 38 -4 44 0 c 4 26 4 58 -6 68 c -8 8 -24 8 -32 0 c -10 -10 -10 -42 -6 -68 z"
+       id="mouth"
+       inkscape:label="mouth" />
+    <!-- Yellow lower mandible framing bottom of dropped gasp -->
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:10;stroke-linecap:round;stroke-linejoin:round"
+       d="m 254 300 c 6 5 20 5 26 0"
+       id="lower_beak"
+       inkscape:label="lower_beak" />
+    <!-- Upper beak cap -->
+    <path
+       style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+       d="m 244 233 c 4 -12 18 -24 28 -24 c 10 0 24 12 28 24 c -12 5 -44 5 -56 0 z"
+       id="upper_beak"
+       inkscape:label="upper_beak" />
+    </g>
+  </g>
+</svg>

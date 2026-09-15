@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   data-bbox="160 175 220 85"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" inkscape:label="Layer 1">
+    <g id="mascot_eyes" transform="translate(13.165564,1.2346624)" inkscape:label="Surprise Hollow Ring Eyes">
+<!-- Hollow ring/doughnut pupils matching expr-surprise.png -->
+    <circle cx="196" cy="221" r="18" fill="#fdf6e3" stroke="#002b36" stroke-width="10" id="right_eye" inkscape:label="right_eye"/>
+    <circle cx="192" cy="216" r="3" fill="#002b36"/>
+
+    <circle cx="338" cy="211" r="18" fill="#fdf6e3" stroke="#002b36" stroke-width="10" id="left_eye" inkscape:label="left_eye"/>
+    <circle cx="334" cy="206" r="3" fill="#002b36"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,545 @@
+{
+  "$schema": "./catalog.schema.json",
+  "version": "2.0.0",
+  "description": "Modular Mascot Asset Catalog for Aptipiou (Body, Beak, Eyes, Particles)",
+  "palette": {
+    "base03": "#002b36",
+    "base02": "#073642",
+    "base1": "#93a1a1",
+    "base3": "#fdf6e3",
+    "yellow": "#b58900",
+    "red": "#dc322f",
+    "magenta": "#d33682",
+    "blue": "#268bd2",
+    "green": "#859900",
+    "pink": "#e896be",
+    "blossomCore": "#da5780",
+    "blossomDeep": "#f48498"
+  },
+  "categories": {
+    "particles": {
+      "heart-large": {
+        "path": "/mascot/particles/hearts/heart-large.svg",
+        "category": "hearts",
+        "viewBox": "0 0 64 64",
+        "tags": ["love", "romance", "blush", "floating"],
+        "defaultAnchor": "head-right",
+        "motionPreset": "float-up-fade"
+      },
+      "heart-medium": {
+        "path": "/mascot/particles/hearts/heart-medium.svg",
+        "category": "hearts",
+        "viewBox": "0 0 48 48",
+        "tags": ["love", "tilted", "accent"],
+        "defaultAnchor": "cheek-right",
+        "motionPreset": "float-up-fade"
+      },
+      "heart-small": {
+        "path": "/mascot/particles/hearts/heart-small.svg",
+        "category": "hearts",
+        "viewBox": "0 0 32 32",
+        "tags": ["love", "mini", "spark"],
+        "defaultAnchor": "head-left",
+        "motionPreset": "float-up-fade"
+      },
+      "heart-sparkle": {
+        "path": "/mascot/particles/hearts/heart-sparkle.svg",
+        "category": "hearts",
+        "viewBox": "0 0 64 64",
+        "tags": ["love", "sparkle", "celebrate"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "pulse-pop"
+      },
+      "cloud-thought": {
+        "path": "/mascot/particles/clouds/cloud-thought.svg",
+        "category": "clouds",
+        "viewBox": "0 0 96 72",
+        "tags": ["thinking", "dream", "thought"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "float-hover"
+      },
+      "dust-ground": {
+        "path": "/mascot/particles/clouds/dust-ground.svg",
+        "category": "clouds",
+        "viewBox": "0 0 160 64",
+        "tags": ["landing", "dust", "ground", "impact"],
+        "defaultAnchor": "baseline-ground",
+        "motionPreset": "puff-expand-dissolve"
+      },
+      "dust-puff-large": {
+        "path": "/mascot/particles/clouds/dust-puff-large.svg",
+        "category": "clouds",
+        "viewBox": "0 0 64 64",
+        "tags": ["dust", "puff", "landing"],
+        "defaultAnchor": "foot-left",
+        "motionPreset": "puff-expand-dissolve"
+      },
+      "dust-puff-medium": {
+        "path": "/mascot/particles/clouds/dust-puff-medium.svg",
+        "category": "clouds",
+        "viewBox": "0 0 48 48",
+        "tags": ["dust", "puff", "landing"],
+        "defaultAnchor": "foot-right",
+        "motionPreset": "puff-expand-dissolve"
+      },
+      "dust-puff-small": {
+        "path": "/mascot/particles/clouds/dust-puff-small.svg",
+        "category": "clouds",
+        "viewBox": "0 0 32 32",
+        "tags": ["dust", "speck", "particle"],
+        "defaultAnchor": "baseline-ground",
+        "motionPreset": "scatter-fade"
+      },
+      "bubble-large": {
+        "path": "/mascot/particles/bubbles/bubble-large.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 64 64",
+        "tags": ["bubble", "glossy", "dream"],
+        "defaultAnchor": "head-right",
+        "motionPreset": "float-drift"
+      },
+      "bubble-medium": {
+        "path": "/mascot/particles/bubbles/bubble-medium.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 48 48",
+        "tags": ["bubble", "floating"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "float-drift"
+      },
+      "bubble-small": {
+        "path": "/mascot/particles/bubbles/bubble-small.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 32 32",
+        "tags": ["bubble", "trailing"],
+        "defaultAnchor": "head-right",
+        "motionPreset": "float-drift"
+      },
+      "sleep-z-large": {
+        "path": "/mascot/particles/bubbles/sleep-z-large.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 48 48",
+        "tags": ["sleep", "zzz", "resting"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "float-up-fade"
+      },
+      "sleep-z-medium": {
+        "path": "/mascot/particles/bubbles/sleep-z-medium.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 36 36",
+        "tags": ["sleep", "zzz"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "float-up-fade"
+      },
+      "sleep-z-small": {
+        "path": "/mascot/particles/bubbles/sleep-z-small.svg",
+        "category": "bubbles",
+        "viewBox": "0 0 24 24",
+        "tags": ["sleep", "zzz"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "float-up-fade"
+      },
+      "bubble-question": {
+        "path": "/mascot/particles/emotes/bubble-question.svg",
+        "category": "emotes",
+        "viewBox": "0 0 72 72",
+        "tags": ["curious", "question", "bubble"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "pop-in"
+      },
+      "bubble-alert": {
+        "path": "/mascot/particles/emotes/bubble-alert.svg",
+        "category": "emotes",
+        "viewBox": "0 0 72 72",
+        "tags": ["alert", "exclamation", "bubble"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "pop-in"
+      },
+      "bubble-dizzy": {
+        "path": "/mascot/particles/emotes/bubble-dizzy.svg",
+        "category": "emotes",
+        "viewBox": "0 0 72 72",
+        "tags": ["dizzy", "spiral", "swirl"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "rotate-spin"
+      },
+      "sparkle": {
+        "path": "/mascot/particles/emotes/sparkle.svg",
+        "category": "emotes",
+        "viewBox": "0 0 48 48",
+        "tags": ["sparkle", "star", "celebrate"],
+        "defaultAnchor": "head-top-right",
+        "motionPreset": "pulse-pop"
+      },
+      "shock-lines": {
+        "path": "/mascot/particles/emotes/shock-lines.svg",
+        "category": "emotes",
+        "viewBox": "0 0 64 64",
+        "tags": ["shock", "action", "surprise"],
+        "defaultAnchor": "head-left",
+        "motionPreset": "burst"
+      },
+      "drop-sweat-large": {
+        "path": "/mascot/particles/drops/drop-sweat-large.svg",
+        "category": "drops",
+        "viewBox": "0 0 48 64",
+        "tags": ["sweat", "nervous", "anxious"],
+        "defaultAnchor": "forehead-right",
+        "motionPreset": "fall-drip"
+      },
+      "drop-sweat-small": {
+        "path": "/mascot/particles/drops/drop-sweat-small.svg",
+        "category": "drops",
+        "viewBox": "0 0 32 40",
+        "tags": ["sweat", "bead", "nervous"],
+        "defaultAnchor": "forehead-right",
+        "motionPreset": "fall-drip"
+      },
+      "drop-tear": {
+        "path": "/mascot/particles/drops/drop-tear.svg",
+        "category": "drops",
+        "viewBox": "0 0 40 56",
+        "tags": ["cry", "tear", "sad"],
+        "defaultAnchor": "eye-bottom-left",
+        "motionPreset": "fall-drip"
+      },
+      "sweat-splash": {
+        "path": "/mascot/particles/drops/sweat-splash.svg",
+        "category": "drops",
+        "viewBox": "0 0 48 48",
+        "tags": ["sweat", "splash", "stress"],
+        "defaultAnchor": "head-right",
+        "motionPreset": "burst"
+      }
+    },
+    "beak": {
+      "default": {
+        "path": "/mascot/beak/default.svg",
+        "label": "Neutral / Default",
+        "description": "Canonical resting closed beak from aptipiou_redone.svg",
+        "tags": ["neutral", "default", "rest"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "smile": {
+        "path": "/mascot/beak/smile.svg",
+        "label": "Cheerful Smile",
+        "description": "Warm cheerful upturned beak with subtle open smile curve",
+        "tags": ["smile", "happy", "friendly"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "laugh": {
+        "path": "/mascot/beak/laugh.svg",
+        "label": "Wide Laugh",
+        "description": "Wide open laughing beak with red oral cavity and yellow mandible",
+        "tags": ["laugh", "joy", "glee"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "grin": {
+        "path": "/mascot/beak/grin.svg",
+        "label": "Cheeky Grin",
+        "description": "Broad beaming cheeky smile with cheerful curved mandible",
+        "tags": ["grin", "cheeky", "cheerful"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "surprise": {
+        "path": "/mascot/beak/surprise.svg",
+        "label": "Surprise / Gasp",
+        "description": "Deep dropped oval gasp cavity dropping significantly lower into shock",
+        "tags": ["surprise", "gasp", "jaw-drop"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "shocked": {
+        "path": "/mascot/beak/shocked.svg",
+        "label": "Extreme Shock / Jaw-Drop",
+        "description": "Massive elongated jaw-drop dropping down to Y=325 matching original sprite",
+        "tags": ["shocked", "jaw-drop", "disbelief"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "smirk": {
+        "path": "/mascot/beak/smirk.svg",
+        "label": "Asymmetric Smirk",
+        "description": "Confident asymmetric sly smirk tilted slightly up on right",
+        "tags": ["smirk", "sly", "confident"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "pout": {
+        "path": "/mascot/beak/pout.svg",
+        "label": "Pout / Frown",
+        "description": "Downturned sulking lower beak expressing disappointment",
+        "tags": ["pout", "frown", "sad"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "dizzy": {
+        "path": "/mascot/beak/dizzy.svg",
+        "label": "Wobbly Dizzy Mouth",
+        "description": "Wavy squiggly undulating zigzag mouth matching original expr-dizzy.png",
+        "tags": ["dizzy", "wobbly", "zigzag"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "grimace": {
+        "path": "/mascot/beak/grimace.svg",
+        "label": "Tense Grimace",
+        "description": "Tense wavy horizontal grimace showing stress or anxiety",
+        "tags": ["grimace", "tense", "nervous"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      },
+      "sleep": {
+        "path": "/mascot/beak/sleep.svg",
+        "label": "Relaxed Sleep Beak",
+        "description": "Completely relaxed resting beak line for sleep and deep rest",
+        "tags": ["sleep", "rest", "relaxed"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "235 210 70 60"
+      }
+    },
+    "eyes": {
+      "open": {
+        "path": "/mascot/eyes/open.svg",
+        "label": "Open / Default",
+        "description": "Default open pupils with dual specular reflection glints",
+        "tags": ["open", "default"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "blink": {
+        "path": "/mascot/eyes/blink.svg",
+        "label": "Blink / Closed",
+        "description": "Peaceful downward resting closed eye arcs (u u)",
+        "tags": ["blink", "closed"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "happy": {
+        "path": "/mascot/eyes/happy.svg",
+        "label": "Happy / Cheerful Smile",
+        "description": "Upward cheerful anime smiling eye arcs (^ ^)",
+        "tags": ["happy", "smile"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "wink": {
+        "path": "/mascot/eyes/wink.svg",
+        "label": "Wink (Right Closed)",
+        "description": "Left eye open with glints, right eye closed in cheerful wink",
+        "tags": ["wink", "playful"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "wink-left": {
+        "path": "/mascot/eyes/wink-left.svg",
+        "label": "Wink (Left Closed)",
+        "description": "Right eye open with glints, left eye closed in cheerful wink",
+        "tags": ["wink", "playful"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "squint": {
+        "path": "/mascot/eyes/squint.svg",
+        "label": "Squint / Laughing",
+        "description": "Narrowed laughing chevrons (> <) expressing concentrated joy",
+        "tags": ["squint", "laugh"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "laugh": {
+        "path": "/mascot/eyes/laugh.svg",
+        "label": "Laughing Eyes",
+        "description": "Squeezed joyous crescents (^ ^) with subtle laughing glints",
+        "tags": ["laugh", "joy"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "dizzy": {
+        "path": "/mascot/eyes/dizzy.svg",
+        "label": "Hypnotic Dizzy Spirals",
+        "description": "Authentic concentric hypnotic spiral pupils (@ @) matching expr-dizzy.png",
+        "tags": ["dizzy", "spiral"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "shocked": {
+        "path": "/mascot/eyes/shocked.svg",
+        "label": "Shocked Pinpoint Eyes",
+        "description": "Authentic shocked expression from expr-shocked.png with tiny pinpoint pupils in wide empty sclera",
+        "tags": ["shocked", "pinpoint"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "love": {
+        "path": "/mascot/eyes/love.svg",
+        "label": "Love / Heart Eyes",
+        "description": "Giant glowing heart-shaped pupils (\u2665 \u2665) with specular glints matching expr-love.png",
+        "tags": ["love", "heart"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "sleepy": {
+        "path": "/mascot/eyes/sleepy.svg",
+        "label": "Sleepy / Drowsy",
+        "description": "Heavy drooping half-closed eyelids over pupils matching drowsy posture",
+        "tags": ["sleepy", "drowsy"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      },
+      "cry": {
+        "path": "/mascot/eyes/cry.svg",
+        "label": "Cry / Flowing Tears",
+        "description": "Authentic squeezed crying eyes with flowing blue teardrop streams from expr-cry.png",
+        "tags": ["cry", "tears"],
+        "viewBox": "0 0 512 512",
+        "bboxTight": "160 175 220 85"
+      }
+    },
+    "body": {
+      "standing": {
+        "path": "/mascot/body/standing.svg",
+        "label": "Standing / Idle",
+        "description": "Default upright resting posture with legs planted firmly and wings at sides",
+        "tags": ["standing", "idle", "default", "rest"],
+        "viewBox": "0 0 512 512"
+      },
+      "fly-glide": {
+        "path": "/mascot/body/fly-glide.svg",
+        "label": "Fly - Glide",
+        "description": "Streamlined flight glide with wings spread wide horizontally and legs tucked",
+        "tags": ["flying", "glide", "wings-spread"],
+        "viewBox": "0 0 512 512"
+      },
+      "fly-upstroke": {
+        "path": "/mascot/body/fly-upstroke.svg",
+        "label": "Fly - Upstroke",
+        "description": "Flight upstroke with wingtips flapped high upward and body angled upward",
+        "tags": ["flying", "upstroke", "flap"],
+        "viewBox": "0 0 512 512"
+      },
+      "fly-downstroke": {
+        "path": "/mascot/body/fly-downstroke.svg",
+        "label": "Fly - Downstroke",
+        "description": "Flight downstroke with powerful downward thrust pushing body forward",
+        "tags": ["flying", "downstroke", "thrust"],
+        "viewBox": "0 0 512 512"
+      },
+      "fly-bank": {
+        "path": "/mascot/body/fly-bank.svg",
+        "label": "Fly - Banking Turn",
+        "description": "Aerodynamic banking turn glide with asymmetrical wing angles",
+        "tags": ["flying", "turn", "bank"],
+        "viewBox": "0 0 512 512"
+      },
+      "sleep": {
+        "path": "/mascot/body/sleep.svg",
+        "label": "Sleep / Curled",
+        "description": "Curled up sleeping posture resting peacefully low on the ground",
+        "tags": ["sleep", "crouch", "rest", "curled"],
+        "viewBox": "0 0 512 512"
+      },
+      "wakeup-crouch": {
+        "path": "/mascot/body/wakeup-crouch.svg",
+        "label": "Wakeup - Crouch",
+        "description": "Ground crouch posture starting to stir and wake from sleep",
+        "tags": ["wakeup", "crouch", "stirring"],
+        "viewBox": "0 0 512 512"
+      },
+      "wakeup-stretch": {
+        "path": "/mascot/body/wakeup-stretch.svg",
+        "label": "Wakeup - Stretch",
+        "description": "Stretching upward from ground crouch with wings unfurling",
+        "tags": ["wakeup", "stretch", "rising"],
+        "viewBox": "0 0 512 512"
+      },
+      "land-touchdown": {
+        "path": "/mascot/body/land-touchdown.svg",
+        "label": "Landing - Touchdown",
+        "description": "Feet reaching downward to absorb ground contact upon landing",
+        "tags": ["landing", "touchdown", "contact"],
+        "viewBox": "0 0 512 512"
+      },
+      "land-impact": {
+        "path": "/mascot/body/land-impact.svg",
+        "label": "Landing - Impact Squash",
+        "description": "Deep squash compression on ground absorbing touchdown momentum",
+        "tags": ["landing", "impact", "squash", "crouch"],
+        "viewBox": "0 0 512 512"
+      },
+      "land-settle": {
+        "path": "/mascot/body/land-settle.svg",
+        "label": "Landing - Settle",
+        "description": "Low settled landing crouch at ground baseline",
+        "tags": ["landing", "settle", "ground"],
+        "viewBox": "0 0 512 512"
+      },
+      "land-rebound": {
+        "path": "/mascot/body/land-rebound.svg",
+        "label": "Landing - Rebound",
+        "description": "Rebounding upward from landing compression recovering balance",
+        "tags": ["landing", "rebound", "recovery"],
+        "viewBox": "0 0 512 512"
+      },
+      "land-stand": {
+        "path": "/mascot/body/land-stand.svg",
+        "label": "Landing - Stand",
+        "description": "Straightening up back to full upright standing posture",
+        "tags": ["landing", "stand", "idle"],
+        "viewBox": "0 0 512 512"
+      },
+      "happy-bounce": {
+        "path": "/mascot/body/happy-bounce.svg",
+        "label": "Happy - Bounce",
+        "description": "Cheerful upward hop with body bounce and left foot kicked up",
+        "tags": ["happy", "bounce", "hop", "dance"],
+        "viewBox": "0 0 512 512"
+      },
+      "happy-soar": {
+        "path": "/mascot/body/happy-soar.svg",
+        "label": "Happy - Soar Leap",
+        "description": "Peak joy leap with wings flapped wide and both feet kicked up",
+        "tags": ["happy", "soar", "leap", "glee"],
+        "viewBox": "0 0 512 512"
+      },
+      "happy-land": {
+        "path": "/mascot/body/happy-land.svg",
+        "label": "Happy - Landing",
+        "description": "Cheerful landing with wings fluttering following joy bounce",
+        "tags": ["happy", "landing", "dance"],
+        "viewBox": "0 0 512 512"
+      },
+      "action-wave": {
+        "path": "/mascot/body/action-wave.svg",
+        "label": "Action - Wave",
+        "description": "Left wing raised high and waving in friendly greeting",
+        "tags": ["action", "wave", "greeting", "hello"],
+        "viewBox": "0 0 512 512"
+      },
+      "action-thumbsup": {
+        "path": "/mascot/body/action-thumbsup.svg",
+        "label": "Action - Thumbs Up",
+        "description": "Wing extended forward giving an affirmative thumbs-up gesture",
+        "tags": ["action", "thumbsup", "approval", "agree"],
+        "viewBox": "0 0 512 512"
+      },
+      "action-thinking": {
+        "path": "/mascot/body/action-thinking.svg",
+        "label": "Action - Thinking",
+        "description": "Wing resting thoughtfully on chin in contemplation",
+        "tags": ["action", "thinking", "ponder", "curious"],
+        "viewBox": "0 0 512 512"
+      },
+      "action-celebrate": {
+        "path": "/mascot/body/action-celebrate.svg",
+        "label": "Action - Celebrate",
+        "description": "Both wings raised high overhead in celebration and triumph",
+        "tags": ["action", "celebrate", "victory", "triumph"],
+        "viewBox": "0 0 512 512"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   data-bbox="160 175 220 85"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" inkscape:label="Layer 1">
+    <g id="mascot_eyes" transform="translate(13.165564,1.2346624)" inkscape:label="Wink (Right Eye Closed)">
+<path d="M 174 224 C 182 206 210 206 218 224" fill="none" stroke="#002b36" stroke-width="12.7" stroke-linecap="round" id="right_eye"/>
+    <ellipse cx="338.2" cy="211.3" rx="21.9" ry="29.3" fill="#073642" id="left_eye"/>
+    <ellipse cx="331.1" cy="201.9" rx="6.6" ry="7.1" fill="#fdf6e3"/>
+    <ellipse cx="343.7" cy="219.9" rx="3.6" ry="3.9" fill="#fdf6e3"/>
+    </g>
+  </g>
+</svg>

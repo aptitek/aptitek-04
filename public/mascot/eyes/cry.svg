@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   data-bbox="160 175 220 85"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" inkscape:label="Layer 1">
+    <g id="mascot_eyes" transform="translate(13.165564,1.2346624)" inkscape:label="Cry / Heavy Flowing Tears">
+<!-- Downward squeezed tearful eye chevrons matching expr-cry.png -->
+    <path d="M 174 216 L 196 226 L 218 218" fill="none" stroke="#002b36" stroke-width="12.7" stroke-linecap="round" stroke-linejoin="round" id="right_eye"/>
+    <path d="M 316 206 L 338 216 L 360 208" fill="none" stroke="#002b36" stroke-width="12.7" stroke-linecap="round" stroke-linejoin="round" id="left_eye"/>
+
+    <!-- Flowing blue teardrop stream on right eye -->
+    <path
+       d="M 170 222 C 160 230 156 250 162 265 C 168 275 182 272 180 260 C 176 248 174 234 170 222 Z"
+       fill="#268bd2"
+       stroke="#002b36"
+       stroke-width="6"
+       stroke-linejoin="round"
+       id="right_tear"/>
+    <circle cx="166" cy="256" r="3.5" fill="#fdf6e3"/>
+
+    <!-- Flowing blue teardrop stream on left eye -->
+    <path
+       d="M 364 212 C 374 220 378 240 372 255 C 366 265 352 262 354 250 C 358 238 360 224 364 212 Z"
+       fill="#268bd2"
+       stroke="#002b36"
+       stroke-width="6"
+       stroke-linejoin="round"
+       id="left_tear"/>
+    <circle cx="368" cy="246" r="3.5" fill="#fdf6e3"/>
+    </g>
+  </g>
+</svg>
