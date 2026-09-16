@@ -1,22 +1,1507 @@
-<?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="512mm" height="512mm" viewBox="0 0 512 512" version="1.1" inkscape:label="Mascot Body - Standing"><g id="layer1" inkscape:label="Layer 1"><g id="mascot_body" inkscape:label="Standing Stance"><path style="fill:#e896be;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1" d="m 389.0248,302.60133 c 0.0286,0.009 53.63191,-25.92016 61.48911,-6.43191 11.36274,28.18308 -29.63356,46.89685 -30.10137,46.56704 0,0 19.54113,-1.43594 15.43659,11.57745 -11.19847,35.50459 -66.28109,42.5176 -65.34823,39.62057 -48.41237,5.1445 -42.97423,-64.48869 -18.9944,-75.48099 z" id="path3" ns2:nodetypes="cscsccc" inkscape:label="left_wing" />
-      <path id="path1" style="fill:#e896be;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1" d="m 206.04173,24.400165 c -18.60876,4.470895 4.49069,39.465389 4.55132,37.115219 0.12369,-4.79428 -27.64256,-25.734744 -43.39738,-13.190681 -12.23564,5.887442 9.55487,21.111563 9.55487,21.111563 C 136.50053,79.445551 60.362818,112.9965 61.130018,222.28609 c 0.2083,29.67259 1.33285,67.79527 43.664702,93.22005 1.36962,0.8226 18.21906,8.32084 19.67653,9.11558 -1.01935,0.72635 -17.60659,-4.98045 -18.62973,-4.25502 -10.829422,7.67829 -17.046902,10.6756 -25.039742,21.34148 -3.12482,4.16986 -19.86345,-17.70948 -35.08046,-9.29451 -16.3461,9.03936 -4.9596,40.28617 -1.45794,44.40291 2.67015,3.13918 -11.3068,-4.96329 -11.05562,-0.41978 1.88709,34.13615 20.26216,49.87512 32.57771,51.59958 19.02174,31.79481 75.184962,51.09526 112.238122,50.81375 l 79.10605,-0.60101 c 74.48876,-5.18697 114.96445,-41.18158 114.96441,-98.26524 -10e-6,-17.75856 -7.89374,-44.67753 -15.88899,-60.88118 44.22638,-16.15973 53.29163,-39.85016 55.10843,-67.37312 1.25849,-19.06766 -4.46296,-25.67764 -17.49313,-42.91797 C 393.85226,129.66191 332.12577,74.70786 256.4531,64.041767 252.36619,62.491445 234.30054,17.610774 206.04173,24.400165 Z" ns2:nodetypes="ssccsscssssscscsccccs" inkscape:label="body" />
-      <ellipse style="opacity:1;fill:#d33682;stroke:none;stroke-width:13.9074;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path14" cx="164.54727" cy="284.09259" rx="32.41684" ry="17.752079" inkscape:label="blush_right" />
-      <ellipse style="opacity:1;fill:#d33682;stroke:none;stroke-width:13.1252;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path15" cx="324.40503" cy="320.60513" rx="28.531826" ry="14.430981" transform="matrix(0.98971976,-0.14302025,0.16259401,0.98669306,0,0)" inkscape:label="blush_left" />
-      <path id="glasspane" inkscape:label="glasspane" style="fill:#88c1e9;stroke:none" d="m 353.71644,144.43969 a 56.309586,59.139626 0 0 0 -56.30974,59.14006 56.309586,59.139626 0 0 0 56.30974,59.13954 56.309586,59.139626 0 0 0 56.30974,-59.13954 56.309586,59.139626 0 0 0 -56.30974,-59.14006 z m -173.85761,11.76982 a 58.146084,61.490677 0 0 0 -58.1458,61.49082 58.146084,61.490677 0 0 0 58.1458,61.4903 58.146084,61.490677 0 0 0 58.14633,-61.4903 58.146084,61.490677 0 0 0 -58.14633,-61.49082 z" /><path id="glasses_frame" inkscape:label="glasses_frame" style="fill:none;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round" d="m 353.71644,144.43969 a 56.309586,59.139626 0 0 0 -56.30974,59.14006 56.309586,59.139626 0 0 0 56.30974,59.13954 56.309586,59.139626 0 0 0 56.30974,-59.13954 56.309586,59.139626 0 0 0 -56.30974,-59.14006 z m -173.85761,11.76982 a 58.146084,61.490677 0 0 0 -58.1458,61.49082 58.146084,61.490677 0 0 0 58.1458,61.4903 58.146084,61.490677 0 0 0 58.14633,-61.4903 58.146084,61.490677 0 0 0 -58.14633,-61.49082 z" /><path style="fill:#e896be;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1" d="m 185.12473,347.44583 c -2.12683,18.99377 -5.82288,31.45105 -14.30869,45.39773 -19.31417,31.74334 -82.649452,38.65405 -74.179622,10.1067 0,0 -25.49062,-3.25624 -29.55006,-16.28377 -11.19134,-35.91518 32.38717,-59.97748 42.679352,-69.00997" id="path3-3" ns2:nodetypes="cscsc" inkscape:label="right wing" />
-      <path style="fill:#859900;stroke:#002b36;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ColoredDot)" d="m 70.773758,383.90071 29.844082,-25.98492 -8.747402,7.97555 c 0,0 8.304442,3.84622 15.335372,-1.08394 5.34633,-3.74889 22.9858,-18.47253 22.99883,-18.46906" id="path4" ns2:nodetypes="cccsc" inkscape:label="cyber_wing1" />
-      <path style="fill:#859900;stroke:#002b36;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ColoredDot)" d="m 95.986868,402.16735 c 17.890362,-7.42184 30.739342,-16.37389 45.537942,-28.30041" id="path5" ns2:nodetypes="cc" inkscape:label="cyber_wing2" />
-      <path id="path6" style="fill:#859900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" d="M 134.8528,85.672206 C 98.408248,105.68955 60.588308,145.09769 61.130168,222.2861 c 0.10696,15.23724 0.45538,32.70282 6.50141,49.53289 11.72482,1.03851 24.78453,0.33642 24.78453,0.33642 0,0 27.049852,-0.62285 29.471592,-63.6726 2.1698,-56.49047 43.91494,-72.32384 46.20803,-94.5994 2.06231,-20.033721 -21.71182,-27.411265 -33.24293,-28.211204 z" inkscape:label="cyber_implant" />
-      <ellipse style="fill:#859900;stroke:#002b36;stroke-width:12.2614;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path7" cx="82.09391" cy="218.98647" rx="40.86903" ry="54.247406" inkscape:label="cyber_ear" />
-      <ellipse style="fill:#268bd2;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="ellipse7" cx="67.68644" cy="221.04468" rx="28.290598" ry="38.581657" inkscape:label="headphones" />
-      <path style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ColoredDot)" d="M 64.599128,178.85133 V 77.741648" id="path8" inkscape:label="antenna" />
-      <path style="fill:#d33682;stroke:#002b36;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ColoredDot)" d="M 156.70412,94.464621 C 128.07917,112.92374 115.48314,133.04759 115.53988,133.05611" id="path9" ns2:nodetypes="cc" inkscape:label="cyber" />
-      <path style="fill:#859900;stroke:#002b36;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ColoredDot-3)" d="m 42.508418,220.62841 c 25.95164,1.72229 30.80876,2.24271 30.8655,2.25123" id="path9-2" ns2:nodetypes="cc" inkscape:label="cyber" />
-      <path style="fill:#d33682;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" d="m 238.51805,202.52077 58.40177,-4.88826" id="path11" ns2:nodetypes="cc" inkscape:label="glass_bridge" />
-      <path style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" d="m 228.49399,485.73165 c -25.99154,-2.79246 -35.65671,-70.58572 -15.28145,-77.49876 20.37527,-6.91304 19.64758,29.10753 19.64758,29.10753 0,0 13.66038,-31.19097 25.10522,-25.46909 9.32027,4.6597 -4.51409,76.54166 -29.47135,73.86032 z" id="path16" ns2:nodetypes="szcss" inkscape:label="right_leg" />
-      <path style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" d="m 340.46215,471.46494 c -17.14008,-10.04633 -1.6223,-67.24976 16.50966,-67.76194 18.13195,-0.51217 8.02546,25.49611 8.02546,25.49611 -0.0699,-0.0998 11.23863,-26.45496 26.66004,-17.18665 15.09833,9.07415 -34.42461,69.28222 -51.19516,59.45248 z" id="path16-3" ns2:nodetypes="szcss" inkscape:label="left_leg" />
-      <ellipse style="fill:#fdf6e3;stroke:none;stroke-width:14.7129;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path17-6" cx="331.05725" cy="201.90196" rx="6.5605512" ry="7.0751042" inkscape:label="upper_left_reflection" />
-      <ellipse style="fill:#fdf6e3;stroke:none;stroke-width:8.16156;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path17-8-2" cx="343.68375" cy="219.94017" rx="3.6392932" ry="3.9247279" inkscape:label="lower_left_reflection" />
-      <ellipse style="fill:#fdf6e3;stroke:none;stroke-width:14.7129;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path17" cx="202.43822" cy="209.3676" rx="6.5605512" ry="7.0751042" inkscape:label="upper_right_reflection" />
-      <ellipse style="fill:#fdf6e3;stroke:none;stroke-width:8.16156;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path17-8" cx="193.81396" cy="230.65387" rx="3.6392932" ry="3.9247279" inkscape:label="lower_right_reflection" />
-    </g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 512 512"
+   version="1.1"
+   inkscape:label="Mascot Body - Standing"
+   id="svg1"
+   sodipodi:docname="standing.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+    .mascot-beak, .mascot-eye, .mascot-particle { display: none; }
+
+    /* Default fallback for standalone viewing &amp; unset attributes */
+    .beak-default,
+    .eyes-open { display: inline; }
+
+    [data-beak] .beak-default { display: none; }
+    [data-eyes] .eyes-open { display: none; }
+
+    /* Beak visibility controls */
+    [data-beak=&quot;default&quot;] .beak-default,
+    [data-beak=&quot;talk-closed&quot;] .beak-talk-closed,
+    [data-beak=&quot;talk-a&quot;] .beak-talk-a,
+    [data-beak=&quot;talk-e&quot;] .beak-talk-e,
+    [data-beak=&quot;talk-i&quot;] .beak-talk-i,
+    [data-beak=&quot;talk-o&quot;] .beak-talk-o,
+    [data-beak=&quot;talk-u&quot;] .beak-talk-u,
+    [data-beak=&quot;talk-t&quot;] .beak-talk-t,
+    [data-beak=&quot;talk-fv&quot;] .beak-talk-fv,
+    [data-beak=&quot;talk-wide&quot;] .beak-talk-wide,
+    [data-beak=&quot;smile&quot;] .beak-smile,
+    [data-beak=&quot;grin&quot;] .beak-grin,
+    [data-beak=&quot;smirk&quot;] .beak-smirk,
+    [data-beak=&quot;laugh&quot;] .beak-laugh,
+    [data-beak=&quot;pout&quot;] .beak-pout,
+    [data-beak=&quot;surprise&quot;] .beak-surprise,
+    [data-beak=&quot;shocked&quot;] .beak-shocked,
+    [data-beak=&quot;grimace&quot;] .beak-grimace,
+    [data-beak=&quot;dizzy&quot;] .beak-dizzy,
+    [data-beak=&quot;sleep&quot;] .beak-sleep { display: inline; }
+
+    /* Eyes visibility controls */
+    [data-eyes=&quot;open&quot;] .eyes-open,
+    [data-eyes=&quot;default&quot;] .eyes-open,
+    [data-eyes=&quot;happy&quot;] .eyes-happy,
+    [data-eyes=&quot;laugh&quot;] .eyes-laugh,
+    [data-eyes=&quot;love&quot;] .eyes-love,
+    [data-eyes=&quot;heart&quot;] .eyes-heart,
+    [data-eyes=&quot;blink&quot;] .eyes-blink,
+    [data-eyes=&quot;sleepy&quot;] .eyes-sleepy,
+    [data-eyes=&quot;wink&quot;] .eyes-wink,
+    [data-eyes=&quot;wink-right&quot;] .eyes-wink-right,
+    [data-eyes=&quot;wink-left&quot;] .eyes-wink-left,
+    [data-eyes=&quot;squint&quot;] .eyes-squint,
+    [data-eyes=&quot;dizzy&quot;] .eyes-dizzy,
+    [data-eyes=&quot;shocked&quot;] .eyes-shocked,
+    [data-eyes=&quot;cry&quot;] .eyes-cry,
+    [data-eyes=&quot;sparkle&quot;] .eyes-sparkle,
+    [data-eyes=&quot;surprise&quot;] .eyes-surprise { display: inline; }
+
+    /* Particle visibility controls */
+    [data-particle=&quot;cloud-thought&quot;] .particle-cloud-thought,
+    [data-particle=&quot;alert&quot;] .particle-alert,
+    [data-particle=&quot;bubble-alert&quot;] .particle-alert,
+    [data-particle=&quot;question&quot;] .particle-question,
+    [data-particle=&quot;bubble-question&quot;] .particle-question,
+    [data-particle=&quot;dizzy&quot;] .particle-dizzy,
+    [data-particle=&quot;bubble-dizzy&quot;] .particle-dizzy,
+    [data-particle=&quot;shock-lines&quot;] .particle-dizzy,
+    [data-particle=&quot;sweat-drop-right&quot;] .particle-sweat-drop-right,
+    [data-particle=&quot;drop-sweat-large&quot;] .particle-sweat-drop-right,
+    [data-particle=&quot;drop-tear&quot;] .particle-sweat-drop-right,
+    [data-particle=&quot;sweat-drop-left&quot;] .particle-sweat-drop-left,
+    [data-particle=&quot;bubbles&quot;] .particle-bubbles,
+    [data-particle=&quot;sleep-z&quot;] .particle-sleep-z,
+    [data-particle=&quot;sleep-z-large&quot;] .particle-sleep-z-large,
+    [data-particle=&quot;sleep-z-medium&quot;] .particle-sleep-z-medium,
+    [data-particle=&quot;sleep-z-small&quot;] .particle-sleep-z-small { display: inline; }
+</style>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.2241537"
+     inkscape:cx="87.673797"
+     inkscape:cy="317.1993"
+     inkscape:window-width="2448"
+     inkscape:window-height="1378"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="mascot_body" />
+  <g
+     id="mascot_character"
+     class="mascot-character"
+     inkscape:label="Mascot Character">
+    <g
+       id="g1"
+       class="mascot-body"
+       inkscape:label="Body">
+      <g
+         id="layer1"
+         inkscape:label="Layer 1">
+        <g
+           id="mascot_body"
+           inkscape:label="Standing Stance">
+          <path
+             style="fill:#f48498;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+             d="m 389.0248,302.60133 c 0.0286,0.009 53.63191,-25.92016 61.48911,-6.43191 11.36274,28.18308 -29.63356,46.89685 -30.10137,46.56704 0,0 19.54113,-1.43594 15.43659,11.57745 -11.19847,35.50459 -66.28109,42.5176 -65.34823,39.62057 -48.41237,5.1445 -42.97423,-64.48869 -18.9944,-75.48099 z"
+             id="path3"
+             sodipodi:nodetypes="cscsccc"
+             inkscape:label="left_wing" />
+          <path
+             id="path1"
+             style="fill:#f48498;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+             d="m 206.04173,24.400165 c -18.60876,4.470895 4.49069,39.465389 4.55132,37.115219 0.12369,-4.79428 -27.64256,-25.734744 -43.39738,-13.190681 -12.23564,5.887442 9.55487,21.111563 9.55487,21.111563 C 136.50053,79.445551 60.362818,112.9965 61.130018,222.28609 c 0.2083,29.67259 1.33285,67.79527 43.664702,93.22005 1.36962,0.8226 18.21906,8.32084 19.67653,9.11558 -1.01935,0.72635 -17.60659,-4.98045 -18.62973,-4.25502 -10.829422,7.67829 -17.046902,10.6756 -25.039742,21.34148 -3.12482,4.16986 -19.86345,-17.70948 -35.08046,-9.29451 -16.3461,9.03936 -4.9596,40.28617 -1.45794,44.40291 2.67015,3.13918 -11.3068,-4.96329 -11.05562,-0.41978 1.88709,34.13615 20.26216,49.87512 32.57771,51.59958 19.02174,31.79481 75.184962,51.09526 112.238122,50.81375 l 79.10605,-0.60101 c 74.48876,-5.18697 114.96445,-41.18158 114.96441,-98.26524 -10e-6,-17.75856 -7.89374,-44.67753 -15.88899,-60.88118 44.22638,-16.15973 53.29163,-39.85016 55.10843,-67.37312 1.25849,-19.06766 -4.46296,-25.67764 -17.49313,-42.91797 C 393.85226,129.66191 332.12577,74.70786 256.4531,64.041767 252.36619,62.491445 234.30054,17.610774 206.04173,24.400165 Z"
+             sodipodi:nodetypes="ssccsscssssscscsccccs"
+             inkscape:label="body" />
+          <ellipse
+             style="opacity:1;fill:#d33682;stroke:none;stroke-width:13.9074;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path14"
+             cx="164.54727"
+             cy="284.09259"
+             rx="32.41684"
+             ry="17.752079"
+             inkscape:label="blush_right" />
+          <ellipse
+             style="opacity:1;fill:#d33682;stroke:none;stroke-width:13.1252;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path15"
+             cx="324.40503"
+             cy="320.60513"
+             rx="28.531826"
+             ry="14.430981"
+             transform="matrix(0.98971976,-0.14302025,0.16259401,0.98669306,0,0)"
+             inkscape:label="blush_left" />
+          <path
+             id="glasspane"
+             inkscape:label="glasspane"
+             style="fill:#88c1e9;stroke:none"
+             d="m 353.71644,144.43969 a 56.309586,59.139626 0 0 0 -56.30974,59.14006 56.309586,59.139626 0 0 0 56.30974,59.13954 56.309586,59.139626 0 0 0 56.30974,-59.13954 56.309586,59.139626 0 0 0 -56.30974,-59.14006 z m -173.85761,11.76982 a 58.146084,61.490677 0 0 0 -58.1458,61.49082 58.146084,61.490677 0 0 0 58.1458,61.4903 58.146084,61.490677 0 0 0 58.14633,-61.4903 58.146084,61.490677 0 0 0 -58.14633,-61.49082 z" />
+          <path
+             id="glasses_frame"
+             inkscape:label="glasses_frame"
+             style="fill:none;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+             d="m 353.71644,144.43969 a 56.309586,59.139626 0 0 0 -56.30974,59.14006 56.309586,59.139626 0 0 0 56.30974,59.13954 56.309586,59.139626 0 0 0 56.30974,-59.13954 56.309586,59.139626 0 0 0 -56.30974,-59.14006 z m -173.85761,11.76982 a 58.146084,61.490677 0 0 0 -58.1458,61.49082 58.146084,61.490677 0 0 0 58.1458,61.4903 58.146084,61.490677 0 0 0 58.14633,-61.4903 58.146084,61.490677 0 0 0 -58.14633,-61.49082 z" />
+          <path
+             style="fill:#f48498;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+             d="m 185.12473,347.44583 c -2.12683,18.99377 -5.82288,31.45105 -14.30869,45.39773 -19.31417,31.74334 -82.649452,38.65405 -74.179622,10.1067 0,0 -25.49062,-3.25624 -29.55006,-16.28377 -11.19134,-35.91518 32.38717,-59.97748 42.679352,-69.00997"
+             id="path3-3"
+             sodipodi:nodetypes="cscsc"
+             inkscape:label="right wing" />
+          <g
+             id="path4"
+             inkscape:label="cyber_wing1"
+             style="opacity:1">
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 70.773758,383.90071 29.844082,-25.98492 -8.747402,7.97555 c 0,0 8.304442,3.84622 15.335372,-1.08394 5.34633,-3.74889 22.9858,-18.47253 22.99883,-18.46906"
+               id="path23" />
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 131.29492,342.24805 c -5e-5,-2e-5 -3.5451,0.63994 -3.60937,0.6875 -0.0643,0.0476 -0.0822,0.0625 -0.0996,0.0762 -0.0347,0.0273 -0.0461,0.0368 -0.0586,0.0469 -0.0249,0.0202 -0.0416,0.0336 -0.0625,0.0508 -0.0418,0.0343 -0.0929,0.0772 -0.16015,0.13282 -0.13446,0.11124 -0.32719,0.27175 -0.57422,0.47656 -0.49407,0.40963 -1.20289,0.99737 -2.07031,1.71484 -1.73486,1.43495 -4.10266,3.38654 -6.63282,5.45313 -5.0603,4.13318 -10.91992,8.81984 -13.25195,10.45508 -0.9536,0.66867 -1.9646,0.94745 -2.96289,1.21484 l 1.58594,-1.44727 0.0723,-0.0645 a 4.2337814,4.2337814 0 0 0 -5.632809,-6.32226 l -0.07227,0.0644 -29.771484,25.91992 a 4.233335,4.233335 0 0 0 -0.414063,5.97266 4.233335,4.233335 0 0 0 5.972656,0.41406 l 18.992188,-16.53516 c 3.571048,1.07081 10.565278,2.29131 17.091798,-2.28515 3.0143,-2.11365 8.64683,-6.66313 13.74609,-10.82813 2.54964,-2.0825 4.92859,-4.04636 6.67188,-5.48828 0.87164,-0.72096 1.5861,-1.31115 2.08008,-1.7207 0.24698,-0.20478 0.43843,-0.36482 0.5664,-0.47071 0.0532,-0.044 0.0874,-0.0728 0.11524,-0.0957 -0.0151,0.0119 -0.0326,0.0256 -0.0957,0.0723 -0.004,0.003 -0.19837,0.0356 -0.22851,0.043 a 4.233335,4.233335 0 0 0 1.80273,-2.35743 4.233335,4.233335 0 0 0 -3,-5.17968 z"
+               id="path24" />
+            <g
+               id="g19">
+              <g
+                 id="path19"
+                 style="opacity:1">
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 139.40885,348.7895 c -1.35304,5.08072 -6.57465,8.10609 -11.65537,6.75305 -5.08072,-1.35304 -8.10609,-6.57465 -6.75305,-11.65537 1.35304,-5.08072 6.6851,-8.07668 11.65537,-6.75305 5.08072,1.35304 8.10609,6.57465 6.75305,11.65537 z"
+                   id="path21" />
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 128.66211,335.0293 c -4.39486,0.6244 -8.28291,3.78963 -9.50195,8.36718 -1.61829,6.07674 2.02678,12.36805 8.10351,13.98633 6.07673,1.61829 12.36804,-2.02678 13.98633,-8.10351 1.61829,-6.07674 -2.02678,-12.36804 -8.10352,-13.98633 -1.4971,-0.39869 -3.01942,-0.47181 -4.48437,-0.26367 z m 0.53125,3.77539 c 0.97498,-0.14011 1.98463,-0.0932 2.97266,0.16992 4.0847,1.08779 6.49013,5.23951 5.40234,9.32422 -1.08779,4.08471 -5.23951,6.49013 -9.32422,5.40234 -4.08471,-1.08779 -6.49014,-5.23951 -5.40234,-9.32422 0.81051,-3.04352 3.42662,-5.15193 6.35156,-5.57226 z"
+                   id="path22" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="path5"
+             inkscape:label="cyber_wing2"
+             style="opacity:1">
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 95.986868,402.16735 c 17.890362,-7.42184 30.739342,-16.37389 45.537942,-28.30041"
+               id="path17" />
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 141.97656,369.6582 a 4.233335,4.233335 0 0 0 -3.10742,0.91211 c -14.67228,11.82472 -27.06377,20.45244 -44.503906,27.6875 a 4.233335,4.233335 0 0 0 -2.289062,5.53125 4.233335,4.233335 0 0 0 5.533203,2.28906 c 18.340585,-7.60861 31.647345,-16.88769 46.572265,-28.91601 a 4.233335,4.233335 0 0 0 0.63867,-5.95117 4.233335,4.233335 0 0 0 -2.84375,-1.55274 z"
+               id="path18" />
+            <g
+               id="g6">
+              <g
+                 id="path10"
+                 style="opacity:1">
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 148.94112,367.88997 c 3.29928,4.09381 2.65446,10.09399 -1.43934,13.39328 -4.09381,3.29928 -10.09399,2.65446 -13.39328,-1.43934 -3.29928,-4.09381 -2.56546,-10.16571 1.43934,-13.39328 4.09381,-3.29928 10.09399,-2.65446 13.39328,1.43934 z"
+                   id="path12" />
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 142.74414,362.51562 c -2.91268,-0.31301 -5.94441,0.47815 -8.39258,2.45118 -4.82516,3.88872 -5.68994,11.15442 -1.72656,16.07226 3.94607,4.89634 11.17592,5.67262 16.07227,1.72656 4.89633,-3.94607 5.67262,-11.17396 1.72656,-16.07031 -1.97304,-2.44817 -4.76701,-3.86667 -7.67969,-4.17969 z m -0.4043,3.76563 c 1.93569,0.20802 3.79094,1.15906 5.11719,2.80469 2.6525,3.29127 2.14088,8.06233 -1.15039,10.71484 -3.29127,2.6525 -8.06234,2.13892 -10.71484,-1.15234 -2.63518,-3.26978 -2.03209,-8.14843 1.15234,-10.71485 1.64564,-1.32625 3.66002,-1.86036 5.5957,-1.65234 z"
+                   id="path13" />
+              </g>
+            </g>
+          </g>
+          <path
+             id="path6"
+             style="fill:#859900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             d="M 134.8528,85.672206 C 98.408248,105.68955 60.588308,145.09769 61.130168,222.2861 c 0.10696,15.23724 0.45538,32.70282 6.50141,49.53289 11.72482,1.03851 24.78453,0.33642 24.78453,0.33642 0,0 27.049852,-0.62285 29.471592,-63.6726 2.1698,-56.49047 43.91494,-72.32384 46.20803,-94.5994 2.06231,-20.033721 -21.71182,-27.411265 -33.24293,-28.211204 z"
+             inkscape:label="cyber_implant" />
+          <ellipse
+             style="fill:#859900;stroke:#002b36;stroke-width:12.2614;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path7"
+             cx="82.09391"
+             cy="218.98647"
+             rx="40.86903"
+             ry="54.247406"
+             inkscape:label="cyber_ear" />
+          <ellipse
+             style="fill:#268bd2;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="ellipse7"
+             cx="67.68644"
+             cy="221.04468"
+             rx="28.290598"
+             ry="38.581657"
+             inkscape:label="headphones" />
+          <g
+             id="path8"
+             inkscape:label="antenna"
+             style="opacity:1">
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#dc322f;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="M 64.599128,178.85133 V 77.741648"
+               id="path38" />
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="M 64.599609,71.392578 A 6.3499999,6.3499999 0 0 0 58.25,77.742187 V 178.85156 a 6.3499999,6.3499999 0 0 0 6.349609,6.34961 6.3499999,6.3499999 0 0 0 6.34961,-6.34961 V 77.742187 a 6.3499999,6.3499999 0 0 0 -6.34961,-6.349609 z"
+               id="path39" />
+            <g
+               id="g35">
+              <g
+                 id="path35"
+                 style="opacity:1">
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#dc322f;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 64.599128,63.454148 c 7.8867,0 14.2875,6.4008 14.2875,14.2875 0,7.8867 -6.4008,14.2875 -14.2875,14.2875 -7.8867,0 -14.2875,-6.57225 -14.2875,-14.2875 0,-7.8867 6.4008,-14.2875 14.2875,-14.2875 z"
+                   id="path36" />
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 64.599609,60.595703 c -9.432787,0 -17.144531,7.713698 -17.144531,17.146484 0,9.295695 7.670331,17.144532 17.144531,17.144532 9.432787,0 17.144532,-7.711745 17.144532,-17.144532 0,-9.432786 -7.711745,-17.146484 -17.144532,-17.146484 z m 0,5.716797 c 6.340613,0 11.429688,5.089074 11.429688,11.429687 0,6.340614 -5.089075,11.429688 -11.429688,11.429688 -6.2992,0 -11.429687,-5.294882 -11.429687,-11.429688 0,-6.340613 5.089074,-11.429687 11.429687,-11.429687 z"
+                   id="path37" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="path9"
+             inkscape:label="cyber"
+             style="opacity:1">
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#d33682;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="M 156.70412,94.464621 C 128.07917,112.92374 115.48314,133.04759 115.53988,133.05611"
+               id="path33" />
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 157.59766,90.326172 a 4.233335,4.233335 0 0 0 -3.1875,0.580078 c -14.66365,9.45601 -25.23784,19.34732 -32.16602,26.91406 -3.46409,3.78337 -6.01644,6.98559 -7.7168,9.26953 -0.85017,1.14198 -1.48724,2.05303 -1.92187,2.69922 -0.21731,0.3231 -0.38319,0.57786 -0.50781,0.77539 -0.0623,0.0988 -0.11169,0.18041 -0.16797,0.27539 -0.0281,0.0475 -0.0527,0.0882 -0.11133,0.19727 -0.0293,0.0545 -0.0626,0.10355 -0.1543,0.3125 -0.0459,0.10447 -0.2264,0.65951 -0.22656,0.66016 -1.6e-4,6.4e-4 3.47439,5.23238 3.47461,5.23242 a 4.233335,4.233335 0 0 0 4.64258,-3.27149 c 0.004,0.006 0.0879,0.13088 0.0879,0.13086 1.6e-4,-6.4e-4 -0.17984,0.55038 -0.22461,0.65235 -0.0895,0.20392 -0.11857,0.24633 -0.14258,0.29101 -0.048,0.0894 -0.0574,0.10077 -0.0625,0.10938 -0.0102,0.0172 0.0111,-0.0187 0.0449,-0.0723 0.0676,-0.1072 0.19546,-0.30237 0.37305,-0.56641 0.35517,-0.52806 0.91751,-1.33488 1.6875,-2.36914 1.53997,-2.06852 3.91397,-5.05137 7.16992,-8.60742 6.51189,-7.11209 16.54846,-16.51447 30.50977,-25.517576 a 4.233335,4.233335 0 0 0 1.26367,-5.851562 4.233335,4.233335 0 0 0 -2.66406,-1.84375 z"
+               id="path34" />
+            <g
+               id="g30">
+              <g
+                 id="path30"
+                 style="opacity:1">
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#d33682;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 124.95928,134.47051 c -0.78075,5.19952 -5.63429,8.78575 -10.8338,8.005 -5.19952,-0.78075 -8.78575,-5.63429 -8.005,-10.8338 0.78075,-5.19952 5.74733,-8.76878 10.8338,-8.005 5.19952,0.78075 8.78575,5.63429 8.005,10.8338 z"
+                   id="path31" />
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 117.23633,121.75195 c -6.12842,-0.92024 -12.0621,3.36131 -13,9.60742 -0.93381,6.21881 3.38665,12.0662 9.60547,13 6.2188,0.93381 12.06814,-3.38665 13.00195,-9.60546 0.93381,-6.21881 -3.38861,-12.06815 -9.60742,-13.00196 z m -0.56445,3.76953 c 4.18022,0.6277 7.03199,4.4858 6.40429,8.66602 -0.62769,4.18022 -4.48775,7.03199 -8.66797,6.4043 -4.18022,-0.6277 -7.03199,-4.48776 -6.40429,-8.66797 0.62359,-4.15292 4.62344,-7.00967 8.66797,-6.40235 z"
+                   id="path32" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="path9-2"
+             inkscape:label="cyber"
+             style="opacity:1">
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 42.508418,220.62841 c 25.95164,1.72229 30.80876,2.24271 30.8655,2.25123"
+               id="path28" />
+            <path
+               style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+               d="m 42.789062,216.4043 a 4.233335,4.233335 0 0 0 -4.503906,3.94336 4.233335,4.233335 0 0 0 3.94336,4.5039 c 12.96512,0.86044 20.653501,1.42097 25.095703,1.76563 2.221101,0.17233 3.629957,0.29013 4.478515,0.36523 0.424279,0.0376 0.709549,0.0652 0.882813,0.082 0.08663,0.008 0.145322,0.0142 0.177734,0.0176 0.03241,0.003 0.507373,0.0782 -0.117187,-0.0156 a 4.233335,4.233335 0 0 0 4.814453,-3.5586 4.233335,4.233335 0 0 0 -3.558594,-4.81445 c -0.631653,-0.0949 -0.202123,-0.0252 -0.259766,-0.0312 -0.05764,-0.006 -0.134031,-0.0135 -0.236328,-0.0234 -0.204594,-0.0199 -0.510528,-0.0505 -0.955078,-0.0898 -0.889099,-0.0787 -2.328039,-0.19892 -4.572265,-0.37305 -4.488454,-0.34825 -12.202934,-0.90963 -25.189454,-1.77148 z"
+               id="path29" />
+            <g
+               id="g25">
+              <g
+                 id="path25"
+                 style="opacity:1">
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#859900;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 82.793321,224.29404 c -0.780751,5.19952 -5.634297,8.78575 -10.833808,8.005 -5.19951,-0.78075 -8.78575,-5.63429 -8.004998,-10.8338 0.780751,-5.19952 5.74733,-8.76878 10.833808,-8.005 5.19951,0.78075 8.78575,5.63429 8.004998,10.8338 z"
+                   id="path26" />
+                <path
+                   style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#002b36;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+                   d="m 75.070312,211.57617 c -6.128424,-0.92024 -12.062093,3.35935 -13,9.60547 -0.933808,6.21881 3.386663,12.06815 9.605469,13.00195 6.218806,0.93381 12.068147,-3.3886 13.001953,-9.60742 0.933809,-6.21881 -3.388615,-12.06619 -9.607422,-13 z m -0.564453,3.76758 c 4.180214,0.62769 7.031993,4.48776 6.404297,8.66797 -0.627695,4.18022 -4.487752,7.03199 -8.667969,6.4043 -4.180213,-0.6277 -7.031992,-4.48776 -6.404296,-8.66797 0.623595,-4.15292 4.623437,-7.01162 8.667968,-6.4043 z"
+                   id="path27" />
+              </g>
+            </g>
+          </g>
+          <path
+             style="fill:#d33682;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             d="m 238.51805,202.52077 58.40177,-4.88826"
+             id="path11"
+             sodipodi:nodetypes="cc"
+             inkscape:label="glass_bridge" />
+          <path
+             style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             d="m 228.49399,485.73165 c -25.99154,-2.79246 -35.65671,-70.58572 -15.28145,-77.49876 20.37527,-6.91304 19.64758,29.10753 19.64758,29.10753 0,0 13.66038,-31.19097 25.10522,-25.46909 9.32027,4.6597 -4.51409,76.54166 -29.47135,73.86032 z"
+             id="path16"
+             sodipodi:nodetypes="szcss"
+             inkscape:label="right_leg" />
+          <path
+             style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             d="m 340.46215,471.46494 c -17.14008,-10.04633 -1.6223,-67.24976 16.50966,-67.76194 18.13195,-0.51217 8.02546,25.49611 8.02546,25.49611 -0.0699,-0.0998 11.23863,-26.45496 26.66004,-17.18665 15.09833,9.07415 -34.42461,69.28222 -51.19516,59.45248 z"
+             id="path16-3"
+             sodipodi:nodetypes="szcss"
+             inkscape:label="left_leg" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="mascot_particles"
+       class="mascot-particles-group"
+       inkscape:label="Particules"
+       transform="translate(-13.253458,-1.7348829)">
+      <path
+         d="m 402.97124,139.81506 h 17.98691 c 1.28476,0 1.92714,1.02783 0.64238,2.3126 l -15.41734,13.10471 h 16.05972"
+         fill="none"
+         stroke="#002b36"
+         stroke-width="4.49672"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="particle-sleep-z-small"
+         transform="translate(17.458556,0.54756299)"
+         class="mascot-particle particle-sleep-z-small particle-sleep-z"
+         data-particle="sleep-z-small" />
+      <path
+         d="m 402.73222,86.505636 h 30.24018 c 2.26798,0 3.02397,1.511988 0.756,3.780024 l -26.46016,23.43612 h 27.21614"
+         fill="none"
+         stroke="#002b36"
+         stroke-width="7.56006"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="particle-sleep-z-medium"
+         transform="translate(17.458556,0.54756299)"
+         class="mascot-particle particle-sleep-z-medium particle-sleep-z"
+         data-particle="sleep-z-medium" />
+      <path
+         d="m 426.17612,19.800712 h 51.75961 c 3.98154,0 5.97227,1.99073 1.9908,5.97227 l -45.78741,41.80588 h 47.77815"
+         fill="none"
+         stroke="#002b36"
+         stroke-width="12.9399"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="particle-sleep-z-large"
+         transform="translate(17.458556,0.54756299)"
+         class="mascot-particle particle-sleep-z-large particle-sleep-z"
+         data-particle="sleep-z-large" />
+      <g
+         id="particle-bubbles"
+         transform="translate(17.458556,0.54756299)"
+         class="mascot-particle particle-bubbles"
+         data-particle="bubbles">
+        <g
+           id="g4"
+           transform="matrix(1.0022611,0,0,1.0022611,274.01374,226.30448)">
+          <circle
+             cx="32"
+             cy="32"
+             r="26"
+             fill="#fdf6e3"
+             stroke="#002b36"
+             stroke-width="4.5"
+             id="circle1-8" />
+          <path
+             d="M 14,32 A 18,18 0 0 0 46,44 22,22 0 0 1 14,32 Z"
+             fill="#268bd2"
+             opacity="0.4"
+             id="path1-0" />
+          <path
+             d="M 18,24 A 16,16 0 0 1 34,14"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="3.5"
+             stroke-linecap="round"
+             id="path2-5" />
+          <circle
+             cx="42"
+             cy="38"
+             r="2"
+             fill="#ffffff"
+             id="circle2-6" />
+        </g>
+        <g
+           id="g3"
+           transform="matrix(1.0022611,0,0,1.0022611,276.37176,229.17705)">
+          <circle
+             cx="24"
+             cy="24"
+             r="19"
+             fill="#fdf6e3"
+             stroke="#002b36"
+             stroke-width="3.5"
+             id="circle1-69" />
+          <path
+             d="M 11,24 A 13,13 0 0 0 34,33 16,16 0 0 1 11,24 Z"
+             fill="#268bd2"
+             opacity="0.4"
+             id="path1-3" />
+          <path
+             d="M 14,18 A 12,12 0 0 1 26,11"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="2.5"
+             stroke-linecap="round"
+             id="path2-3" />
+        </g>
+        <g
+           id="g2"
+           transform="matrix(1.0022611,0,0,1.0022611,278.98701,232.04962)">
+          <circle
+             cx="16"
+             cy="16"
+             r="12"
+             fill="#fdf6e3"
+             stroke="#002b36"
+             stroke-width="2.8"
+             id="circle1-9" />
+          <path
+             d="M 9,12 A 8,8 0 0 1 18,7"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="2"
+             stroke-linecap="round"
+             id="path1-19" />
+        </g>
+      </g>
+      <g
+         id="particle-cloud-thought"
+         transform="matrix(1.4537311,0,0,1.4537311,373.6295,5.2507891)"
+         class="mascot-particle particle-cloud-thought"
+         data-particle="cloud-thought">
+        <path
+           d="M 32,46 C 24,46 18,40 18,32 18,24 24,18 32,18 34,10 42,4 52,4 c 12,0 20,8 20,18 8,0 14,6 14,14 0,8 -6,14 -14,14 -4,0 -16,0 -40,-4 z"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="5"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="path1-6" />
+        <circle
+           cx="16"
+           cy="56"
+           r="6"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="4"
+           id="circle1-4" />
+        <circle
+           cx="8"
+           cy="66"
+           r="3.5"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="3"
+           id="circle2-0" />
+      </g>
+      <g
+         transform="matrix(0.7863599,-0.28621159,0.28621159,0.7863599,215.42807,95.662422)"
+         id="particle-sweat-drop-right"
+         class="mascot-particle particle-sweat-drop-right particle-drop-sweat-large particle-drop-tear"
+         data-particle="sweat-drop-right">
+        <path
+           d="M 24,8 C 24,8 10,26 10,38 10,48 16,56 24,56 32,56 38,48 38,38 38,26 24,8 24,8 Z"
+           fill="#268bd2"
+           stroke="#002b36"
+           stroke-width="4"
+           stroke-linejoin="round"
+           id="path1-46" />
+        <path
+           d="m 18,36 c 0,-6 2,-12 4,-16"
+           fill="none"
+           stroke="#fdf6e3"
+           stroke-width="2.5"
+           stroke-linecap="round"
+           id="path2-2" />
+      </g>
+      <g
+         id="particle-sweat-drop-left"
+         transform="matrix(0.79964928,0,0,0.79964928,101.04529,271.78553)"
+         class="mascot-particle particle-sweat-drop-left"
+         data-particle="sweat-drop-left">
+        <path
+           d="M 16,4 C 16,4 6,16 6,24 6,30 10,35 16,35 22,35 26,30 26,24 26,16 16,4 16,4 Z"
+           fill="#268bd2"
+           stroke="#002b36"
+           stroke-width="3"
+           stroke-linejoin="round"
+           id="path1-69" />
+        <circle
+           cx="13"
+           cy="22"
+           r="1.8"
+           fill="#fdf6e3"
+           id="circle1-87" />
+      </g>
+      <g
+         id="particle-alert"
+         transform="matrix(1.5520312,0,0,1.5520312,384.00281,8.8331183)"
+         class="mascot-particle particle-alert particle-bubble-alert"
+         data-particle="alert">
+        <circle
+           cx="36"
+           cy="36"
+           r="30"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="5"
+           id="circle1-28" />
+        <line
+           x1="36"
+           y1="18"
+           x2="36"
+           y2="39"
+           stroke="#dc322f"
+           stroke-width="6.5"
+           stroke-linecap="round"
+           id="line1" />
+        <circle
+           cx="36"
+           cy="50"
+           r="4"
+           fill="#dc322f"
+           id="circle2-2" />
+      </g>
+      <g
+         id="particle-dizzy"
+         transform="matrix(1.5520312,0,0,1.5520312,384.00281,8.8331183)"
+         class="mascot-particle particle-dizzy particle-shock-lines particle-bubble-dizzy"
+         data-particle="dizzy">
+        <circle
+           cx="36"
+           cy="36"
+           r="30"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="5"
+           id="circle1-0" />
+        <path
+           d="m 36,36 a 4,4 0 0 1 0,-4 8,8 0 0 1 6,4 A 12,12 0 0 1 34,46 16,16 0 0 1 20,34 20,20 0 0 1 40,18"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="4"
+           stroke-linecap="round"
+           id="path1-27" />
+      </g>
+      <g
+         id="particle-question"
+         transform="matrix(1.5520312,0,0,1.5520312,384.00281,8.8331183)"
+         class="mascot-particle particle-question particle-bubble-question"
+         data-particle="question">
+        <circle
+           cx="36"
+           cy="36"
+           r="30"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="5"
+           id="circle1-61" />
+        <path
+           d="m 28,26 c 0,-6 4,-10 9,-10 5,0 9,4 9,9 0,5 -5,8 -9,11 v 6"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="5"
+           stroke-linecap="round"
+           id="path1-32" />
+        <circle
+           cx="37"
+           cy="50"
+           r="3.5"
+           fill="#002b36"
+           id="circle2-1" />
+      </g>
+    </g>
+    <g
+       id="mascot_beaks"
+       class="mascot-beaks-group"
+       inkscape:label="Beaks"
+       transform="translate(-13.253458,-1.7348829)">
+      <g
+         id="beak-dizzy"
+         transform="translate(14.293583,1.619166)"
+         inkscape:label="Wobbly Dizzy Mouth"
+         class="mascot-beak beak-dizzy"
+         data-beak="dizzy">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,242 c 8,-6 16,8 24,-2 8,-8 18,8 26,2 -2,16 -16,22 -26,20 -10,-2 -20,-8 -24,-20 z"
+           id="mouth"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 6,-10 18,-24 28,-24 10,0 22,14 28,24 -10,4 -22,-4 -30,2 -8,6 -18,2 -26,-2 z"
+           id="upper_beak"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-grimace"
+         transform="translate(14.293493,1.619166)"
+         inkscape:label="Tense Grimace"
+         class="mascot-beak beak-grimace"
+         data-beak="grimace">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,242 c 8,-4 16,6 26,-2 8,-6 16,4 24,0 -4,12 -18,16 -26,14 -8,-2 -18,-4 -24,-12 z"
+           id="mouth-9"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,236 c 4,-12 18,-24 26,-24 10,0 22,12 26,24 -12,2 -40,2 -52,0 z"
+           id="upper_beak-3"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-grin"
+         transform="translate(14.293493,1.619166)"
+         inkscape:label="Cheeky Grin"
+         class="mascot-beak beak-grin"
+         data-beak="grin">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,240 c 6,-4 50,-4 56,0 0,16 -16,28 -28,28 -12,0 -28,-12 -28,-28 z"
+           id="mouth-1"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,6 -44,6 -56,0 z"
+           id="upper_beak-8"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-laugh"
+         transform="translate(14.891222,3.619166)"
+         inkscape:label="Wide Laugh"
+         class="mascot-beak beak-laugh"
+         data-beak="laugh">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 238,238 c 6,-4 52,-4 58,0 2,24 -12,48 -29,48 -17,0 -31,-24 -29,-48 z"
+           id="mouth-3"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 252,268 c 5,-6 20,-6 25,0 -4,8 -21,8 -25,0 z"
+           id="tongue"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 241,234 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-7"
+           inkscape:label="upper_beak" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:10;stroke-linecap:round;stroke-linejoin:round"
+           d="m 256,282 c 4,4 18,4 22,0"
+           id="lower_beak"
+           inkscape:label="lower_beak" />
+      </g>
+      <g
+         id="beak-pout"
+         transform="translate(14.293493,-0.38083397)"
+         inkscape:label="Pout / Frown"
+         class="mascot-beak beak-pout"
+         data-beak="pout">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,248 c 8,6 44,6 52,0 -4,-12 -18,-18 -26,-18 -10,0 -22,6 -26,18 z"
+           id="mouth-97"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,238 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,2 -44,2 -56,0 z"
+           id="upper_beak-36"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-shocked"
+         transform="translate(12.107702,3.619166)"
+         inkscape:label="Extreme Shock / Jaw-Drop"
+         class="mascot-beak beak-shocked"
+         data-beak="shocked">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 244,232 c 6,-3 40,-3 46,0 4,35 4,80 -4,94 -8,10 -30,10 -38,0 -8,-14 -8,-59 -4,-94 z"
+           id="mouth-94"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 252,316 c 6,-8 20,-8 26,0 -4,8 -22,8 -26,0 z"
+           id="tongue-7"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:11;stroke-linecap:round;stroke-linejoin:round"
+           d="m 252,326 c 8,6 18,6 26,0"
+           id="lower_beak-8"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 243,232 c 4,-11 18,-22 28,-22 10,0 24,11 28,22 -12,4 -44,4 -56,0 z"
+           id="upper_beak-4"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-sleep"
+         transform="translate(12.293493,-0.38083397)"
+         inkscape:label="Relaxed Sleep Beak"
+         class="mascot-beak beak-sleep"
+         data-beak="sleep">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:8;stroke-linecap:round;stroke-linejoin:round"
+           d="m 244,242 c 12,4 36,4 46,0"
+           id="mouth-6"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,236 c 4,-10 18,-22 28,-22 10,0 24,12 28,22 -12,4 -44,4 -56,0 z"
+           id="upper_beak-32"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-smile"
+         transform="translate(14.293541,1.8511225)"
+         inkscape:label="Cheerful Smile"
+         class="mascot-beak beak-smile"
+         data-beak="smile">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,242 c 6,-8 48,-8 54,2 -2,16 -18,26 -27,26 -10,0 -25,-10 -27,-28 z"
+           id="mouth-4"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-26 28,-24 10,2 24,12 28,24 -12,8 -44,8 -56,0 z"
+           id="upper_beak-76"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-smirk"
+         transform="translate(14.293555,1.619166)"
+         inkscape:label="Asymmetric Smirk"
+         class="mascot-beak beak-smirk"
+         data-beak="smirk">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,242 c 8,-6 48,-2 54,8 -4,14 -18,20 -28,18 -10,-2 -24,-12 -26,-26 z"
+           id="mouth-45"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-24 28,-24 10,0 24,10 28,20 -12,6 -44,8 -56,4 z"
+           id="upper_beak-2"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-surprise"
+         transform="translate(11.044519,4.619166)"
+         inkscape:label="Surprise / Gasp"
+         class="mascot-beak beak-surprise"
+         data-beak="surprise">
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 245,234 c 5,-4 38,-4 44,0 4,26 4,58 -6,68 -8,8 -24,8 -32,0 -10,-10 -10,-42 -6,-68 z"
+           id="mouth-30"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:10;stroke-linecap:round;stroke-linejoin:round"
+           d="m 254,300 c 6,5 20,5 26,0"
+           id="lower_beak-7"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 244,233 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,5 -44,5 -56,0 z"
+           id="upper_beak-86"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-a"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: A / Open"
+         class="mascot-beak beak-talk-a"
+         data-beak="talk-a">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 246,238 c 4,18 14,34 24,34 10,0 20,-16 24,-34 z"
+           id="lower_beak-9"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:none"
+           d="m 248,238 c 4,16 12,26 22,26 10,0 18,-10 22,-26 z"
+           id="mouth-2"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 258,256 c 4,-4 16,-4 20,0 -2,6 -18,6 -20,0 z"
+           id="tongue-0"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-6"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-closed"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: Closed / M-B-P"
+         class="mascot-beak beak-talk-closed beak-default"
+         data-beak="default">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 246,238 c 6,12 16,20 24,20 8,0 18,-8 24,-20 z"
+           id="lower_beak-95"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-0"
+           inkscape:label="upper_beak" />
+        <path
+           style="fill:none;stroke:#002b36;stroke-width:10;stroke-linecap:round"
+           d="m 244,237 c 12,3 38,3 50,0"
+           id="mouth-48"
+           inkscape:label="mouth" />
+      </g>
+      <g
+         id="beak-talk-e"
+         transform="translate(12.293752,1.619166)"
+         inkscape:label="Speech Viseme: E / Stretched"
+         class="mascot-beak beak-talk-e"
+         data-beak="talk-e">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,238 c 8,10 20,15 30,15 10,0 22,-5 30,-15 z"
+           id="lower_beak-2"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:none"
+           d="m 244,239 c 8,7 16,10 26,10 10,0 18,-3 26,-10 z"
+           id="mouth-61"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-06"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-fv"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: F-V / Labiodental"
+         class="mascot-beak beak-talk-fv"
+         data-beak="talk-fv">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 250,238 c 2,8 10,14 20,14 10,0 18,-6 20,-14 z"
+           id="lower_beak-0"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-24 30,-24 12,0 26,12 30,24 -12,6 -48,6 -60,0 z"
+           id="upper_beak-9"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-i"
+         transform="translate(12.293858,1.619166)"
+         inkscape:label="Speech Viseme: I / High"
+         class="mascot-beak beak-talk-i"
+         data-beak="talk-i">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,238 c 8,8 20,12 30,12 10,0 22,-4 30,-12 z"
+           id="lower_beak-97"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:none"
+           d="m 244,238 c 8,5 16,7 26,7 10,0 18,-2 26,-7 z"
+           id="mouth-7"
+           inkscape:label="mouth" />
+        <path
+           style="fill:none;stroke:#fdf6e3;stroke-width:4;stroke-linecap:round"
+           d="m 246,239 c 10,2 16,3 24,3 8,0 14,-1 24,-3"
+           id="teeth"
+           inkscape:label="teeth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-67"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-o"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: O / Round"
+         class="mascot-beak beak-talk-o"
+         data-beak="talk-o">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 248,238 c 4,16 12,28 22,28 10,0 18,-12 22,-28 z"
+           id="lower_beak-94"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:8;stroke-linecap:round;stroke-linejoin:round"
+           d="m 256,244 c 0,-8 28,-8 28,0 0,14 -28,14 -28,0 z"
+           id="mouth-8"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 262,249 c 2,-3 10,-3 12,0 -1,3 -11,3 -12,0 z"
+           id="tongue-1"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 244,236 c 4,-12 16,-24 26,-24 10,0 22,12 26,24 -10,4 -42,4 -52,0 z"
+           id="upper_beak-29"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-t"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: T-D-N / Dental"
+         class="mascot-beak beak-talk-t"
+         data-beak="talk-t">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 246,238 c 4,8 14,14 24,14 10,0 20,-6 24,-14 z"
+           id="lower_beak-09"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:none;stroke:#002b36;stroke-width:8;stroke-linecap:round"
+           d="m 254,240 c 6,2 10,2 16,2 6,0 10,0 16,-2"
+           id="mouth-63"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 266,241 c 2,-2 6,-2 8,0 -1,3 -7,3 -8,0 z"
+           id="tongue-8"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,236 c 4,-12 18,-24 28,-24 10,0 24,12 28,24 -12,4 -44,4 -56,0 z"
+           id="upper_beak-5"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-u"
+         transform="translate(12.293493,1.619166)"
+         inkscape:label="Speech Viseme: U / Woo"
+         class="mascot-beak beak-talk-u"
+         data-beak="talk-u">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 252,238 c 2,10 8,18 18,18 10,0 16,-8 18,-18 z"
+           id="lower_beak-4"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+           d="m 264,243 c 0,-5 12,-5 12,0 0,8 -12,8 -12,0 z"
+           id="mouth-81"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 246,236 c 4,-12 14,-24 24,-24 10,0 20,12 24,24 -8,4 -40,4 -48,0 z"
+           id="upper_beak-03"
+           inkscape:label="upper_beak" />
+      </g>
+      <g
+         id="beak-talk-wide"
+         transform="translate(12.293493,3.619166)"
+         inkscape:label="Speech Viseme: Wide / Exclamation"
+         class="mascot-beak beak-talk-wide"
+         data-beak="talk-wide">
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 242,238 c 4,20 16,38 28,38 12,0 24,-18 28,-38 z"
+           id="lower_beak-6"
+           inkscape:label="lower_beak" />
+        <path
+           style="fill:#dc322f;stroke:#002b36;stroke-width:8;stroke-linecap:round;stroke-linejoin:round"
+           d="m 246,238 c 4,18 14,30 24,30 10,0 20,-12 24,-30 z"
+           id="mouth-31"
+           inkscape:label="mouth" />
+        <path
+           style="fill:#da5780;stroke:none"
+           d="m 259.85915,258 c 4,-6 16,-6 20,0 -2,8 -18,8 -20,0 z"
+           id="tongue-75"
+           inkscape:label="tongue" />
+        <path
+           style="fill:#b58900;stroke:#002b36;stroke-width:12.7;stroke-linecap:round;stroke-linejoin:round"
+           d="m 240,235 c 4,-12 18,-25 30,-25 12,0 26,13 30,25 -12,4 -48,4 -60,0 z"
+           id="upper_beak-96"
+           inkscape:label="upper_beak" />
+      </g>
+    </g>
+    <g
+       id="mascot_eyes"
+       class="mascot-eyes-group"
+       inkscape:label="Eyes"
+       transform="translate(-13.253458,-1.7348829)">
+      <g
+         id="eyes-cry"
+         transform="translate(13.970565,27.023722)"
+         inkscape:label="Cry / Heavy Flowing Tears"
+         class="mascot-eye eyes-cry"
+         data-eyes="cry">
+        <path
+           d="m 174,216 22,10 22,-8"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="right_eye-4" />
+        <path
+           d="m 316,206 22,10 22,-8"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="left_eye-1" />
+        <path
+           d="m 144.7869,240.52391 c -10,8 -14,28 -8,43 6,10 20,7 18,-5 -4,-12 -6,-26 -10,-38 z"
+           fill="#268bd2"
+           stroke="#002b36"
+           stroke-width="6"
+           stroke-linejoin="round"
+           id="right_tear" />
+        <circle
+           cx="140.7869"
+           cy="274.5239"
+           r="3.5"
+           fill="#fdf6e3"
+           id="circle1" />
+        <path
+           d="m 380.4657,225.37838 c 10,8 14,28 8,43 -6,10 -20,7 -18,-5 4,-12 6,-26 10,-38 z"
+           fill="#268bd2"
+           stroke="#002b36"
+           stroke-width="6"
+           stroke-linejoin="round"
+           id="left_tear" />
+        <circle
+           cx="384.4657"
+           cy="259.37839"
+           r="3.5"
+           fill="#fdf6e3"
+           id="circle2" />
+      </g>
+      <g
+         id="eyes-surprise"
+         transform="translate(17.458556,0.54756299)"
+         inkscape:label="Surprise Hollow Ring Eyes"
+         class="mascot-eye eyes-surprise"
+         data-eyes="surprise">
+        <circle
+           cx="175.62474"
+           cy="221"
+           r="33.945854"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="18.8588"
+           id="right_eye-80"
+           inkscape:label="right_eye"
+           style="stroke-width:12.7;stroke-dasharray:none" />
+        <circle
+           cx="345.64072"
+           cy="206.27002"
+           r="33.66111"
+           fill="#fdf6e3"
+           stroke="#002b36"
+           stroke-width="18.7006"
+           id="left_eye-05"
+           inkscape:label="left_eye"
+           style="stroke-width:12.7;stroke-dasharray:none" />
+      </g>
+      <g
+         id="eyes-wink"
+         transform="translate(9.668229,5.2475556)"
+         inkscape:label="Wink (Right Eye Closed)"
+         class="mascot-eye eyes-wink eyes-wink-right"
+         data-eyes="wink">
+        <path
+           d="m 174,224 c 8,-18 36,-18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="right_eye-85" />
+        <ellipse
+           cx="338.20001"
+           cy="211.3"
+           rx="21.9"
+           ry="29.299999"
+           fill="#073642"
+           id="left_eye-06" />
+        <ellipse
+           cx="331.10001"
+           cy="201.89999"
+           rx="6.5999999"
+           ry="7.0999999"
+           fill="#fdf6e3"
+           id="ellipse1" />
+        <ellipse
+           cx="343.70001"
+           cy="219.89999"
+           rx="3.5999999"
+           ry="3.9000001"
+           fill="#fdf6e3"
+           id="ellipse2" />
+      </g>
+      <g
+         id="eyes-wink-left"
+         transform="translate(8.3066784,0.54137076)"
+         inkscape:label="Wink (Left Eye Closed)"
+         class="mascot-eye eyes-wink-left"
+         data-eyes="wink-left">
+        <ellipse
+           cx="195.8"
+           cy="221.10001"
+           rx="24.4"
+           ry="30.799999"
+           fill="#073642"
+           id="right_eye-5" />
+        <ellipse
+           cx="202.39999"
+           cy="209.39999"
+           rx="6.5999999"
+           ry="7.0999999"
+           fill="#fdf6e3"
+           id="ellipse1-8" />
+        <ellipse
+           cx="193.8"
+           cy="230.7"
+           rx="3.5999999"
+           ry="3.9000001"
+           fill="#fdf6e3"
+           id="ellipse2-6" />
+        <path
+           d="m 316,214 c 8,-18 36,-18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="left_eye-2" />
+      </g>
+      <g
+         id="eyes-sparkle"
+         inkscape:label="Sparkle Eyes"
+         class="mascot-eye eyes-sparkle"
+         data-eyes="sparkle">
+        <g
+           id="g10"
+           transform="matrix(1.5520312,0,0,1.5520312,163.21788,185.36576)">
+          <path
+             d="M 24,4 Q 24,24 44,24 24,24 24,44 24,24 4,24 24,24 24,4 Z"
+             fill="#b58900"
+             stroke="#002b36"
+             stroke-width="3"
+             stroke-linejoin="round"
+             id="path1-14" />
+          <circle
+             cx="24"
+             cy="24"
+             r="3"
+             fill="#fdf6e3"
+             id="circle1-91" />
+        </g>
+        <g
+           id="g10-7"
+           transform="matrix(1.5520312,0,0,1.5520312,320.74937,174.6129)">
+          <path
+             d="M 24,4 Q 24,24 44,24 24,24 24,44 24,24 4,24 24,24 24,4 Z"
+             fill="#b58900"
+             stroke="#002b36"
+             stroke-width="3"
+             stroke-linejoin="round"
+             id="path1-14-0" />
+          <circle
+             cx="24"
+             cy="24"
+             r="3"
+             fill="#fdf6e3"
+             id="circle1-91-4" />
+        </g>
+      </g>
+      <g
+         id="eyes-heart"
+         inkscape:label="Heart Eyes"
+         class="mascot-eye eyes-heart"
+         data-eyes="heart">
+        <g
+           id="g11"
+           transform="matrix(1.2434217,0,0,1.2434217,156.6749,188.58651)">
+          <path
+             d="M 32,56 C 20,44 6,34 6,20 6,10 14,4 24,4 c 4.5,0 7,3 8,5 1,-2 3.5,-5 8,-5 10,0 18,6 18,16 0,14 -14,24 -26,36 z"
+             fill="#da5780"
+             stroke="#002b36"
+             stroke-width="4.5"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="path1-8" />
+          <path
+             d="m 23,10 c -6,0 -11,5 -11,11 0,3 2,6 4,8"
+             fill="none"
+             stroke="#f48498"
+             stroke-width="3"
+             stroke-linecap="round"
+             id="path2-0" />
+          <circle
+             cx="20"
+             cy="16"
+             r="2.5"
+             fill="#fdf6e3"
+             id="circle2-42" />
+        </g>
+        <g
+           id="g11-4"
+           transform="matrix(1.2434217,0,0,1.2434217,323.30779,173.04223)">
+          <path
+             d="M 32,56 C 20,44 6,34 6,20 6,10 14,4 24,4 c 4.5,0 7,3 8,5 1,-2 3.5,-5 8,-5 10,0 18,6 18,16 0,14 -14,24 -26,36 z"
+             fill="#da5780"
+             stroke="#002b36"
+             stroke-width="4.5"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="path1-8-2" />
+          <path
+             d="m 23,10 c -6,0 -11,5 -11,11 0,3 2,6 4,8"
+             fill="none"
+             stroke="#f48498"
+             stroke-width="3"
+             stroke-linecap="round"
+             id="path2-0-2" />
+          <circle
+             cx="20"
+             cy="16"
+             r="2.5"
+             fill="#fdf6e3"
+             id="circle2-42-2" />
+        </g>
+      </g>
+      <g
+         id="eyes-happy"
+         transform="translate(12.335392,-4.1094149)"
+         inkscape:label="Happy / Cheerful Smile"
+         class="mascot-eye eyes-happy"
+         data-eyes="happy">
+        <path
+           d="m 174,224 c 8,-18 36,-18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="right_eye-3" />
+        <path
+           d="m 316,214 c 8,-18 36,-18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="left_eye-8" />
+      </g>
+      <g
+         id="eyes-laugh"
+         transform="translate(10.27718,-15.986667)"
+         inkscape:label="Laughing Eyes"
+         class="mascot-eye eyes-laugh"
+         data-eyes="laugh">
+        <path
+           d="m 172,224 c 10,-22 38,-22 48,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="right_eye-6" />
+        <path
+           d="m 314,214 c 10,-22 38,-22 48,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="left_eye-4" />
+      </g>
+      <g
+         id="eyes-love"
+         transform="translate(12.335392,10.705317)"
+         inkscape:label="Love / Heart Eyes"
+         class="mascot-eye eyes-love"
+         data-eyes="love">
+        <path
+           d="m 196,238 c -14,-12 -24,-22 -24,-32 0,-10 10,-16 20,-10 2,2 4,4 4,4 0,0 2,-2 4,-4 10,-6 20,0 20,10 0,10 -10,20 -24,32 z"
+           fill="#dc322f"
+           stroke="#002b36"
+           stroke-width="7"
+           stroke-linejoin="round"
+           id="right_eye-38"
+           inkscape:label="right_eye" />
+        <circle
+           cx="188"
+           cy="202"
+           r="3"
+           fill="#fdf6e3"
+           id="circle1-6" />
+        <path
+           d="m 338,228 c -14,-12 -24,-22 -24,-32 0,-10 10,-16 20,-10 2,2 4,4 4,4 0,0 2,-2 4,-4 10,-6 20,0 20,10 0,10 -10,20 -24,32 z"
+           fill="#dc322f"
+           stroke="#002b36"
+           stroke-width="7"
+           stroke-linejoin="round"
+           id="left_eye-0"
+           inkscape:label="left_eye" />
+        <circle
+           cx="330"
+           cy="192"
+           r="3"
+           fill="#fdf6e3"
+           id="circle2-4" />
+      </g>
+      <g
+         id="eyes-open"
+         transform="translate(14.099935,0.45366199)"
+         inkscape:label="Open / Default"
+         class="mascot-eye eyes-open eyes-default"
+         data-eyes="open">
+        <ellipse
+           cx="195.8"
+           cy="221.10001"
+           rx="24.4"
+           ry="30.799999"
+           fill="#073642"
+           id="right_eye-64"
+           inkscape:label="right_eye" />
+        <ellipse
+           cx="202.39999"
+           cy="209.39999"
+           rx="6.5999999"
+           ry="7.0999999"
+           fill="#fdf6e3"
+           id="upper_right_reflection" />
+        <ellipse
+           cx="193.8"
+           cy="230.7"
+           rx="3.5999999"
+           ry="3.9000001"
+           fill="#fdf6e3"
+           id="lower_right_reflection" />
+        <ellipse
+           cx="338.20001"
+           cy="211.3"
+           rx="21.9"
+           ry="29.299999"
+           fill="#073642"
+           id="left_eye-3"
+           inkscape:label="left_eye" />
+        <ellipse
+           cx="331.10001"
+           cy="201.89999"
+           rx="6.5999999"
+           ry="7.0999999"
+           fill="#fdf6e3"
+           id="upper_left_reflection" />
+        <ellipse
+           cx="343.70001"
+           cy="219.89999"
+           rx="3.5999999"
+           ry="3.9000001"
+           fill="#fdf6e3"
+           id="lower_left_reflection" />
+      </g>
+      <g
+         id="eyes-shocked"
+         transform="translate(11.306286,3.9764311)"
+         inkscape:label="Shocked Pinpoint Eyes"
+         class="mascot-eye eyes-shocked"
+         data-eyes="shocked">
+        <circle
+           cx="196"
+           cy="221"
+           r="7"
+           fill="#002b36"
+           id="right_eye-9"
+           inkscape:label="right_eye" />
+        <circle
+           cx="198"
+           cy="219"
+           r="2.5"
+           fill="#fdf6e3"
+           id="circle1-2" />
+        <circle
+           cx="338"
+           cy="211"
+           r="7"
+           fill="#002b36"
+           id="left_eye-5"
+           inkscape:label="left_eye" />
+        <circle
+           cx="340"
+           cy="209"
+           r="2.5"
+           fill="#fdf6e3"
+           id="circle2-40" />
+      </g>
+      <g
+         id="eyes-sleepy"
+         transform="translate(18.510028,-4.596334)"
+         inkscape:label="Sleepy / Drowsy"
+         class="mascot-eye eyes-sleepy"
+         data-eyes="sleepy">
+        <path
+           d="m 170,216 c 12,6 40,6 52,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="path1-4" />
+        <path
+           d="m 312,206 c 12,6 40,6 52,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="path2" />
+      </g>
+      <g
+         id="eyes-squint"
+         transform="translate(19.64162,4.641378)"
+         inkscape:label="Squint / Laughing"
+         class="mascot-eye eyes-squint"
+         data-eyes="squint">
+        <path
+           d="m 176,214 26,8 -26,8"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="right_eye-8" />
+        <path
+           d="m 358,204 -26,8 26,8"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="left_eye-9" />
+      </g>
+      <g
+         id="eyes-blink"
+         transform="translate(12.941459,-1.1151894)"
+         inkscape:label="Blink / Closed"
+         class="mascot-eye eyes-blink"
+         data-eyes="blink">
+        <path
+           d="m 174,220 c 6,18 38,18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="right_eye" />
+        <path
+           d="m 316,210 c 6,18 38,18 44,0"
+           fill="none"
+           stroke="#002b36"
+           stroke-width="12.7"
+           stroke-linecap="round"
+           id="left_eye" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -139,4 +139,26 @@ describe('Mascot Dialog & Modular Vector Primitives', () => {
     expect(smileHtml).toContain('mouth-shape-smile');
     expect(smileHtml).toContain('aptipiou-eyes-wink');
   });
+
+  it('renders AptipiouVector with modular body data attributes and exports useBodySvg hook', async () => {
+    const { AptipiouVector } = await import('../../src/components/Mascot/vector/index.ts');
+    const { useBodySvg, prefetchBodies } =
+      await import('../../src/components/Mascot/vector/useBodySvg.ts');
+
+    expect(typeof useBodySvg).toBe('function');
+    expect(typeof prefetchBodies).toBe('function');
+
+    const html = renderToString(
+      createElement(AptipiouVector, {
+        body: 'action-wave',
+        beak: 'smile',
+        eyes: 'happy',
+        particle: 'sparkle',
+      }),
+    );
+    expect(html).toContain('data-body="action-wave"');
+    expect(html).toContain('data-beak="smile"');
+    expect(html).toContain('data-eyes="happy"');
+    expect(html).toContain('data-particle="sparkle"');
+  });
 });

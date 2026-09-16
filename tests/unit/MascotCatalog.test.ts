@@ -98,3 +98,52 @@ describe('Mascot Vector Assets Integrity', () => {
     }
   });
 });
+
+describe('Mascot Body Assets Deduplication & Hierarchy', () => {
+  it('all 20 body SVGs contain uniform 4-layer hierarchy without duplicate eyes in body', () => {
+    const catalog = JSON.parse(fs.readFileSync(path.join(MASCOT_DIR, 'catalog.json'), 'utf-8'));
+    for (const [id, item] of Object.entries(catalog.categories.body) as [
+      string,
+      { path: string },
+    ][]) {
+      const filePath = path.resolve(path.join('public', item.path));
+      const content = fs.readFileSync(filePath, 'utf-8');
+
+      expect(content, `${id} should contain mascot_character wrapper`).toContain(
+        'id="mascot_character"',
+      );
+      expect(content, `${id} should contain mascot_body layer`).toContain('id="mascot_body"');
+      expect(content, `${id} should contain mascot_beaks layer`).toContain('id="mascot_beaks"');
+      expect(content, `${id} should contain mascot_eyes layer`).toContain('id="mascot_eyes"');
+      expect(content, `${id} should contain mascot_particles layer`).toContain(
+        'id="mascot_particles"',
+      );
+
+      // Verify no residual duplicate eyes inside mascot_body
+      const bodyMatch = content.match(
+        /<g id="mascot_body"[\s\S]*?<\/g>\s*<g id="mascot_particles"/,
+      );
+      if (bodyMatch) {
+        expect(bodyMatch[0]).not.toContain('label="left_eye"');
+        expect(bodyMatch[0]).not.toContain('label="right_eye"');
+        expect(bodyMatch[0]).not.toContain('label="upper_left_reflection"');
+      }
+    }
+  });
+
+  it('source master SVGs have no duplicate eye paths in default body layer', () => {
+    for (const masterFile of ['aptipiou_full.svg', 'aptipiou_redone.svg']) {
+      const fullPath = path.resolve(path.join('public', masterFile));
+      if (!fs.existsSync(fullPath)) continue;
+      const content = fs.readFileSync(fullPath, 'utf-8');
+      const bodyLayerMatch = content.match(
+        /inkscape:label="Body"[\s\S]*?(?:<\/g>\s*<g|<g[^>]*inkscape:label="Beaks")/,
+      );
+      if (bodyLayerMatch) {
+        expect(bodyLayerMatch[0]).not.toContain('id="path12-6"');
+        expect(bodyLayerMatch[0]).not.toContain('id="path12-6-5"');
+        expect(bodyLayerMatch[0]).not.toContain('id="path17"');
+      }
+    }
+  });
+});

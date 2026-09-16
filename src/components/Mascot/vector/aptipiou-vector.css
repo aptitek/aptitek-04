@@ -102,6 +102,94 @@
   animation: aptipiou-wing-wave 0.6s steps(3) infinite;
 }
 
-.aptipiou-vector-inline-fallback {
+.aptipiou-vector-inline-fallback,
+.mascot-asset-references {
   display: none;
+}
+
+/* Modular SVG Layer Visibility Controls */
+.mascot-beak,
+.mascot-eye,
+.mascot-particle {
+  display: none;
+}
+
+/* Default fallback when no attribute is present */
+.beak-default,
+.eyes-open {
+  display: inline;
+}
+
+[data-beak] .beak-default {
+  display: none;
+}
+
+[data-eyes] .eyes-open {
+  display: none;
+}
+
+/* Beak visibility controls */
+[data-beak='default'] .beak-default,
+[data-beak='talk-closed'] .beak-talk-closed,
+[data-beak='talk-a'] .beak-talk-a,
+[data-beak='talk-e'] .beak-talk-e,
+[data-beak='talk-i'] .beak-talk-i,
+[data-beak='talk-o'] .beak-talk-o,
+[data-beak='talk-u'] .beak-talk-u,
+[data-beak='talk-t'] .beak-talk-t,
+[data-beak='talk-fv'] .beak-talk-fv,
+[data-beak='talk-wide'] .beak-talk-wide,
+[data-beak='smile'] .beak-smile,
+[data-beak='grin'] .beak-grin,
+[data-beak='smirk'] .beak-smirk,
+[data-beak='laugh'] .beak-laugh,
+[data-beak='pout'] .beak-pout,
+[data-beak='surprise'] .beak-surprise,
+[data-beak='shocked'] .beak-shocked,
+[data-beak='grimace'] .beak-grimace,
+[data-beak='dizzy'] .beak-dizzy,
+[data-beak='sleep'] .beak-sleep {
+  display: inline;
+}
+
+/* Eyes visibility controls */
+[data-eyes='open'] .eyes-open,
+[data-eyes='default'] .eyes-open,
+[data-eyes='happy'] .eyes-happy,
+[data-eyes='laugh'] .eyes-laugh,
+[data-eyes='love'] .eyes-love,
+[data-eyes='heart'] .eyes-heart,
+[data-eyes='blink'] .eyes-blink,
+[data-eyes='sleepy'] .eyes-sleepy,
+[data-eyes='wink'] .eyes-wink,
+[data-eyes='wink-right'] .eyes-wink-right,
+[data-eyes='wink-left'] .eyes-wink-left,
+[data-eyes='squint'] .eyes-squint,
+[data-eyes='dizzy'] .eyes-dizzy,
+[data-eyes='shocked'] .eyes-shocked,
+[data-eyes='cry'] .eyes-cry,
+[data-eyes='sparkle'] .eyes-sparkle,
+[data-eyes='surprise'] .eyes-surprise {
+  display: inline;
+}
+
+/* Particle visibility controls */
+[data-particle='cloud-thought'] .particle-cloud-thought,
+[data-particle='alert'] .particle-alert,
+[data-particle='bubble-alert'] .particle-alert,
+[data-particle='question'] .particle-question,
+[data-particle='bubble-question'] .particle-question,
+[data-particle='dizzy'] .particle-dizzy,
+[data-particle='bubble-dizzy'] .particle-dizzy,
+[data-particle='shock-lines'] .particle-dizzy,
+[data-particle='sweat-drop-right'] .particle-sweat-drop-right,
+[data-particle='drop-sweat-large'] .particle-sweat-drop-right,
+[data-particle='drop-tear'] .particle-sweat-drop-right,
+[data-particle='sweat-drop-left'] .particle-sweat-drop-left,
+[data-particle='bubbles'] .particle-bubbles,
+[data-particle='sleep-z'] .particle-sleep-z,
+[data-particle='sleep-z-large'] .particle-sleep-z-large,
+[data-particle='sleep-z-medium'] .particle-sleep-z-medium,
+[data-particle='sleep-z-small'] .particle-sleep-z-small {
+  display: inline;
 }

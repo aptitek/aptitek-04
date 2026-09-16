@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { useEffect, type FC, type ReactNode } from 'react';
 import { Box } from 'styled-system/jsx';
 import type {
   AptipiouEyes as EyesType,
@@ -11,7 +11,26 @@ import { AptipiouEyes } from './AptipiouEyes.tsx';
 import { AptipiouMouth } from './AptipiouMouth.tsx';
 import { resolveParticle } from './particles.ts';
 import { useAptipiouAnimation } from './useAptipiouAnimation.ts';
+import { prefetchBodies, useBodySvg } from './useBodySvg.ts';
 import './aptipiou-vector.css';
+
+const COMMON_BODIES = [
+  'standing',
+  'action-wave',
+  'action-celebrate',
+  'action-thinking',
+  'action-thumbsup',
+  'fly-upstroke',
+  'fly-glide',
+  'fly-downstroke',
+  'fly-bank',
+  'land-touchdown',
+  'land-impact',
+  'land-settle',
+  'land-rebound',
+  'land-stand',
+  'happy-bounce',
+];
 
 const BODY_MAP: Record<string, string> = {
   idle: 'standing',
@@ -90,11 +109,13 @@ function resolveBeakAsset(beak?: string, mouth?: string): { asset: string; inlin
 
 interface RenderSvgOptions {
   body: string;
+  bodyMarkup: string;
   eyesAsset: string;
   inlineEyes: EyesType;
   beakAsset: string;
   inlineMouth: MouthType;
   particle: ParticlePlacement | null;
+  particleId?: string | undefined;
   bodyAnimClass: string;
 }
 
@@ -107,11 +128,13 @@ const InlineFallback: FC<{ eyes: EyesType; mouth: MouthType }> = ({ eyes, mouth 
 
 function renderSvg({
   body,
+  bodyMarkup,
   eyesAsset,
   inlineEyes,
   beakAsset,
   inlineMouth,
   particle,
+  particleId,
   bodyAnimClass,
 }: RenderSvgOptions): ReactNode {
   return (
@@ -120,20 +143,31 @@ function renderSvg({
       width="100%"
       height="100%"
       className={`aptipiou-vector-svg ${bodyAnimClass}`}
+      data-body={body}
+      data-beak={beakAsset}
+      data-eyes={eyesAsset}
+      data-particle={particleId}
       aria-hidden="true"
     >
-      <SvgImage href={`/mascot/body/${body}.svg`} x="0" y="0" width="512" height="512" />
-      <SvgImage href={`/mascot/eyes/${eyesAsset}.svg`} x="0" y="0" width="512" height="512" />
-      <SvgImage href={`/mascot/beak/${beakAsset}.svg`} x="0" y="0" width="512" height="512" />
-      {particle && (
-        <SvgImage
-          href={particle.path}
-          x={particle.x}
-          y={particle.y}
-          width={particle.width}
-          height={particle.height}
-        />
+      {bodyMarkup ? (
+        <G dangerouslySetInnerHTML={{ __html: bodyMarkup }} />
+      ) : (
+        <SvgImage href={`/mascot/body/${body}.svg`} x="0" y="0" width="512" height="512" />
       )}
+      <G className="mascot-asset-references" aria-hidden="true">
+        <SvgImage href={`/mascot/body/${body}.svg`} x="0" y="0" width="512" height="512" />
+        <SvgImage href={`/mascot/eyes/${eyesAsset}.svg`} x="0" y="0" width="512" height="512" />
+        <SvgImage href={`/mascot/beak/${beakAsset}.svg`} x="0" y="0" width="512" height="512" />
+        {particle && (
+          <SvgImage
+            href={particle.path}
+            x={particle.x}
+            y={particle.y}
+            width={particle.width}
+            height={particle.height}
+          />
+        )}
+      </G>
       <InlineFallback eyes={inlineEyes} mouth={inlineMouth} />
     </Svg>
   );
@@ -148,6 +182,7 @@ export const AptipiouVector: FC<AptipiouVectorProps> = (props) => {
   });
 
   const bodyAsset = resolveBodyAsset(props.body ?? animated.body);
+  const bodyMarkup = useBodySvg(bodyAsset);
   const { asset: eyesAsset, inline: inlineEyes } = resolveEyesAsset(props.eyes ?? animated.eyes);
   const { asset: beakAsset, inline: inlineMouth } = resolveBeakAsset(
     props.beak,
@@ -155,15 +190,22 @@ export const AptipiouVector: FC<AptipiouVectorProps> = (props) => {
   );
   const particle = resolveParticle(props.particle);
 
+  useEffect(() => {
+    prefetchBodies(COMMON_BODIES);
+  }, []);
+
   const size = props.size ?? 192;
   const bodyAnimClass = `aptipiou-body-${animated.body}`;
+  const particleId = typeof props.particle === 'string' ? props.particle : undefined;
   const svgContent = renderSvg({
     body: bodyAsset,
+    bodyMarkup,
     eyesAsset,
     inlineEyes,
     beakAsset,
     inlineMouth,
     particle,
+    particleId,
     bodyAnimClass,
   });
   const className = `aptipiou-vector-container ${props.className ?? ''}`;
