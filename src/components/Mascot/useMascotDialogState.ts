@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useSyncExternalStore, useEffect, useRef } from 'react';
 import type {
   DialogStep,
   MascotAnimation,
@@ -10,6 +10,7 @@ import { useTranslations } from '../../i18n/index.ts';
 import { useMascotAudio } from './useMascotAudio.ts';
 import { useMascotTypewriter } from './useMascotTypewriter.ts';
 import { useSoundState } from './useSoundState.ts';
+import { mascotScrollyStore } from './mascotScrollyStore.ts';
 
 function useDialogueScript(propScript?: DialogStep[], locale = 'fr') {
   const t = useTranslations(locale);
@@ -54,7 +55,7 @@ function useMascotPosing(
     [onExp],
   );
 
-  return { viseme, expression, anim, handleVisChange, handleExpChange };
+  return { viseme, expression, anim, setAnim, handleVisChange, handleExpChange };
 }
 
 export function useMascotDialogState(props: MascotDialogProps) {
@@ -63,12 +64,33 @@ export function useMascotDialogState(props: MascotDialogProps) {
   const audio = useMascotAudio({ enabled: soundEnabled });
   const [stepIndex, setStepIndex] = useState(0);
 
-  const { viseme, expression, anim, handleVisChange, handleExpChange } = useMascotPosing(
+  const scrollyState = useSyncExternalStore(
+    mascotScrollyStore.subscribe,
+    mascotScrollyStore.getSnapshot,
+    mascotScrollyStore.getServerSnapshot,
+  );
+
+  const { viseme, expression, anim, setAnim, handleVisChange, handleExpChange } = useMascotPosing(
     props.onVisemeChange,
     props.onExpressionChange,
   );
 
-  const currentStep = activeScript[stepIndex] || activeScript[0];
+  // Play touchdown squash landing when state enters 'landing'
+  const prevScrollyState = useRef(scrollyState.state);
+  useEffect(() => {
+    if (scrollyState.state === 'landing' && prevScrollyState.current !== 'landing') {
+      setAnim('landing');
+    } else if (scrollyState.state === 'landed' && prevScrollyState.current === 'landing') {
+      setAnim('idle');
+    }
+    prevScrollyState.current = scrollyState.state;
+  }, [scrollyState.state, setAnim]);
+
+  // Gate dialogue typewriter so that it starts after the mascot has touched down
+  const isDialogReady =
+    typeof window === 'undefined' || scrollyState.hasLanded || scrollyState.state === 'landed';
+  const currentStep = isDialogReady ? activeScript[stepIndex] || activeScript[0] : undefined;
+
   const { displayedText, isTyping, fastForward } = useMascotTypewriter({
     step: currentStep,
     audio,
@@ -97,12 +119,13 @@ export function useMascotDialogState(props: MascotDialogProps) {
     stepIndex,
     setStepIndex,
     activeScript,
-    anim,
+    anim: scrollyState.state === 'landing' ? 'landing' : anim,
     expression,
     viseme,
     displayedText,
     isTyping,
     handleAdvance,
     handlePoke,
+    scrollyState,
   };
 }

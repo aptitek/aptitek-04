@@ -173,7 +173,6 @@
   display: inline;
 }
 
-/* Particle visibility controls */
 [data-particle='cloud-thought'] .particle-cloud-thought,
 [data-particle='alert'] .particle-alert,
 [data-particle='bubble-alert'] .particle-alert,
@@ -187,9 +186,75 @@
 [data-particle='drop-tear'] .particle-sweat-drop-right,
 [data-particle='sweat-drop-left'] .particle-sweat-drop-left,
 [data-particle='bubbles'] .particle-bubbles,
+[data-particle='bubble-large'] .particle-bubbles,
+[data-particle='bubble-medium'] .particle-bubbles,
+[data-particle='bubble-small'] .particle-bubbles,
 [data-particle='sleep-z'] .particle-sleep-z,
 [data-particle='sleep-z-large'] .particle-sleep-z-large,
 [data-particle='sleep-z-medium'] .particle-sleep-z-medium,
 [data-particle='sleep-z-small'] .particle-sleep-z-small {
   display: inline;
+}
+
+/* Beak Bubble Layout & Breathing Animation */
+/* Prevent overlapping concentric circles: display only one clean bubble at a time */
+.particle-bubbles #g3,
+.particle-bubbles #g2 {
+  display: none;
+}
+
+[data-particle='bubble-small'] .particle-bubbles #g2 {
+  display: inline;
+}
+[data-particle='bubble-small'] .particle-bubbles #g4,
+[data-particle='bubble-small'] .particle-bubbles #g3 {
+  display: none;
+}
+
+[data-particle='bubble-medium'] .particle-bubbles #g3 {
+  display: inline;
+}
+[data-particle='bubble-medium'] .particle-bubbles #g4,
+[data-particle='bubble-medium'] .particle-bubbles #g2 {
+  display: none;
+}
+
+[data-particle='bubbles'] .particle-bubbles #g4,
+[data-particle='bubble-large'] .particle-bubbles #g4 {
+  display: inline;
+}
+
+@keyframes aptipiou-beak-bubble-breathe {
+  0% {
+    transform: scale(0.35);
+    opacity: 0.72;
+  }
+  38% {
+    transform: scale(1.15) translate(3px, -2px);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.24) translate(4px, -3px);
+    opacity: 0.98;
+  }
+  68% {
+    transform: scale(0.92) translate(1.5px, -1px);
+    opacity: 0.88;
+  }
+  100% {
+    transform: scale(0.35);
+    opacity: 0.72;
+  }
+}
+
+.particle-bubbles {
+  transform-box: fill-box;
+  transform-origin: 20% 80%;
+  animation: aptipiou-beak-bubble-breathe 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle-bubbles {
+    animation: none;
+  }
 }

@@ -99,6 +99,7 @@ test('MiddleSection / AptitekSection renders MascotDialog terminal with mascot a
 }) => {
   await page.goto('/fr');
   const middleSection = page.locator('[data-testid="aptitek-middle-section"]');
+  await middleSection.scrollIntoViewIfNeeded();
   await expect(middleSection).toBeVisible();
 
   // Terminal bubble and title
@@ -109,16 +110,16 @@ test('MiddleSection / AptitekSection renders MascotDialog terminal with mascot a
   await expect(terminalTitle).toBeVisible();
   await expect(terminalTitle).toContainText('aptipiou-terminal');
 
-  // Mascot on the left
+  // Mascot on the left (lands into stage after scroll)
   const mascotStage = middleSection.locator('.mascot-stage');
   await expect(mascotStage).toBeVisible();
   const mascotSvg = mascotStage.locator('.aptipiou-vector-svg');
-  await expect(mascotSvg).toBeVisible();
+  await expect(mascotSvg).toBeVisible({ timeout: 10000 });
 
   // Dialogue mono text in Recursive Casual Mono
   const dialogText = middleSection.locator('.mascot-dialog-mono-text');
   await expect(dialogText).toBeVisible();
-  await expect(dialogText).toContainText('Aptipiou', { timeout: 5000 });
+  await expect(dialogText).toContainText('Aptipiou', { timeout: 10000 });
 
   // Advance to next step
   const nextBtn = middleSection.locator('.mascot-action-btn-next');
@@ -134,4 +135,28 @@ test('MiddleSection / AptitekSection renders MascotDialog terminal with mascot a
   // Sound switch in the appbar
   const soundSwitch = page.locator('[data-testid="sound-switch"]');
   await expect(soundSwitch).toBeVisible();
+});
+
+test('Mascot scrollytelling: sleeping on tree branch, flying on scroll, landing on dialog stage', async ({
+  page,
+}) => {
+  await page.goto('/');
+
+  // 1. Initially at top: Mascot sleeping peacefully on the tree branch
+  const branchPerch = page.locator('.mascot-branch-perch');
+  const treeContainer = page.locator('#peacefulTreeContainer');
+  await expect(treeContainer).toBeVisible();
+  await expect(branchPerch).toBeVisible({ timeout: 5000 });
+
+  // 2. Scroll down towards the middle section
+  const middleSection = page.locator('[data-testid="aptitek-middle-section"]');
+  await middleSection.scrollIntoViewIfNeeded();
+
+  // 3. Stage receives mascot and dialogue begins typing seamlessly
+  const mascotStage = middleSection.locator('.mascot-stage');
+  await expect(mascotStage).toBeVisible();
+
+  const dialogText = middleSection.locator('.mascot-dialog-mono-text');
+  await expect(dialogText).toBeVisible({ timeout: 10000 });
+  await expect(dialogText).toContainText('Aptipiou', { timeout: 10000 });
 });

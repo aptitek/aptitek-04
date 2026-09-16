@@ -6,6 +6,7 @@ import { M3eSlider, M3eSliderThumb } from '@m3e/react/slider';
 import { M3eIcon } from '@m3e/react/icon';
 import { useTranslations } from '../i18n/index.ts';
 import { useThemeMode } from './useThemeMode.ts';
+import { MascotBranchPerch, MascotFlightActor } from '../components/Mascot/index.ts';
 
 import '@m3e/icons/rounded/spa';
 import '@m3e/icons/rounded/sunny';
@@ -230,6 +231,9 @@ export function SeasonHero(props: SeasonHeroProps): ReactElement {
         mode={themeMode}
         interactive={true}
         className="season-hero-canvas-container"
+        treeOverlay={
+          <MascotBranchPerch ariaLabel={t.mascotSleepingAriaLabel} title={t.mascotSleepingTitle} />
+        }
       >
         <Flex className="season-hero-content-stack">
           <SeasonHeroTickerBox prefixNode={prefixNode} phrases={phrases} suffix={suffix} />
@@ -244,6 +248,7 @@ export function SeasonHero(props: SeasonHeroProps): ReactElement {
           />
         </Flex>
       </SeasonBackground>
+      <MascotFlightActor />
     </Box>
   );
 }

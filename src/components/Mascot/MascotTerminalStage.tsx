@@ -9,6 +9,7 @@ export interface MascotTerminalStageProps {
   viseme: MascotViseme;
   alt: string;
   onPoke: () => void;
+  isLanded?: boolean;
 }
 
 export const MascotTerminalStage: FC<MascotTerminalStageProps> = ({
@@ -17,6 +18,7 @@ export const MascotTerminalStage: FC<MascotTerminalStageProps> = ({
   viseme,
   alt,
   onPoke,
+  isLanded = true,
 }) => {
   const handleKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -25,18 +27,26 @@ export const MascotTerminalStage: FC<MascotTerminalStageProps> = ({
     }
   };
 
+  const stageClass = isLanded
+    ? 'mascot-stage mascot-stage--landed'
+    : 'mascot-stage mascot-stage--waiting';
+
   return (
     <Box className="mascot-stage-wrapper">
       <Box
         role="button"
         tabIndex={0}
-        className="mascot-stage"
+        className={stageClass}
         onClick={onPoke}
         onKeyDown={handleKey}
         aria-label={alt}
         title={alt}
       >
-        <Mascot animation={animation} expression={expression} viseme={viseme} size={192} />
+        {isLanded ? (
+          <Mascot animation={animation} expression={expression} viseme={viseme} size={192} />
+        ) : (
+          <Box className="mascot-stage-target-perch" aria-hidden="true" />
+        )}
       </Box>
     </Box>
   );

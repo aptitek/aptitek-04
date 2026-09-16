@@ -159,4 +159,6 @@ export const en = {
   mascotDialogueStep2:
     '[thinking] Ready to level up your engineering XP with hands-on talent trees?',
   mascotDialogueStep3: '[celebrate] Explore our interactive modules and master modern web craft!',
+  mascotSleepingAriaLabel: 'Aptipiou sleeping on tree branch. Click to wake up.',
+  mascotSleepingTitle: 'Aptipiou rests peacefully in the breeze... (Click to wake up)',
 } as const;

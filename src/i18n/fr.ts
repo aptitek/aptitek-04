@@ -161,4 +161,6 @@ export const fr = {
     "[thinking] Prêt à faire monter votre niveau d'XP grâce à nos arbres de talents ?",
   mascotDialogueStep3:
     ' [celebrate] Explorez nos modules interactifs et maîtrisez l’artisanat web !',
+  mascotSleepingAriaLabel: "Aptipiou endormi sur la branche de l'arbre. Cliquez pour réveiller.",
+  mascotSleepingTitle: 'Aptipiou dort paisiblement au gré du vent... (Cliquez pour réveiller)',
 } as const;
