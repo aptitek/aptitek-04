@@ -38,9 +38,10 @@ describe('Appbar Fancy Switches Specifications', () => {
     expect(html).toContain('Switch to English');
   });
 
-  it('renders SoundSwitch with MDI volume icons and data-testid="sound-switch"', () => {
+  it('renders SoundSwitch with MDI volume icons, ghost slot, and data-testid="sound-switch"', () => {
     const html = renderToString(createElement(SoundSwitch, { ariaLabel: 'Toggle mascot sound' }));
     expect(html).toContain('data-testid="sound-switch"');
+    expect(html).toContain('switch_ghost_slot');
     expect(html).toContain('volume_up');
     expect(html).toContain('volume_off');
     expect(html).toContain('aria-label="Toggle mascot sound"');

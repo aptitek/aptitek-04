@@ -44,8 +44,8 @@ export const SoundSwitch: FC<SoundSwitchProps> = ({ ariaLabel, className }) => {
         dataTestId="sound-switch"
         handleIconOn={<VolumeOnIcon />}
         handleIconOff={<VolumeOffIcon />}
-        peekingIconOn={<VolumeOffIcon />}
-        peekingIconOff={<VolumeOnIcon />}
+        ghostIconOn={<VolumeOffIcon />}
+        ghostIconOff={<VolumeOnIcon />}
       />
     </Box>
   );
