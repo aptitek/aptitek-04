@@ -13,6 +13,9 @@
       "project": ["src/**/*.{astro,mdx,ts,tsx}", "tests/**/*.{ts,tsx}"],
       "ignoreDependencies": [
         "@astrojs/check",
+        "@lit/react",
+        "@m3e/icons",
+        "@m3e/react",
         "maplibre-gl",
         "react-map-gl",
         "ogl",

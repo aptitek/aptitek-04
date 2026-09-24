@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('English landing page renders SeasonHero with Milkshake font and M3e slider', async ({
+test('English landing page renders SeasonHero with Milkshake font and no manual slider dock', async ({
   page,
 }) => {
   await page.goto('/');
@@ -26,12 +26,11 @@ test('English landing page renders SeasonHero with Milkshake font and M3e slider
   await expect(brandMilkshake).toContainText('Apti');
   await expect(brandMilkshake).toHaveCSS('font-style', 'normal');
 
-  // Verify M3e Season Slider Dock
+  // Verify manual slider dock card is removed on top of the background
   const sliderDock = page.locator('[data-testid="season-slider-dock"]');
-  await expect(sliderDock).toBeVisible();
-
+  await expect(sliderDock).not.toBeAttached();
   const m3eSlider = page.locator('[data-testid="season-m3e-slider"]');
-  await expect(m3eSlider).toBeVisible();
+  await expect(m3eSlider).not.toBeAttached();
 });
 
 test('French localized page renders Petit Apti and French proverb', async ({ page }) => {
@@ -80,18 +79,47 @@ test('Theme switcher toggles between light and dark modes affecting SeasonBackgr
   await expect(page.locator('html')).toHaveAttribute('data-theme', expectedMode);
 });
 
-test('Season presets update the active season badge', async ({ page }) => {
-  await page.goto('/');
-  const statusNumber = page.locator('.season-status-number');
-  await expect(statusNumber).toBeVisible();
-  await expect(statusNumber).toHaveText('0.00');
+function getExpectedSeasonProgress(date: Date = new Date()): string {
+  const year = date.getFullYear();
+  const time = date.getTime();
+  const springStart = new Date(year, 2, 1).getTime();
+  const summerStart = new Date(year, 5, 1).getTime();
+  const fallStart = new Date(year, 8, 1).getTime();
+  const winterStart = new Date(year, 11, 1).getTime();
 
-  // Click Summer preset
-  const summerChip = page.locator('.season-chips-container [data-segment-id="summer"]');
-  if (await summerChip.isVisible()) {
-    await summerChip.click();
-    await expect(statusNumber).toHaveText('1.00');
+  let start = fallStart;
+  let end = winterStart;
+  let base = 2.0;
+
+  if (time >= springStart && time < summerStart) {
+    start = springStart;
+    end = summerStart;
+    base = 0.0;
+  } else if (time >= summerStart && time < fallStart) {
+    start = summerStart;
+    end = fallStart;
+    base = 1.0;
+  } else if (time >= winterStart) {
+    start = winterStart;
+    end = new Date(year + 1, 2, 1).getTime();
+    base = 3.0;
+  } else if (time < springStart) {
+    start = new Date(year - 1, 11, 1).getTime();
+    end = springStart;
+    base = 3.0;
   }
+
+  const fraction = (time - start) / (end - start);
+  return (base + Math.max(0, Math.min(1, fraction))).toFixed(2);
+}
+
+test('SeasonHero reflects current northern hemisphere season progress', async ({ page }) => {
+  await page.goto('/');
+  const seasonHero = page.locator('[data-testid="season-hero"]');
+  await expect(seasonHero).toBeVisible();
+
+  const expectedProgress = getExpectedSeasonProgress();
+  await expect(seasonHero).toHaveAttribute('data-season-progress', expectedProgress);
 });
 
 test('MiddleSection / AptitekSection renders MascotDialog terminal with mascot and speech bubble', async ({

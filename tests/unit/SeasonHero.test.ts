@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { useTranslations } from '../../src/i18n/index.ts';
 
-describe('SeasonHero & i18n specifications', () => {
+describe('SeasonHero copy & i18n specifications', () => {
   it('supplies French copy with Petit Apti and fait son nid', () => {
     const tFr = useTranslations('fr');
     expect(tFr.heroPrefix).toBe('Petit');
@@ -21,7 +21,7 @@ describe('SeasonHero & i18n specifications', () => {
     expect(tEn.heroPhrases).toContain('talent');
   });
 
-  it('provides localized season names and slider aria labels', () => {
+  it('provides localized season names', () => {
     const tFr = useTranslations('fr');
     const tEn = useTranslations('en');
 
@@ -34,9 +34,6 @@ describe('SeasonHero & i18n specifications', () => {
     expect(tEn.summer).toBe('Summer');
     expect(tEn.fall).toBe('Fall');
     expect(tEn.winter).toBe('Winter');
-
-    expect(tFr.seasonSliderAriaLabel).toBeTruthy();
-    expect(tEn.seasonSliderAriaLabel).toBeTruthy();
   });
 
   it('ensures brand-name-milkshake enforces font-style: normal and neutral font-variation-settings in global.css', async () => {
@@ -46,5 +43,39 @@ describe('SeasonHero & i18n specifications', () => {
     const css = readFileSync(cssPath, 'utf-8');
     expect(css).toMatch(/\.brand-name-milkshake\s*\{[^}]*font-style:\s*normal;/);
     expect(css).toMatch(/\.brand-name-milkshake\s*\{[^}]*font-variation-settings:\s*normal;/);
+  });
+});
+
+describe('SeasonHero season progress & rendering', () => {
+  it('defaults season background in SeasonHero to the current northern hemisphere season', async () => {
+    const { createElement } = await import('react');
+    const { renderToStaticMarkup } = await import('react-dom/server');
+    const { SeasonHero } = await import('../../src/theme/SeasonHero.tsx');
+    const { getNorthernHemisphereSeasonProgress } = await import('reapti');
+
+    const html = renderToStaticMarkup(createElement(SeasonHero, { locale: 'en' }));
+    const expectedProgress = getNorthernHemisphereSeasonProgress().toFixed(2);
+    expect(html).toContain(`data-season-progress="${expectedProgress}"`);
+  });
+
+  it('respects explicit season override in SeasonHero', async () => {
+    const { createElement } = await import('react');
+    const { renderToStaticMarkup } = await import('react-dom/server');
+    const { SeasonHero } = await import('../../src/theme/SeasonHero.tsx');
+
+    const html = renderToStaticMarkup(
+      createElement(SeasonHero, { locale: 'en', season: 'winter' }),
+    );
+    expect(html).toContain('data-season-progress="3.00"');
+  });
+
+  it('does not render manual slider card dock on top of background', async () => {
+    const { createElement } = await import('react');
+    const { renderToStaticMarkup } = await import('react-dom/server');
+    const { SeasonHero } = await import('../../src/theme/SeasonHero.tsx');
+
+    const html = renderToStaticMarkup(createElement(SeasonHero, { locale: 'en' }));
+    expect(html).not.toContain('season-slider-dock');
+    expect(html).not.toContain('season-m3e-slider');
   });
 });

@@ -185,7 +185,7 @@ h3,
 .season-hero-content-stack {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   inline-size: 100%;
   block-size: 100%;
@@ -204,106 +204,6 @@ h3,
   align-items: center;
   margin-block-start: var(--spacing-md);
   text-align: center;
-}
-
-.season-slider-dock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding-block: var(--spacing-sm);
-  padding-inline: var(--spacing-md);
-  background-color: var(--theme-surface-container);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--theme-outline-variant);
-  box-shadow: var(--theme-elevation-3);
-  inline-size: 100%;
-  max-inline-size: 460px;
-  margin-block-end: var(--spacing-xs);
-  transition-property: box-shadow, border-color, background-color;
-  transition-duration: var(--motion-normal);
-  transition-timing-function: var(--motion-ease);
-}
-
-.season-slider-status-bar {
-  display: flex;
-  justify-content: center;
-  inline-size: 100%;
-}
-
-.season-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding-block: var(--spacing-xs);
-  padding-inline: var(--spacing-md);
-  border-radius: var(--radius-full);
-  background-color: var(--theme-primary-container);
-  color: var(--theme-on-primary-container);
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-
-.season-status-name {
-  font-family: var(--font-body);
-}
-
-.season-status-number {
-  font-family: var(--font-body);
-  opacity: 0.85;
-}
-
-.season-slider-track-container {
-  inline-size: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-inline: var(--spacing-sm);
-}
-
-.season-slider-track-container [data-override] m3e-slider {
-  inline-size: 100%;
-}
-
-.season_preset_chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  inline-size: 100%;
-}
-
-.season_preset_btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding-block: var(--spacing-xs);
-  padding-inline: var(--spacing-sm);
-  border-radius: var(--radius-full);
-  border: 1px solid var(--theme-outline-variant);
-  background-color: var(--theme-surface);
-  color: var(--theme-on-surface-variant);
-  font-family: var(--font-body);
-  font-variation-settings: var(--font-variation-body);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition-property: background-color, border-color, color, transform, box-shadow;
-  transition-duration: var(--motion-fast);
-  transition-timing-function: var(--motion-ease);
-}
-
-.season_preset_btn:hover {
-  background-color: var(--theme-surface-container-high);
-  color: var(--theme-on-surface);
-  transform: translateY(-1px);
-}
-
-.season_preset_btn_active {
-  background-color: var(--theme-secondary-container);
-  color: var(--theme-on-secondary-container);
-  border-color: var(--theme-secondary);
-  font-weight: 700;
 }
 
 /* Callout and Semantic Landmarks */
